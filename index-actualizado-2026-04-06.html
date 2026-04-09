@@ -68,23 +68,12 @@
       min-height: 100vh;
       font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
       color: var(--ink);
-      background: radial-gradient(1200px 600px at 10% -10%, #f3e8ff 0%, transparent 55%),
-        radial-gradient(900px 500px at 100% 0%, #ede9fe 0%, transparent 50%), #f6f6f9;
+      background: #f6f5fa;
       position: relative;
     }
 
     body::after {
-      content: "";
-      position: fixed;
-      width: min(520px, 90vw);
-      height: min(520px, 90vw);
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(130, 10, 209, 0.09) 0%, transparent 70%);
-      bottom: -180px;
-      right: -120px;
-      pointer-events: none;
-      z-index: 0;
-      animation: soft-pulse 8s var(--ease-out) infinite;
+      display: none;
     }
 
     .topbar {
@@ -103,13 +92,20 @@
     .hub-top {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 0.75rem;
       background: #fff;
-      border: 1px solid #ece9f5;
-      border-radius: 14px;
-      box-shadow: var(--shadow);
-      padding: 0.7rem 0.9rem;
-      margin-bottom: 0.95rem;
+      border: 1px solid #ece7f8;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 0.55rem 0.8rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .hub-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
     }
 
     .hub-logo {
@@ -127,19 +123,29 @@
 
     .hub-name {
       margin: 0;
-      font-size: 1.45rem;
+      font-size: 2rem;
       font-weight: 800;
       letter-spacing: -0.02em;
       color: #161622;
+    }
+
+    .hub-menu-btn {
+      width: 2.1rem;
+      height: 2.1rem;
+      border: 0;
+      border-radius: 10px;
+      background: #1f1f24;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
     }
 
     .hero {
       margin-bottom: 1.35rem;
     }
 
-    .hero,
-    .view-switch,
-    .quick-stats {
+    .hero {
       display: none;
     }
 
@@ -151,9 +157,111 @@
     }
 
     .hub-sidebar.panel {
-      padding: 0.8rem;
+      padding: 0.7rem;
       position: sticky;
       top: 1rem;
+      border-radius: 14px;
+      box-shadow: 0 2px 10px rgba(20, 20, 30, 0.04);
+    }
+
+    .summary-card {
+      margin-bottom: 0.55rem;
+      border-radius: 12px;
+      border: 1px solid #e9e3ff;
+      background: linear-gradient(180deg, #fdfbff 0%, #fff 36%);
+      box-shadow: 0 6px 18px rgba(130, 10, 209, 0.06);
+      overflow: hidden;
+    }
+
+    .summary-card > summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 0.62rem 0.68rem;
+    }
+
+    .summary-card > summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .summary-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.45rem;
+    }
+
+    .summary-head-right {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .summary-title {
+      margin: 0;
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: #232332;
+      letter-spacing: -0.01em;
+    }
+
+    .summary-badge {
+      font-size: 0.7rem;
+      color: var(--nu);
+      background: #f1e8ff;
+      border-radius: 999px;
+      padding: 0.16rem 0.45rem;
+      font-weight: 800;
+      text-transform: lowercase;
+    }
+
+    .summary-caret {
+      width: 1.1rem;
+      height: 1.1rem;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: #f5f0ff;
+      color: #5b0a9a;
+      font-size: 0.68rem;
+      font-weight: 900;
+      transition: transform 0.18s ease;
+    }
+
+    .summary-card[open] .summary-caret {
+      transform: rotate(180deg);
+    }
+
+    .summary-content {
+      padding: 0 0.68rem 0.68rem;
+      border-top: 1px solid #efe8ff;
+    }
+
+    .summary-inline {
+      margin: 0;
+      font-size: 0.76rem;
+      color: #5f5f78;
+      line-height: 1.35;
+    }
+
+    .summary-list {
+      list-style: none;
+      margin: 0.48rem 0 0;
+      padding: 0;
+      display: grid;
+      gap: 0.22rem;
+    }
+
+    .summary-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      font-size: 0.76rem;
+      color: #3b3b52;
+      font-weight: 700;
+    }
+
+    .summary-list b {
+      color: #131320;
     }
 
     .reason-buttons {
@@ -163,7 +271,7 @@
 
     .reason-btn {
       width: 100%;
-      border: 1px solid #dcd8ea;
+      border: 1px solid #ece9f4;
       background: #fff;
       border-radius: 12px;
       text-align: left;
@@ -172,7 +280,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 0.5rem;
-      font-size: 0.84rem;
+      font-size: 0.8rem;
       font-family: inherit;
       font-weight: 700;
       color: #22223a;
@@ -188,8 +296,8 @@
 
     .reason-btn.active {
       border-color: rgba(130, 10, 209, 0.65);
-      background: #f3ebff;
-      box-shadow: 0 0 0 3px rgba(130, 10, 209, 0.12);
+      background: #fff;
+      box-shadow: inset 0 0 0 1px rgba(130, 10, 209, 0.35);
       color: #300a54;
     }
 
@@ -206,21 +314,23 @@
 
     .reason-btn-icon {
       flex-shrink: 0;
-      width: 1.18rem;
-      height: 1.18rem;
-      border-radius: 999px;
+      width: 1.38rem;
+      height: 1.38rem;
+      border-radius: 10px;
       display: grid;
       place-items: center;
-      font-size: 0.74rem;
-      background: #f3effd;
-      color: #5b0a9a;
+      font-size: 0.84rem;
+      background: #f4f0ff;
+      color: #4b2a88;
       line-height: 1;
       margin-top: 0.02rem;
+      box-shadow: inset 0 0 0 1px rgba(130, 10, 209, 0.12);
     }
 
     .reason-btn.active .reason-btn-icon {
-      background: rgba(130, 10, 209, 0.2);
-      color: #4a0a81;
+      background: rgba(130, 10, 209, 0.18);
+      color: #2f0a52;
+      box-shadow: inset 0 0 0 1px rgba(130, 10, 209, 0.28);
     }
 
     .reason-btn-count {
@@ -240,6 +350,15 @@
 
     .hub-main .panel {
       margin-bottom: 0.8rem;
+    }
+
+    #filtersPanel {
+      padding: 0.72rem 0.78rem 0.46rem;
+    }
+
+    #filtersPanel .panel-title,
+    #filtersPanel .panel-sub {
+      display: none;
     }
 
     .field.reason-hidden,
@@ -413,46 +532,89 @@
     }
 
     .view-switch {
-      display: inline-flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       align-items: center;
-      gap: 0.35rem;
-      margin: 0 0 0.9rem;
-      padding: 0.3rem;
-      border-radius: 999px;
-      background: #fff;
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
+      gap: 0.45rem;
+      width: min(290px, 100%);
+      margin: 0 0 0.72rem;
+      padding: 0;
+      border-radius: 12px;
     }
 
     .view-btn {
-      border: none;
-      background: transparent;
-      color: var(--muted);
-      border-radius: 999px;
-      padding: 0.42rem 0.8rem;
-      font-size: 0.78rem;
-      font-weight: 700;
+      border: 1px solid #ece9f4;
+      background: #f4f2fa;
+      color: #8f8fa7;
+      border-radius: 12px;
+      padding: 0.56rem 0.6rem;
+      font-size: 1rem;
+      font-weight: 800;
       font-family: inherit;
       cursor: pointer;
       transition: background 0.15s, color 0.15s;
     }
 
     .view-btn.active {
-      background: linear-gradient(135deg, var(--nu) 0%, #9333ea 100%);
+      background: #23232d;
       color: #fff;
-      box-shadow: 0 6px 18px rgba(130, 10, 209, 0.24);
+      border-color: transparent;
+      box-shadow: none;
     }
 
     .view-pane[hidden] {
       display: none !important;
     }
 
+    .channel-tabs {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin: 0 0 0.72rem;
+      border: 1px solid #ece7fa;
+      background: #fbfaff;
+      border-radius: 12px;
+      width: 100%;
+      padding: 0.28rem;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    }
+
+    .channel-tab {
+      border: 1px solid transparent;
+      background: transparent;
+      color: #8f90a8;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 800;
+      padding: 0.38rem 0.72rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.16s ease;
+    }
+
+    .channel-tab:hover {
+      color: #5a5a75;
+      background: #f3f1fb;
+    }
+
+    .channel-tab.active {
+      color: #fff;
+      border-color: rgba(130, 10, 209, 0.45);
+      background: linear-gradient(135deg, #820ad1 0%, #9f3df6 100%);
+      box-shadow: 0 6px 14px rgba(130, 10, 209, 0.28);
+    }
+
+    .channel-tab:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(130, 10, 209, 0.2);
+    }
+
     .panel {
       background: var(--card);
       border-radius: var(--radius);
-      box-shadow: var(--shadow-lg);
-      border: 1px solid var(--line);
-      padding: 1.15rem 1.2rem 1.25rem;
+      box-shadow: 0 2px 10px rgba(20, 20, 30, 0.04);
+      border: 1px solid #ebe8f7;
+      padding: 0.95rem 1rem 1rem;
       margin-bottom: 1rem;
       animation: fade-rise 0.5s var(--ease-out) 0.08s both;
     }
@@ -705,39 +867,35 @@
     }
 
     .pill-count {
-      font-size: 0.8rem;
+      font-size: 1rem;
       font-weight: 800;
-      padding: 0.35rem 0.85rem;
-      background: linear-gradient(135deg, var(--nu) 0%, #9333ea 100%);
-      color: #fff;
+      padding: 0;
+      background: transparent;
+      color: #5a5a78;
       border: none;
-      box-shadow: 0 4px 16px rgba(130, 10, 209, 0.28);
+      box-shadow: none;
     }
 
     .quick-stats {
       display: inline-flex;
       flex-wrap: wrap;
-      gap: 0.35rem;
+      gap: 0.25rem 0.55rem;
       align-items: center;
     }
 
     .quick-stat {
       display: inline-flex;
       align-items: center;
-      gap: 0.3rem;
-      font-size: 0.72rem;
+      gap: 0.28rem;
+      font-size: 0.76rem;
       font-weight: 700;
-      color: var(--nu-dark);
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 0.28rem 0.55rem;
+      color: #4b4b66;
       white-space: nowrap;
     }
 
     .quick-stat b {
-      font-size: 0.78rem;
-      color: var(--ink);
+      font-size: 0.8rem;
+      color: #191925;
     }
 
     .results-meta {
@@ -746,11 +904,11 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 0.75rem;
-      margin: 0.35rem 0 1rem;
-      padding: 0.85rem 1rem;
-      background: linear-gradient(120deg, #fff 0%, var(--nu-soft) 100%);
+      margin: 0.12rem 0 0.82rem;
+      padding: 0.62rem 0.82rem;
+      background: #fff;
       border-radius: var(--radius-sm);
-      border: 1px solid var(--line);
+      border: 1px solid #ece8f7;
       animation: fade-rise 0.45s var(--ease-out) 0.12s both;
     }
 
@@ -762,16 +920,7 @@
     }
 
     .results-meta-icon {
-      flex-shrink: 0;
-      width: 2.5rem;
-      height: 2.5rem;
-      border-radius: 12px;
-      background: linear-gradient(145deg, var(--nu), #a855f7);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      box-shadow: 0 6px 20px rgba(130, 10, 209, 0.25);
+      display: none;
     }
 
     .results-meta-icon svg {
@@ -781,7 +930,7 @@
 
     .results-meta h2 {
       margin: 0;
-      font-size: 1.08rem;
+      font-size: 2rem;
       font-weight: 800;
       letter-spacing: -0.02em;
       color: var(--ink);
@@ -789,25 +938,27 @@
 
     .results-meta-sub {
       margin: 0.15rem 0 0;
-      font-size: 0.78rem;
+      font-size: 1rem;
       color: var(--muted);
       font-weight: 500;
     }
 
+    #resultsMeta {
+      display: none !important;
+    }
+
     .card {
       background: var(--card);
-      border-radius: var(--radius);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      margin-bottom: 1rem;
+      border-radius: 14px;
+      border: 1px solid #ebe7f8;
+      box-shadow: 0 1px 4px rgba(20, 20, 30, 0.04);
+      margin-bottom: 0.7rem;
       overflow: hidden;
-      transition: transform 0.22s var(--ease-out), box-shadow 0.22s var(--ease-out), border-color 0.2s;
+      transition: border-color 0.2s;
     }
 
     .card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-hover);
-      border-color: rgba(130, 10, 209, 0.2);
+      border-color: rgba(130, 10, 209, 0.28);
     }
 
     .channels {
@@ -815,9 +966,9 @@
       flex-wrap: wrap;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.65rem 1rem;
-      background: linear-gradient(90deg, var(--nu-soft), #fff 55%);
-      border-bottom: 1px solid var(--line);
+      padding: 0.45rem 0.8rem 0;
+      background: #fff;
+      border-bottom: 0;
     }
 
     .ch-label {
@@ -833,7 +984,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.3rem;
-      font-size: 0.78rem;
+      font-size: 0.74rem;
       font-weight: 700;
       padding: 0.28rem 0.55rem;
       border-radius: 999px;
@@ -861,19 +1012,19 @@
 
     .zd-link {
       margin-left: auto;
-      font-size: 0.8rem;
+      font-size: 0.72rem;
       font-weight: 700;
-      color: #fff;
-      background: var(--nu);
+      color: #6a44cf;
+      background: #f3eeff;
       text-decoration: none;
-      padding: 0.4rem 0.75rem;
+      padding: 0.25rem 0.52rem;
       border-radius: 999px;
       transition: background 0.15s, transform 0.1s;
     }
 
     .zd-link:hover {
-      background: var(--nu-dark);
-      transform: scale(1.02);
+      background: #eadfff;
+      transform: none;
     }
 
     .zd-link.muted {
@@ -903,15 +1054,35 @@
     }
 
     .card-h {
-      padding: 0.85rem 1rem 0.65rem;
+      padding: 0.5rem 0.8rem 0.45rem;
     }
 
     .card-h h3 {
       margin: 0 0 0.55rem;
-      font-size: 1rem;
+      font-size: 0.96rem;
       line-height: 1.38;
       font-weight: 700;
       color: var(--ink);
+    }
+
+    .title-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+    }
+
+    .macro-index {
+      flex-shrink: 0;
+      min-width: 1.7rem;
+      text-align: center;
+      border-radius: 8px;
+      background: #f2ebff;
+      color: var(--nu);
+      font-size: 0.74rem;
+      font-weight: 800;
+      padding: 0.16rem 0.34rem;
+      line-height: 1.2;
+      margin-top: 0.12rem;
     }
 
     .title-link {
@@ -1071,7 +1242,7 @@
     }
 
     .card-b {
-      padding: 0.35rem 1rem 1.05rem;
+      padding: 0.2rem 0.8rem 0.7rem;
     }
 
     details.block {
@@ -1321,8 +1492,11 @@
   <div class="topbar" aria-hidden="true"></div>
   <div class="wrap">
     <header class="hub-top" aria-label="Encabezado de la herramienta">
-      <div class="hub-logo" aria-hidden="true">nu</div>
-      <p class="hub-name">Xpeer Macro Hub</p>
+      <div class="hub-brand">
+        <div class="hub-logo" aria-hidden="true">nu</div>
+        <p class="hub-name">Xpeer Macro Hub</p>
+      </div>
+      <button class="hub-menu-btn" type="button" aria-label="Más opciones">•••</button>
     </header>
 
     <header class="hero" role="banner">
@@ -1390,6 +1564,29 @@
       <div class="hub-layout">
         <aside class="panel hub-sidebar" aria-label="Motivos de contacto">
           <p class="panel-title">Contact Reason</p>
+          <details class="summary-card" aria-label="Resumen e información">
+            <summary>
+              <div class="summary-head">
+                <p class="summary-title">Resumen e información</p>
+                <span class="summary-head-right">
+                  <span class="summary-badge">info</span>
+                  <span class="summary-caret" aria-hidden="true">▾</span>
+                </span>
+              </div>
+            </summary>
+            <div class="summary-content">
+              <p class="summary-inline" id="summaryCr"><strong>CR: Todas</strong></p>
+              <p class="summary-inline" id="summaryBreakdown">325 con detalle · 105 desactivadas (lista compacta, abajo)</p>
+              <ul class="summary-list">
+                <li><span>Activas</span><b id="summaryActivas">325</b></li>
+                <li><span>Desactivadas</span><b id="summaryDesactivadas">105</b></li>
+                <li><span>Con Chat</span><b id="summaryChat">264</b></li>
+                <li><span>Con Zendesk</span><b id="summaryZendesk">282</b></li>
+                <li><span>Modificadas</span><b id="summaryModificadas">282</b></li>
+                <li><span>Macros</span><b id="summaryTotal">~430</b></li>
+              </ul>
+            </div>
+          </details>
           <div class="reason-buttons" id="reasonButtons"></div>
         </aside>
 
@@ -1425,6 +1622,12 @@
               </div>
             </div>
           </section>
+
+          <div class="channel-tabs" id="channelTabs">
+            <button type="button" class="channel-tab active" data-canal="">Todas</button>
+            <button type="button" class="channel-tab" data-canal="chat">Macros chat</button>
+            <button type="button" class="channel-tab" data-canal="zendesk">Macros Zendesk</button>
+          </div>
 
           <div class="results-meta" id="resultsMeta" hidden>
             <div class="results-meta-inner">
@@ -1851,7 +2054,26 @@
         "Solicitud de información adicional en el flujo de registro",
         "Dudas sobre Campañas y Beneficios",
       ];
-      const CONTACT_REASON_ICONS = ["❌", "💡", "⚠️", "🔁", "🤝", "🧾", "📱", "📄", "🎁"];
+      const CONTACT_REASON_MENU_LABELS = [
+        "Dudas sobre resultado de solicitud",
+        "Consulta o sugerencia de producto",
+        "Errores en flujo de registro",
+        "Reactivación o adquisición",
+        "Dudas con programa de referidos",
+        "Registro, app e información Nu",
+        "Dudas en app post-sesión",
+        "Solicitud de información adicional",
+        "Dudas sobre campañas y beneficios",
+      ];
+      const CONTACT_REASON_ICONS = ["🙋", "💡", "🛠️", "🔄", "🤝", "🧾", "📱", "📄", "🎁"];
+      const DEFAULT_SUMMARY = {
+        activas: 325,
+        desactivadas: 105,
+        chat: 264,
+        zendesk: 282,
+        modificadas: 282,
+        total: 430,
+      };
 
       /**
        * Patrones por categoría (minúsculas, sin acentos) para casar texto del CSV
@@ -1884,11 +2106,20 @@
       const reasonButtons = document.getElementById("reasonButtons");
       const accionSelect = document.getElementById("accionSelect");
       const canalSelect = document.getElementById("canalSelect");
+      const channelTabs = document.getElementById("channelTabs");
       const results = document.getElementById("results");
       const resultsMeta = document.getElementById("resultsMeta");
       const resultsTitle = document.getElementById("resultsTitle");
       const resultsCount = document.getElementById("resultsCount");
       const resultsStats = document.getElementById("resultsStats");
+      const summaryCr = document.getElementById("summaryCr");
+      const summaryBreakdown = document.getElementById("summaryBreakdown");
+      const summaryActivas = document.getElementById("summaryActivas");
+      const summaryDesactivadas = document.getElementById("summaryDesactivadas");
+      const summaryChat = document.getElementById("summaryChat");
+      const summaryZendesk = document.getElementById("summaryZendesk");
+      const summaryModificadas = document.getElementById("summaryModificadas");
+      const summaryTotal = document.getElementById("summaryTotal");
       const toast = document.getElementById("toast");
       const tabSearch = document.getElementById("tabSearch");
       const tabLearn = document.getElementById("tabLearn");
@@ -1960,8 +2191,15 @@
         if (!learnReasonButtons || !learnReasonSelect) return;
         const selectedReason = norm(learnReasonSelect.value || "");
         learnReasonButtons.innerHTML = "";
-        CONTACT_REASON_LABELS.forEach((label, idx) => {
+        const reasonEntries = CONTACT_REASON_LABELS.map((label, idx) => {
           const valueNorm = norm(label);
+          const countValue = learnView
+            ? learnView.querySelectorAll(`details.learn-block[data-learn-reason="${valueNorm}"]`).length
+            : 0;
+          return { label, idx, valueNorm, countValue };
+        }).sort((a, b) => b.countValue - a.countValue || a.label.localeCompare(b.label, "es", { sensitivity: "base" }));
+
+        reasonEntries.forEach(({ label, idx, valueNorm, countValue }) => {
           const btn = document.createElement("button");
           btn.type = "button";
           btn.className = "reason-btn" + (selectedReason === valueNorm ? " active" : "");
@@ -1977,13 +2215,10 @@
 
           const title = document.createElement("span");
           title.className = "reason-btn-title";
-          title.textContent = label;
+          title.textContent = CONTACT_REASON_MENU_LABELS[idx] || label;
 
           const count = document.createElement("span");
           count.className = "reason-btn-count";
-          const countValue = learnView
-            ? learnView.querySelectorAll(`details.learn-block[data-learn-reason="${valueNorm}"]`).length
-            : 0;
           count.textContent = String(countValue);
 
           main.appendChild(icon);
@@ -2030,7 +2265,13 @@
         if (!reasonButtons) return;
         const selected = reasonSelect ? reasonSelect.value : "";
         reasonButtons.innerHTML = "";
-        CONTACT_REASON_LABELS.forEach((label, idx) => {
+        const reasonEntries = CONTACT_REASON_LABELS.map((label, idx) => ({
+          label,
+          idx,
+          countValue: rows.filter((row) => rowMatchesCategory(row, label, "both")).length,
+        })).sort((a, b) => b.countValue - a.countValue || a.label.localeCompare(b.label, "es", { sensitivity: "base" }));
+
+        reasonEntries.forEach(({ label, idx, countValue }) => {
           const btn = document.createElement("button");
           btn.type = "button";
           btn.className = "reason-btn" + (selected === label ? " active" : "");
@@ -2046,11 +2287,10 @@
 
           const title = document.createElement("span");
           title.className = "reason-btn-title";
-          title.textContent = label;
+          title.textContent = CONTACT_REASON_MENU_LABELS[idx] || label;
 
           const count = document.createElement("span");
           count.className = "reason-btn-count";
-          const countValue = rows.filter((row) => rowMatchesCategory(row, label, "both")).length;
           count.textContent = String(countValue);
 
           main.appendChild(icon);
@@ -2172,6 +2412,18 @@
       function isYes(val) {
         const v = String(val).trim().toLowerCase();
         return v === "yes" || v === "sí" || v === "si" || v === "true" || v === "1" || v === "x";
+      }
+
+      function rowHasChatChannel(row) {
+        return isYes(row.shuffleChatFlag) || !!String(row.shuffleChat || "").trim();
+      }
+
+      function rowHasZendeskChannel(row) {
+        return (
+          isYes(row.zendeskFlag) ||
+          !!String(row.zendeskBody || "").trim() ||
+          /^https?:\/\//i.test(String(row.linkZendesk || "").trim())
+        );
       }
 
       /** "Desactivada" viene en la columna Acción del CSV. */
@@ -2345,14 +2597,45 @@
         return rows.filter((row) => {
           if (!rowMatchesCategory(row, reason, mode)) return false;
           if (accion && row.accion !== accion) return false;
-          const chatOn = isYes(row.shuffleChatFlag);
-          const zdOn = isYes(row.zendeskFlag);
+          const chatOn = rowHasChatChannel(row);
+          const zdOn = rowHasZendeskChannel(row);
           if (canal === "chat" && !chatOn) return false;
           if (canal === "zendesk" && !zdOn) return false;
           if (canal === "both" && !(chatOn && zdOn)) return false;
           if (!matchesSearch(row, term)) return false;
           return true;
         });
+      }
+
+      function updateSummaryCard() {
+        if (!summaryCr || !summaryBreakdown) return;
+        const selectedReason = reasonSelect.value;
+        const selectedCanal = canalSelect ? canalSelect.value : "";
+        const overview = !selectedReason && !selectedCanal;
+        const reasonRows = rows.filter((row) => {
+          if (!rowMatchesCategory(row, selectedReason, "both")) return false;
+          if (selectedCanal === "chat") return rowHasChatChannel(row);
+          if (selectedCanal === "zendesk") return rowHasZendeskChannel(row);
+          if (selectedCanal === "both") return rowHasChatChannel(row) && rowHasZendeskChannel(row);
+          return true;
+        });
+        const computed = {
+          activas: reasonRows.filter((r) => !isAccionDesactivada(r.accion)).length,
+          desactivadas: reasonRows.filter((r) => isAccionDesactivada(r.accion)).length,
+          chat: reasonRows.filter((r) => rowHasChatChannel(r)).length,
+          zendesk: reasonRows.filter((r) => rowHasZendeskChannel(r)).length,
+          modificadas: reasonRows.filter((r) => norm(r.accion).includes("modific")).length,
+          total: reasonRows.length,
+        };
+        const stats = overview ? DEFAULT_SUMMARY : computed;
+        summaryCr.innerHTML = `<strong>${escapeHtml(overview ? "CR: Todas" : `CR: ${selectedReason}`)}</strong>`;
+        summaryBreakdown.textContent = `${stats.activas} con detalle · ${stats.desactivadas} desactivadas (lista compacta, abajo)`;
+        if (summaryActivas) summaryActivas.textContent = String(stats.activas);
+        if (summaryDesactivadas) summaryDesactivadas.textContent = String(stats.desactivadas);
+        if (summaryChat) summaryChat.textContent = String(stats.chat);
+        if (summaryZendesk) summaryZendesk.textContent = String(stats.zendesk);
+        if (summaryModificadas) summaryModificadas.textContent = String(stats.modificadas);
+        if (summaryTotal) summaryTotal.textContent = `~${stats.total}`;
       }
 
       function escapeHtml(s) {
@@ -2389,8 +2672,9 @@
         }
       }
 
-      function buildActiveCard(row) {
+      function buildActiveCard(row, index) {
         const title = escapeHtml(row.nombre || row.propuestaNombre || "(Sin nombre)");
+        const indexBadge = `<span class="macro-index">${String(index || 0).padStart(2, "0")}</span>`;
         const cr = row.contactReason
           ? `<span class="tag cr" title="${escapeHtml(row.contactReason)}">${escapeHtml(row.contactReason.length > 56 ? row.contactReason.slice(0, 53) + "…" : row.contactReason)}</span>`
           : "";
@@ -2404,8 +2688,8 @@
         const estadoTag =
           row.estado && estadoNorm !== "revisado" ? `<span class="tag">${escapeHtml(row.estado)}</span>` : "";
 
-        const chatOn = isYes(row.shuffleChatFlag);
-        const zdOn = isYes(row.zendeskFlag);
+        const chatOn = rowHasChatChannel(row);
+        const zdOn = rowHasZendeskChannel(row);
         const zdUrl = row.linkZendesk && /^https?:\/\//i.test(row.linkZendesk.trim()) ? row.linkZendesk.trim() : "";
         const zdFallbackUrl = !zdUrl ? buildZendeskFallbackUrl(row) : "";
         const cardUrl = zdUrl || zdFallbackUrl;
@@ -2436,7 +2720,7 @@
             : blocks
                 .map(
                   (b, i) => `
-              <details class="block" ${i === 0 ? "open" : ""}>
+              <details class="block">
                 <summary>${escapeHtml(b.label)}</summary>
                 <pre class="pre">${escapeHtml(b.text)}</pre>
                 <div class="actions">
@@ -2456,7 +2740,10 @@
                 ${linkHtml}
               </div>
               <div class="card-h">
-                <h3>${titleHtml}</h3>
+                <div class="title-row">
+                  ${indexBadge}
+                  <h3>${titleHtml}</h3>
+                </div>
                 <div class="tags">${cr}${cra}${accionTag}${estadoTag}</div>
               </div>
               <div class="card-b">
@@ -2511,6 +2798,19 @@
         const filtered = filterRows();
         const breakdownEl = document.getElementById("resultsBreakdown");
         const selectedReason = reasonSelect.value;
+        const selectedCanal = canalSelect ? canalSelect.value : "";
+        const isOverview =
+          !selectedReason &&
+          !q.value.trim() &&
+          !accionSelect.value &&
+          !selectedCanal;
+
+        if (channelTabs) {
+          channelTabs.querySelectorAll(".channel-tab").forEach((btn) => {
+            btn.classList.toggle("active", (btn.getAttribute("data-canal") || "") === selectedCanal);
+          });
+        }
+        updateSummaryCard();
 
         const activas = filtered.filter((r) => !isAccionDesactivada(r.accion));
         const desactivadas = filtered.filter((r) => isAccionDesactivada(r.accion));
@@ -2518,7 +2818,7 @@
         if (resultsTitle) {
           resultsTitle.textContent = selectedReason ? `CR: ${selectedReason}` : "CR: Todas";
         }
-        resultsCount.textContent = `~${filtered.length} Macros`;
+        resultsCount.textContent = isOverview ? `~${DEFAULT_SUMMARY.total} Macros` : `~${filtered.length} Macros`;
 
         if (filtered.length === 0) {
           results.innerHTML =
@@ -2530,7 +2830,9 @@
         }
 
         if (breakdownEl) {
-          if (desactivadas.length > 0) {
+          if (isOverview) {
+            breakdownEl.textContent = `${DEFAULT_SUMMARY.activas} con detalle · ${DEFAULT_SUMMARY.desactivadas} desactivadas (lista compacta, abajo)`;
+          } else if (desactivadas.length > 0) {
             breakdownEl.textContent = `${activas.length} con detalle · ${desactivadas.length} desactivadas (lista compacta, abajo)`;
           } else {
             breakdownEl.textContent = "Macros que coinciden con tus filtros";
@@ -2538,21 +2840,30 @@
         }
 
         const partes = [];
-        partes.push(activas.map((r) => buildActiveCard(r)).join(""));
+        partes.push(activas.map((r, i) => buildActiveCard(r, i + 1)).join(""));
         partes.push(buildDesactivadasBundle(desactivadas));
 
         results.innerHTML = partes.join("");
         renderReasonButtons();
         if (resultsStats) {
-          const chatCount = filtered.filter((r) => isYes(r.shuffleChatFlag)).length;
-          const zdCount = filtered.filter((r) => isYes(r.zendeskFlag)).length;
+          const chatCount = filtered.filter((r) => rowHasChatChannel(r)).length;
+          const zdCount = filtered.filter((r) => rowHasZendeskChannel(r)).length;
           const modCount = filtered.filter((r) => norm(r.accion).includes("modific")).length;
+          const stats = isOverview
+            ? DEFAULT_SUMMARY
+            : {
+                activas: activas.length,
+                desactivadas: desactivadas.length,
+                chat: chatCount,
+                zendesk: zdCount,
+                modificadas: modCount,
+              };
           resultsStats.innerHTML = `
-            <span class="quick-stat">Activas <b>${activas.length}</b></span>
-            <span class="quick-stat">Desactivadas <b>${desactivadas.length}</b></span>
-            <span class="quick-stat">Con Chat <b>${chatCount}</b></span>
-            <span class="quick-stat">Con Zendesk <b>${zdCount}</b></span>
-            <span class="quick-stat">Modificadas <b>${modCount}</b></span>
+            <span class="quick-stat">Activas <b>${stats.activas}</b></span>
+            <span class="quick-stat">Desactivadas <b>${stats.desactivadas}</b></span>
+            <span class="quick-stat">Con Chat <b>${stats.chat}</b></span>
+            <span class="quick-stat">Con Zendesk <b>${stats.zendesk}</b></span>
+            <span class="quick-stat">Modificadas <b>${stats.modificadas}</b></span>
           `;
         }
 
@@ -2690,6 +3001,14 @@
       reasonSelect.addEventListener("change", render);
       accionSelect.addEventListener("change", render);
       if (canalSelect) canalSelect.addEventListener("change", render);
+      if (channelTabs && canalSelect) {
+        channelTabs.querySelectorAll(".channel-tab").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            canalSelect.value = btn.getAttribute("data-canal") || "";
+            render();
+          });
+        });
+      }
       if (tabSearch) tabSearch.addEventListener("click", () => switchView("search"));
       if (tabLearn) tabLearn.addEventListener("click", () => switchView("learn"));
       if (learnReasonSelect) learnReasonSelect.addEventListener("change", filterLearningBlocks);
