@@ -1651,6 +1651,16 @@
       overflow: hidden;
     }
 
+    details.block.tip-block {
+      border-color: rgba(130, 10, 209, 0.24);
+      background: linear-gradient(180deg, #fcf9ff 0%, #f8f3ff 100%);
+    }
+
+    details.block.phrases-block {
+      border-color: rgba(5, 150, 105, 0.26);
+      background: linear-gradient(180deg, #f5fdf9 0%, #ecfdf5 100%);
+    }
+
     details.block summary {
       padding: 0.55rem 0.75rem;
       cursor: pointer;
@@ -1664,6 +1674,18 @@
       justify-content: space-between;
       gap: 0.5rem;
       transition: background 0.15s;
+    }
+
+    details.block.tip-block summary {
+      background: linear-gradient(90deg, #f6edff 0%, #f2e8ff 100%);
+      color: #5b0a9a;
+      border-bottom: 1px solid rgba(130, 10, 209, 0.14);
+    }
+
+    details.block.phrases-block summary {
+      background: linear-gradient(90deg, #ebfbf3 0%, #e4f9ee 100%);
+      color: #066e54;
+      border-bottom: 1px solid rgba(5, 150, 105, 0.16);
     }
 
     details.block summary:hover {
@@ -1699,6 +1721,39 @@
       color: #3d3d52;
       scrollbar-width: thin;
       scrollbar-color: rgba(130, 10, 209, 0.35) #f4f4f7;
+    }
+
+    details.block.tip-block .pre {
+      background: transparent;
+      color: #3f345c;
+    }
+
+    details.block.phrases-block .pre {
+      background: transparent;
+      color: #124539;
+      font-weight: 500;
+    }
+
+    .phrase-rich {
+      padding: 0.72rem 0.8rem;
+      color: #143f34;
+      line-height: 1.4;
+      font-size: 0.95rem;
+      background: transparent;
+    }
+
+    .phrase-rich p {
+      margin: 0 0 0.55rem;
+    }
+
+    .phrase-rich p:last-child {
+      margin-bottom: 0;
+    }
+
+    .phrase-lead {
+      color: #047857;
+      font-weight: 800;
+      letter-spacing: -0.01em;
     }
 
     .pre::-webkit-scrollbar {
@@ -3945,6 +4000,30 @@
           .replace(/"/g, "&quot;");
       }
 
+      function toHtmlWithBreaks(s) {
+        return escapeHtml(String(s || "")).replace(/\n/g, "<br>");
+      }
+
+      function removeQuoteMarks(s) {
+        return String(s || "").replace(/[“”"]/g, "");
+      }
+
+      function formatPhrasesText(text) {
+        const raw = removeQuoteMarks(text).trim();
+        if (!raw) return "<p>— Sin contenido —</p>";
+        const chunks = raw.split(/\n{2,}/).map((x) => x.trim()).filter(Boolean);
+        if (!chunks.length) return "<p>— Sin contenido —</p>";
+        return chunks
+          .map((chunk) => {
+            const m = chunk.match(/^([^:\n]{3,220}):\s*([\s\S]*)$/);
+            if (m) {
+              return `<p><span class="phrase-lead">${escapeHtml(m[1])}:</span> ${toHtmlWithBreaks(m[2])}</p>`;
+            }
+            return `<p>${toHtmlWithBreaks(chunk)}</p>`;
+          })
+          .join("");
+      }
+
       function showToast(msg) {
         toast.textContent = msg;
         toast.classList.add("show");
@@ -3952,23 +4031,49 @@
         showToast._t = setTimeout(() => toast.classList.remove("show"), 1600);
       }
 
-      function copyText(text) {
-        const t = text || "";
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(t).then(() => showToast("Copiado al portapapeles"));
-        } else {
-          const ta = document.createElement("textarea");
-          ta.value = t;
-          document.body.appendChild(ta);
-          ta.select();
-          try {
-            document.execCommand("copy");
-            showToast("Copiado");
-          } catch (e) {
-            showToast("No se pudo copiar");
-          }
-          document.body.removeChild(ta);
+      function fallbackCopyText(text) {
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "fixed";
+        ta.style.top = "-1000px";
+        ta.style.left = "-1000px";
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        ta.setSelectionRange(0, ta.value.length);
+        let copied = false;
+        try {
+          copied = document.execCommand("copy");
+        } catch (e) {
+          copied = false;
         }
+        document.body.removeChild(ta);
+        return copied;
+      }
+
+      async function copyText(text) {
+        const t = String(text || "");
+        if (!t.trim()) {
+          showToast("No hay texto para copiar");
+          return;
+        }
+        try {
+          if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
+            await navigator.clipboard.writeText(t);
+            showToast("Copiado al portapapeles");
+            return;
+          }
+        } catch (e) {}
+
+        const copied = fallbackCopyText(t);
+        if (copied) {
+          showToast("Copiado al portapapeles");
+          return;
+        }
+
+        window.prompt("Copia manualmente (Cmd/Ctrl+C):", t);
+        showToast("Copia manual habilitada");
       }
 
       function buildActiveCard(row, index) {
@@ -3994,20 +4099,30 @@
           : `<span class="ch off">Sin canal</span>`;
 
         const blocks = [
-          { label: "Macro", text: row.macro || "" },
-          { label: "Frases complementarias para el agente", text: row.shuffleChat || "" },
-          { label: "Tip para el agente:", text: row.zendeskBody || "" },
+          { label: "Macro", text: row.macro || "", kind: "macro", copyable: true },
+          { label: "Frases complementarias para el agente", text: row.shuffleChat || "", kind: "frases", copyable: false },
+          { label: "Tip para el agente:", text: row.zendeskBody || "", kind: "tip", copyable: false },
         ];
 
         const details = blocks
                 .map(
                   (b, i) => `
-              <details class="block">
+              <details class="block${b.kind === "tip" ? " tip-block" : ""}${b.kind === "frases" ? " phrases-block" : ""}">
                 <summary>${escapeHtml(b.label)}</summary>
-                <pre class="pre">${escapeHtml(b.text || "— Sin contenido —")}</pre>
-                <div class="actions">
+                ${
+                  b.kind === "frases"
+                    ? `<div class="phrase-rich">${formatPhrasesText(b.text)}</div>`
+                    : b.kind === "tip"
+                      ? `<pre class="pre">${escapeHtml(removeQuoteMarks(b.text || "— Sin contenido —"))}</pre>`
+                      : `<pre class="pre">${escapeHtml(b.text || "— Sin contenido —")}</pre>`
+                }
+                ${
+                  b.copyable
+                    ? `<div class="actions">
                   <button type="button" class="btn" data-copy="${i}" ${b.text ? "" : "disabled"}>Copiar texto</button>
-                </div>
+                </div>`
+                    : ""
+                }
               </details>`
                 )
                 .join("");
@@ -4159,10 +4274,16 @@
 
         results.querySelectorAll(".card").forEach((card) => {
           card.querySelectorAll("button.mini-link-btn[data-copy-link]").forEach((btn) => {
-            btn.addEventListener("click", () => copyText(btn.getAttribute("data-copy-link") || ""));
+            btn.addEventListener("click", (e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              copyText(btn.getAttribute("data-copy-link") || "");
+            });
           });
           card.querySelectorAll("button.btn[data-copy]").forEach((btn) => {
-            btn.addEventListener("click", () => {
+            btn.addEventListener("click", (e) => {
+              e.preventDefault();
+              e.stopPropagation();
               const idx = parseInt(btn.getAttribute("data-copy"), 10);
               const dets = card.querySelectorAll("details.block pre.pre");
               if (dets[idx]) copyText(dets[idx].textContent);

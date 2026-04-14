@@ -8,6 +8,7 @@ Buscador interno de macros ACQ con interfaz morada estilo Nu.
 - Fuente principal: `macros-acq.csv`
 - Respaldo embebido sincronizado: `embedded-macros.js`
 - Total de macros cargadas: `431`
+- Ajustes visuales aplicados: portada full screen, secciones diferenciadas (Macro / Frases / Tip), y textos sin abreviaciones.
 
 ## Archivos (subir todos)
 
