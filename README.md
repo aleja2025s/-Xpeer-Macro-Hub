@@ -1,72 +1,42 @@
 # Macro Busqueda ACQ
 
-Buscador interno de macros ACQ con interfaz estilo Nubank.
+Buscador interno de macros ACQ con interfaz morada estilo Nu.
 
-## Archivos del proyecto
+## Estado actual
 
-- `index-actualizado-2026-04-06.html`: version principal actualizada (recomendada).
-- `index.html`: version anterior/base.
-- `embedded-macros.js`: soporte para datos embebidos.
-- `macros-acq.csv`: fuente de datos principal.
+- Actualizado: `2026-04-14`
+- Fuente principal: `macros-acq.csv`
+- Respaldo embebido sincronizado: `embedded-macros.js`
+- Total de macros cargadas: `431`
 
-## Funcionalidades incluidas (version actual)
+## Archivos (subir todos)
 
-- Filtro por `Contact Reason` (ordenado de mayor a menor por cantidad).
-- Resumen lateral dinamico por Contact Reason.
-- Resumen lateral colapsable/desplegable (inicia contraido).
-- Tabs de canal:
-  - `Todas`
-  - `Macros chat`
-  - `Macros Zendesk`
-- Lista de macros compacta con numeracion.
-- Bloque de desactivadas en lista compacta.
-- Estilo visual mejorado con paleta morada.
+1. `index.html` (entrada principal para GitHub Pages)
+2. `index-actualizado-2026-04-06.html` (app principal)
+3. `macros-acq.csv` (datos fuente)
+4. `embedded-macros.js` (fallback de datos embebidos)
+5. `README.md` (guia del proyecto)
 
-## Uso local
+## Uso rapido local
 
-### Opcion 1: abrir con doble clic
-
-1. Abre `index-actualizado-2026-04-06.html`.
-2. Si el navegador no carga CSV por `file:///`, usa el selector para cargar `macros-acq.csv`.
-
-### Opcion 2: servidor local (recomendado)
-
-Desde esta carpeta:
-
-```bash
-python3 -m http.server 8080
-```
-
-Luego abre:
-
-- [http://localhost:8080/index-actualizado-2026-04-06.html](http://localhost:8080/index-actualizado-2026-04-06.html)
-
-## Subir a GitHub
-
-Sube estos 3 archivos como minimo:
-
-- `index-actualizado-2026-04-06.html`
-- `macros-acq.csv`
-- `embedded-macros.js`
-
-Opcional (recomendado):
-
-- `README.md`
+- Doble clic en `index-actualizado-2026-04-06.html`.
+- Si estas en `file:///` y no carga el CSV, usa el selector para elegir `macros-acq.csv`.
+- Portada inicial: fondo morado full pantalla y elementos centrados.
 
 ## Publicar en GitHub Pages
 
-1. Ve al repositorio en GitHub.
-2. Entra a `Settings` -> `Pages`.
-3. En `Source`, selecciona la rama principal y carpeta `/ (root)`.
-4. Guarda y espera el enlace de publicacion.
+1. Sube los 5 archivos listados arriba al root del repo.
+2. Ve a `Settings` -> `Pages`.
+3. En `Source`, elige rama principal y carpeta `/ (root)`.
+4. Guarda.
 5. Abre:
-   - `https://TU-USUARIO.github.io/TU-REPO/index-actualizado-2026-04-06.html`
+   - `https://TU-USUARIO.github.io/TU-REPO/`
 
-## Checklist antes de publicar
+## Verificacion antes de compartir
 
-- `macros-acq.csv` esta actualizado.
-- Los conteos por Contact Reason son correctos.
-- Tabs de canal filtran correctamente.
-- Resumen lateral se despliega/contrae bien.
-- Links de Zendesk abren correctamente.
+- Se abre desde la raiz (`/`) y redirige correctamente.
+- Carga datos de `macros-acq.csv`.
+- Filtros por Contact Reason funcionan.
+- Tabs de canal (`Todas`, `Macros chat`, `Macros Zendesk`) funcionan.
+- Links de Zendesk abren.
 
