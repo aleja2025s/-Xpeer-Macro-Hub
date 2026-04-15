@@ -8,6 +8,9 @@ Herramienta de busqueda de macros ACQ con interfaz morada estilo Nu.
 - Vista nueva: `Wedukas` con 9 accesos directos
 - UX nueva: tarjetas de Weduka 100% clickeables + etiqueta `Ir a Weduka`
 - Entrada GitHub: `index.html` redirige a `index-actualizado-2026-04-06.html`
+- Buscador: no muestra macros hasta seleccionar una `Contact Reason`
+- Aprendizaje: mensaje guiado cuando no hay `Contact Reason` seleccionada
+- Contact Reason `Registro, aplicacion e informacion de productos Nu`: reemplazada por contenido del DOC compartido (sin comentarios)
 
 ## Archivos para GitHub (subir en la raiz)
 

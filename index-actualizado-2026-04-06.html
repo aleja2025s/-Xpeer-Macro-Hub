@@ -355,11 +355,11 @@
       background: #fff;
       border-radius: 12px;
       text-align: left;
-      padding: 0.58rem 0.65rem;
+      padding: 0.68rem 0.72rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 0.5rem;
+      gap: 0.62rem;
       font-size: 0.8rem;
       font-family: inherit;
       font-weight: 700;
@@ -397,18 +397,19 @@
     .reason-btn-main {
       display: inline-flex;
       align-items: flex-start;
-      gap: 0.42rem;
+      gap: 0.55rem;
       min-width: 0;
+      flex: 1;
     }
 
     .reason-btn-icon {
       flex-shrink: 0;
-      width: 1.38rem;
-      height: 1.38rem;
+      width: 1.56rem;
+      height: 1.56rem;
       border-radius: 10px;
       display: grid;
       place-items: center;
-      font-size: 0.84rem;
+      font-size: 0.92rem;
       background: #f4f0ff;
       color: #4b2a88;
       line-height: 1;
@@ -424,12 +425,24 @@
 
     .reason-btn-count {
       flex-shrink: 0;
+      min-width: 2.15rem;
+      text-align: center;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
       font-size: 0.72rem;
       border-radius: 999px;
       padding: 0.12rem 0.45rem;
       background: #f3f4f7;
       color: #54546d;
       font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .reason-btn-count.learn {
+      min-width: auto;
+      font-size: 0.64rem;
+      padding: 0.14rem 0.48rem;
     }
 
     .reason-btn.active .reason-btn-count {
@@ -485,219 +498,229 @@
     }
 
     .hero-card {
-      background: var(--card);
-      border-radius: 24px;
-      border: 1px solid rgba(130, 10, 209, 0.14);
-      box-shadow: 0 24px 54px rgba(46, 6, 97, 0.2);
-      padding: 2.65rem 1.75rem 2.25rem;
-      max-width: 960px;
-      width: min(960px, 100%);
+      width: min(1180px, 100%);
       margin: 0 auto;
-      position: relative;
-      overflow: hidden;
-      animation: fade-rise 0.55s var(--ease-out) both;
       text-align: center;
-      min-height: 360px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, #7b1ce2, #b067ff, #7b1ce2);
-      opacity: 0.9;
-    }
-
-    .intro-mascot {
-      width: 3.3rem;
-      height: 3.3rem;
-      margin: 0 auto 0.9rem;
-      border-radius: 18px;
-      display: grid;
-      place-items: center;
-      font-size: 1.18rem;
-      font-weight: 900;
-      color: #fff;
-      background: linear-gradient(145deg, #741cd8, #9f51ff);
-      box-shadow: 0 12px 24px rgba(120, 31, 225, 0.3);
-      letter-spacing: -0.04em;
+      position: relative;
+      z-index: 1;
+      animation: fade-rise 0.55s var(--ease-out) both;
+      padding: 0.4rem 0.5rem 0.8rem;
     }
 
     .hero-pill {
       display: inline-flex;
       align-items: center;
-      gap: 0.35rem;
-      font-size: 0.7rem;
+      gap: 0.5rem;
+      margin: 0 auto 1.2rem;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.1);
+      color: #f8f4ff;
+      font-size: 0.72rem;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--nu);
-      background: #f2e8ff;
-      border: 1px solid #e9d6ff;
-      padding: 0.38rem 0.76rem;
-      border-radius: 999px;
-      margin: 0 auto 0.95rem;
+      letter-spacing: 0.12em;
+      backdrop-filter: blur(5px);
     }
 
     .hero-pill::before {
       content: "";
-      width: 6px;
-      height: 6px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
-      background: var(--nu);
-      opacity: 0.85;
+      background: #b8ff7a;
+      box-shadow: 0 0 12px rgba(184, 255, 122, 0.75);
+      flex-shrink: 0;
+    }
+
+    .intro-mascot {
+      width: 4.15rem;
+      height: 4.15rem;
+      margin: 0 auto 1.25rem;
+      border-radius: 22px;
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #fff;
+      background: linear-gradient(145deg, #7b2fe4, #9b5dff);
+      border: 2px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 16px 40px rgba(49, 8, 115, 0.32);
+      letter-spacing: -0.04em;
     }
 
     .hero-title {
-      margin: 0 0 0.62rem;
-      font-size: clamp(2.2rem, 5.8vw, 3.2rem);
+      margin: 0 0 0.7rem;
+      font-size: clamp(2.6rem, 7vw, 4.7rem);
       font-weight: 800;
       font-family: var(--font-display);
-      letter-spacing: -0.035em;
-      line-height: 1.15;
-      color: #42137e;
+      letter-spacing: -0.04em;
+      line-height: 1.04;
+      color: #ffffff;
+      text-wrap: balance;
     }
 
     .hero-title .accent {
-      color: var(--nu);
-      font-weight: 800;
+      color: #bba2ff;
     }
 
     .hero-lead {
-      margin: 0 auto 1.3rem;
-      font-size: 1rem;
-      line-height: 1.55;
-      color: #5f5480;
-      max-width: 42rem;
+      margin: 0 auto 1.55rem;
+      font-size: clamp(1.12rem, 2.3vw, 1.55rem);
+      line-height: 1.42;
+      color: #f3ebff;
+      font-weight: 400;
+      max-width: 920px;
+      text-wrap: balance;
     }
 
-    .hero-lead strong {
-      color: var(--ink);
-      font-weight: 700;
-    }
-
-    .hero-list {
-      list-style: none;
+    .hero-feature-grid {
       margin: 0 auto;
-      padding: 0;
+      width: min(1120px, 100%);
       display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 0.78rem;
-      max-width: 780px;
     }
 
-    @media (min-width: 700px) {
-      .hero-list {
-        grid-template-columns: 1fr 1fr;
-        gap: 0.72rem 1.2rem;
-      }
-      .hero-list li:last-child {
-        grid-column: 1 / -1;
-      }
-    }
-
-    .hero-list li {
-      display: flex;
-      gap: 0.7rem;
-      align-items: flex-start;
+    .hero-feature-card {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
       text-align: left;
-      padding: 0.75rem 0.85rem;
-      background: linear-gradient(135deg, #fcf8ff 0%, #fff 100%);
-      border: 1px solid rgba(130, 10, 209, 0.12);
-      border-radius: var(--radius-sm);
-      transition: transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out), border-color 0.2s;
+      padding: 1.15rem 1.2rem 1.08rem;
+      min-height: 116px;
     }
 
-    .hero-list li:hover {
-      transform: translateY(-2px);
-      border-color: rgba(130, 10, 209, 0.18);
-      box-shadow: 0 8px 28px rgba(130, 10, 209, 0.08);
-    }
-
-    .hero-list-num {
-      flex-shrink: 0;
-      width: 1.72rem;
-      height: 1.72rem;
-      border-radius: 10px;
-      background: linear-gradient(135deg, #7f1de7 0%, #9f4df4 100%);
-      color: #fff;
-      font-size: 0.78rem;
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .hero-feature-icon {
+      font-size: 1.42rem;
       line-height: 1;
+      display: inline-block;
+      margin-bottom: 0.52rem;
     }
 
-    .hero-list-body strong {
-      display: block;
-      font-size: 0.9rem;
+    .hero-feature-title {
+      margin: 0 0 0.22rem;
+      font-size: 1.1rem;
       font-weight: 800;
-      color: #3e1e74;
-      margin-bottom: 0.2rem;
+      color: #fff;
+      letter-spacing: -0.015em;
     }
 
-    .hero-list-body span {
-      font-size: 0.82rem;
-      line-height: 1.45;
-      color: #655981;
+    .hero-feature-desc {
+      margin: 0;
+      font-size: 0.84rem;
+      line-height: 1.4;
+      color: #e9dcff;
+      font-weight: 600;
     }
 
     .hero-actions {
-      margin-top: 1.2rem;
+      margin-top: 1.35rem;
       display: flex;
       justify-content: center;
     }
 
     .hero-start-btn {
-      border: 0;
-      border-radius: 999px;
-      padding: 0.84rem 1.45rem;
-      background: linear-gradient(135deg, #6817cd 0%, #8d3def 100%);
+      border: 1px solid rgba(53, 16, 105, 0.45);
+      border-radius: 14px;
+      padding: 0.9rem 1.15rem 0.9rem 1.45rem;
+      min-width: 285px;
+      background: linear-gradient(135deg, #7c2cf0 0%, #8f44ff 100%);
       color: #fff;
-      font-size: 1.04rem;
-      font-weight: 800;
+      font-size: 1.14rem;
+      font-weight: 900;
       font-family: inherit;
       cursor: pointer;
-      box-shadow: 0 10px 24px rgba(99, 21, 187, 0.3);
-      transition: transform 0.16s ease, box-shadow 0.16s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      box-shadow: 0 14px 30px rgba(33, 6, 74, 0.3);
+      transition: transform 0.16s ease, box-shadow 0.16s ease, filter 0.16s ease;
+    }
+
+    .hero-start-btn::after {
+      content: "➜";
+      width: 2rem;
+      height: 2rem;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.16);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+      font-size: 1rem;
+      font-weight: 900;
+      flex-shrink: 0;
     }
 
     .hero-start-btn:hover {
       transform: translateY(-1px);
-      box-shadow: 0 10px 24px rgba(130, 10, 209, 0.32);
+      filter: brightness(1.03);
+      box-shadow: 0 16px 34px rgba(33, 6, 74, 0.34);
     }
 
     .hero-start-btn:focus-visible {
       outline: none;
-      box-shadow: 0 0 0 3px rgba(130, 10, 209, 0.18), 0 8px 22px rgba(130, 10, 209, 0.25);
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2), 0 16px 34px rgba(33, 6, 74, 0.34);
+    }
+
+    .hero-foot {
+      margin: 1.05rem 0 0;
+      color: rgba(232, 219, 255, 0.86);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 1.18rem;
+      font-weight: 800;
+    }
+
+    @media (max-width: 980px) {
+      .hero-feature-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-feature-card {
+        min-height: auto;
+      }
     }
 
     @media (max-width: 760px) {
       #introSlide {
-        min-height: clamp(430px, 67vh, 700px);
-        padding: 1.4rem 0.65rem;
-        border-radius: 20px;
+        min-height: clamp(520px, 88vh, 900px);
+        padding: 1.1rem 0.5rem;
+        border-radius: 0;
       }
 
-      .hero-card {
-        min-height: 280px;
-        padding: 1.35rem 0.95rem 1.2rem;
-        border-radius: 18px;
+      .hero-pill {
+        font-size: 0.64rem;
+        letter-spacing: 0.1em;
+      }
+
+      .intro-mascot {
+        width: 3.45rem;
+        height: 3.45rem;
+        font-size: 1.12rem;
+      }
+
+      .hero-start-btn {
+        min-width: 235px;
+        width: 100%;
+        max-width: 360px;
+      }
+
+      .hero-foot {
+        font-size: 0.92rem;
       }
     }
 
     .view-switch {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       align-items: center;
       gap: 0.45rem;
-      width: min(460px, 100%);
+      width: min(640px, 100%);
       margin: 0 0 0.72rem;
       padding: 0;
       border-radius: 12px;
@@ -729,7 +752,7 @@
 
     .wedukas-panel {
       display: grid;
-      gap: 0.7rem;
+      gap: 0.55rem;
     }
 
     .wedukas-head {
@@ -762,7 +785,7 @@
       border: 1px solid rgba(130, 10, 209, 0.18);
       border-radius: 14px;
       background: linear-gradient(180deg, #fcfaff 0%, #fff 65%);
-      padding: 0.8rem 0.9rem;
+      padding: 0.72rem 0.86rem;
       box-shadow: 0 4px 14px rgba(130, 10, 209, 0.08);
       text-decoration: none;
       transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
@@ -793,6 +816,14 @@
       margin-right: 0.42rem;
       font-size: 0.78rem;
       vertical-align: 0.08em;
+    }
+
+    .wedukas-item-desc {
+      margin: 0.28rem 0 0;
+      font-size: 0.76rem;
+      line-height: 1.35;
+      color: #6a6488;
+      font-weight: 600;
     }
 
     .wedukas-link {
@@ -920,23 +951,38 @@
 
     .learn-search {
       margin-bottom: 0.75rem;
+      margin-top: 0.32rem;
       min-height: 62px;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+      gap: 0.6rem;
+      padding-top: 0.65rem;
     }
 
     .learn-search .row {
-      margin-bottom: 0.65rem;
+      margin-bottom: 0.18rem;
       align-items: flex-end;
     }
 
     .learn-search .panel-title {
-      margin: 0;
+      margin: 0.45rem 0 0.3rem;
       text-align: center;
       font-size: 0.92rem;
       letter-spacing: 0.08em;
       font-weight: 800;
+    }
+
+    .learn-search .search-helpers {
+      margin-top: 0.08rem;
+      justify-content: flex-start;
+      gap: 0.35rem 0.65rem;
+    }
+
+    .learn-search .recent-searches {
+      min-height: 1.2rem;
+      gap: 0.38rem;
     }
 
     .learn-empty {
@@ -947,6 +993,45 @@
       padding: 0.85rem 0.9rem;
       font-size: 0.82rem;
       color: var(--muted);
+    }
+
+    .learn-empty.guide {
+      text-align: center;
+      border-style: solid;
+      border-color: rgba(130, 10, 209, 0.22);
+      background: linear-gradient(180deg, #faf6ff 0%, #ffffff 62%);
+      box-shadow: 0 8px 24px rgba(130, 10, 209, 0.07);
+      padding: 1.1rem 1rem 1rem;
+    }
+
+    .learn-empty.guide::before {
+      content: "⌁";
+      display: block;
+      font-size: 1.75rem;
+      line-height: 1;
+      color: var(--nu);
+      opacity: 0.5;
+      margin-bottom: 0.45rem;
+    }
+
+    .learn-empty.guide .empty-title {
+      margin: 0;
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: #2a2240;
+      letter-spacing: -0.01em;
+    }
+
+    .learn-empty.guide .empty-suggestions {
+      margin-top: 0.35rem;
+      font-size: 0.9rem;
+      color: #5d4a8d;
+      font-weight: 600;
+    }
+
+    .learn-empty.guide .empty-cta {
+      margin-top: 0.7rem;
+      font-size: 0.78rem;
     }
 
     .learn-hint {
@@ -1254,6 +1339,136 @@
       pointer-events: none;
     }
 
+    .search-helpers {
+      margin-top: 0.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.55rem 0.8rem;
+    }
+
+    .recent-searches {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+      min-height: 1.8rem;
+    }
+
+    .search-helper-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .chip-row {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 0.36rem;
+      align-items: center;
+    }
+
+    .chip-btn {
+      border: 1px solid rgba(130, 10, 209, 0.25);
+      background: #f8f3ff;
+      color: #5b0a9a;
+      border-radius: 999px;
+      padding: 0.25rem 0.6rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .chip-btn:hover {
+      background: #efe5ff;
+      border-color: rgba(130, 10, 209, 0.4);
+    }
+
+    .chip-btn-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.22rem;
+      border: 1px solid rgba(130, 10, 209, 0.25);
+      background: #f8f3ff;
+      border-radius: 999px;
+      padding: 0.08rem 0.18rem 0.08rem 0.08rem;
+    }
+
+    .chip-btn-wrap .chip-btn {
+      border: none;
+      background: transparent;
+      padding-right: 0.3rem;
+    }
+
+    .chip-remove-btn {
+      width: 1.15rem;
+      height: 1.15rem;
+      border: none;
+      border-radius: 999px;
+      background: rgba(130, 10, 209, 0.14);
+      color: #6a2cbf;
+      font-size: 0.72rem;
+      font-weight: 900;
+      line-height: 1;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .chip-remove-btn:hover {
+      background: rgba(130, 10, 209, 0.26);
+      color: #4f179a;
+    }
+
+    .recent-clear-btn {
+      border: 1px solid rgba(130, 10, 209, 0.18);
+      background: #fff;
+      color: #6f5a9c;
+      border-radius: 999px;
+      padding: 0.18rem 0.52rem;
+      font-size: 0.68rem;
+      font-weight: 800;
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    .recent-clear-btn:hover {
+      background: #f7f2ff;
+      color: #5b0a9a;
+      border-color: rgba(130, 10, 209, 0.32);
+    }
+
+    .fav-toggle-btn {
+      border: 1px solid rgba(130, 10, 209, 0.25);
+      background: #fff;
+      color: var(--nu-dark);
+      border-radius: 999px;
+      padding: 0.3rem 0.72rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .fav-toggle-btn:hover {
+      background: #f6edff;
+      border-color: rgba(130, 10, 209, 0.4);
+    }
+
+    .fav-toggle-btn.active {
+      background: linear-gradient(135deg, #7f1de7 0%, #9f4df4 100%);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 6px 14px rgba(130, 10, 209, 0.25);
+    }
+
     input[type="search"],
     select {
       width: 100%;
@@ -1430,6 +1645,34 @@
       align-items: center;
       gap: 0.42rem;
       flex-shrink: 0;
+    }
+
+    .fav-btn {
+      border: 1px solid #e6dcff;
+      background: #fff;
+      color: #8c79ba;
+      border-radius: 999px;
+      width: 1.8rem;
+      height: 1.8rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .fav-btn:hover {
+      color: #6d2fca;
+      border-color: rgba(130, 10, 209, 0.35);
+      background: #f6edff;
+    }
+
+    .fav-btn.active {
+      color: #fff;
+      border-color: transparent;
+      background: linear-gradient(135deg, #7f1de7 0%, #9f4df4 100%);
+      box-shadow: 0 6px 14px rgba(130, 10, 209, 0.22);
     }
 
     .card-chevron {
@@ -1913,11 +2156,55 @@
       margin-bottom: 1rem;
     }
 
+    .empty-title {
+      margin: 0;
+      font-size: 1.15rem;
+      line-height: 1.25;
+      font-weight: 800;
+      color: #2a2240;
+      letter-spacing: -0.01em;
+    }
+
     .empty-suggestions {
       margin-top: 0.65rem;
       font-size: 0.82rem;
       color: #66668a;
       line-height: 1.5;
+    }
+
+    .empty-guide {
+      border-style: solid;
+      border-color: rgba(130, 10, 209, 0.22);
+      background: linear-gradient(180deg, #faf6ff 0%, #ffffff 62%);
+      box-shadow: 0 10px 28px rgba(130, 10, 209, 0.07);
+    }
+
+    .empty-guide::before {
+      content: "⌁";
+      font-size: 1.95rem;
+      opacity: 0.5;
+      margin-bottom: 0.6rem;
+    }
+
+    .empty-guide .empty-suggestions {
+      margin-top: 0.45rem;
+      font-size: 0.92rem;
+      color: #5d4a8d;
+      font-weight: 600;
+    }
+
+    .empty-cta {
+      margin: 0.85rem auto 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      border-radius: 999px;
+      border: 1px solid rgba(130, 10, 209, 0.28);
+      background: #f3ebff;
+      color: var(--nu-dark);
+      padding: 0.3rem 0.72rem;
+      font-size: 0.8rem;
+      font-weight: 700;
     }
 
     .empty::before {
@@ -2052,21 +2339,39 @@
 
     <header class="hero" id="introSlide" role="banner">
       <div class="hero-card">
+        <div class="hero-pill">Herramienta interna · CX Acquisition</div>
         <div class="intro-mascot" aria-hidden="true">nu</div>
-        <h1 class="hero-title">Xpeer Macro Hub</h1>
-        <div class="intro-summary">
-          <p class="intro-summary-title">¿Qué incluye esta herramienta?</p>
-          <p class="intro-summary-text"><strong>Buscador:</strong> filtra macros por Contact Reason y palabra clave para Chat y Zendesk.</p>
-          <p class="intro-summary-text"><strong>Espacio de aprendizaje:</strong> guía rápida de cuándo usar cada Contact Reason y cómo responder.</p>
+        <h1 class="hero-title">Xpeer <span class="accent">Macro</span> Hub</h1>
+        <p class="hero-lead">
+          Todo lo que necesitas para atender mejor, en un solo lugar.<br />
+          Macros, guías y recursos para el equipo de CX.
+        </p>
+        <div class="hero-feature-grid" aria-label="Módulos de la herramienta">
+          <article class="hero-feature-card">
+            <span class="hero-feature-icon" aria-hidden="true">🔎</span>
+            <p class="hero-feature-title">Buscador de macros</p>
+            <p class="hero-feature-desc">Filtra por Contact Reason, canal y palabra clave.</p>
+          </article>
+          <article class="hero-feature-card">
+            <span class="hero-feature-icon" aria-hidden="true">📖</span>
+            <p class="hero-feature-title">Espacio de aprendizaje</p>
+            <p class="hero-feature-desc">Guías prácticas de cuándo y cómo usar cada CR.</p>
+          </article>
+          <article class="hero-feature-card">
+            <span class="hero-feature-icon" aria-hidden="true">✨</span>
+            <p class="hero-feature-title">Wedukas</p>
+            <p class="hero-feature-desc">Recursos y materiales de formación del equipo.</p>
+          </article>
         </div>
         <div class="hero-actions">
           <button type="button" class="hero-start-btn" id="startToolBtn">Iniciar herramienta</button>
         </div>
+        <p class="hero-foot">Nu Colombia · ACQ · 2026</p>
       </div>
     </header>
 
     <div id="toolShell" hidden>
-      <div class="view-switch" id="mainViewSwitch" role="tablist" aria-label="Cambiar entre buscador, aprendizaje y Wedukas" hidden>
+      <div class="view-switch" id="mainViewSwitch" role="tablist" aria-label="Cambiar entre buscador, aprendizaje, Wedukas y favoritos" hidden>
         <button class="view-btn active" id="tabSearch" data-view="search" type="button" role="tab" aria-selected="true">
           Buscador
         </button>
@@ -2075,6 +2380,9 @@
         </button>
         <button class="view-btn" id="tabWedukas" data-view="wedukas" type="button" role="tab" aria-selected="false">
           Wedukas
+        </button>
+        <button class="view-btn" id="tabFavorites" data-view="favorites" type="button" role="tab" aria-selected="false">
+          Favoritos
         </button>
       </div>
 
@@ -2149,6 +2457,14 @@
                 </select>
               </div>
             </div>
+            <div class="search-helpers">
+              <div class="recent-searches" id="recentSearchesWrap" hidden>
+                <span class="search-helper-label">Recientes</span>
+                <button type="button" class="recent-clear-btn" id="clearRecentSearchesBtn">Limpiar</button>
+                <div class="chip-row" id="recentSearches"></div>
+              </div>
+              <button type="button" class="fav-toggle-btn" id="onlyFavoritesBtn" aria-pressed="false">☆ Solo favoritas</button>
+            </div>
           </section>
           <div class="selected-cr-banner" id="selectedCrBanner" hidden></div>
 
@@ -2184,6 +2500,12 @@
       <section class="panel learn-search">
         <p class="panel-title">Aprendizaje por Contact Reason</p>
         <div class="row">
+          <div class="field grow">
+            <label for="learnQ">Buscar en aprendizaje</label>
+            <div class="search-wrap">
+              <input type="search" id="learnQ" placeholder="Buscar tema (ej: cross-sell, cupo, registro)…" autocomplete="off" />
+            </div>
+          </div>
           <div class="field grow reason-hidden">
             <label for="learnReasonSelect">Seleccionar Contact Reason</label>
             <select id="learnReasonSelect">
@@ -2198,6 +2520,13 @@
               <option value="solicitud de informacion adicional en el flujo de registro">Solicitud de información adicional en el flujo de registro</option>
               <option value="dudas sobre campanas y beneficios">Dudas sobre Campañas y Beneficios</option>
             </select>
+          </div>
+        </div>
+        <div class="search-helpers">
+          <div class="recent-searches" id="learnRecentSearchesWrap" hidden>
+            <span class="search-helper-label">Recientes</span>
+            <button type="button" class="recent-clear-btn" id="clearLearnRecentSearchesBtn">Limpiar</button>
+            <div class="chip-row" id="learnRecentSearches"></div>
           </div>
         </div>
         <div id="learnEmpty" class="learn-empty" hidden>No hay coincidencias en aprendizaje para esa búsqueda.</div>
@@ -2916,38 +3245,47 @@
           <div class="wedukas-panel">
             <a class="wedukas-item" href="https://nucolombia.myweduka.com/DocumentFind/Document?idDocument=4610" target="_blank" rel="noopener">
               <p class="wedukas-item-title">Registro, aplicación e información de productos Nu (Prospecto)</p>
+              <p class="wedukas-item-desc">Registro, onboarding, documentos y dudas iniciales de prospectos.</p>
               <span class="wedukas-link">Ir a Weduka ↗</span>
             </a>
             <a class="wedukas-item" href="https://nucolombia.myweduka.com/DocumentFind/Document?idDocument=4620" target="_blank" rel="noopener">
               <p class="wedukas-item-title">Dudas relacionadas al resultado de aplicación</p>
+              <p class="wedukas-item-desc">Escenarios de declinación, cancelación o resultado inesperado.</p>
               <span class="wedukas-link">Ir a Weduka ↗</span>
             </a>
             <a class="wedukas-item" href="https://nucolombia.myweduka.com/DocumentFind/Document?idDocument=4621" target="_blank" rel="noopener">
               <p class="wedukas-item-title">Consulta o sugerencia de producto no ofertado</p>
+              <p class="wedukas-item-desc">Solicitudes por productos que Nu aún no ofrece.</p>
               <span class="wedukas-link">Ir a Weduka ↗</span>
             </a>
             <a class="wedukas-item" href="https://nucolombia.myweduka.com/DocumentFind/Document?idDocument=4624" target="_blank" rel="noopener">
               <p class="wedukas-item-title">Reactivación o adquisición de otros productos (Cliente o ex-cliente)</p>
+              <p class="wedukas-item-desc">Cross-sell y reactivación de productos para clientes/ex-clientes.</p>
               <span class="wedukas-link">Ir a Weduka ↗</span>
             </a>
             <a class="wedukas-item" href="https://nucolombia.myweduka.com/DocumentFind/Document?idDocument=4622" target="_blank" rel="noopener">
               <p class="wedukas-item-title">Errores en el flujo de registro</p>
+              <p class="wedukas-item-desc">Bugs y bloqueos durante el proceso de registro.</p>
               <span class="wedukas-link">Ir a Weduka ↗</span>
             </a>
             <a class="wedukas-item" href="https://nucolombia.myweduka.com/DocumentFind/Document?idDocument=4600" target="_blank" rel="noopener">
               <p class="wedukas-item-title">Dudas sobre Campañas y Beneficios</p>
+              <p class="wedukas-item-desc">Promociones vigentes, campañas finalizadas y elegibilidad.</p>
               <span class="wedukas-link">Ir a Weduka ↗</span>
             </a>
             <a class="wedukas-item" href="https://nucolombia.myweduka.com/DocumentFind/Document?idDocument=4625" target="_blank" rel="noopener">
               <p class="wedukas-item-title">Dudas o problemas con programa de referidos</p>
+              <p class="wedukas-item-desc">Invitar amigos, estado del beneficio y troubleshooting MGM.</p>
               <span class="wedukas-link">Ir a Weduka ↗</span>
             </a>
             <a class="wedukas-item" href="https://nucolombia.myweduka.com/DocumentFind/Document?idDocument=4604" target="_blank" rel="noopener">
               <p class="wedukas-item-title">Dudas o problemas en la app después de iniciar sesión</p>
+              <p class="wedukas-item-desc">Home, widgets, misiones y errores de navegación en app.</p>
               <span class="wedukas-link">Ir a Weduka ↗</span>
             </a>
             <a class="wedukas-item" href="https://nucolombia.myweduka.com/DocumentFind/Document?idDocument=4616" target="_blank" rel="noopener">
               <p class="wedukas-item-title">Solicitud de información adicional en el flujo de registro</p>
+              <p class="wedukas-item-desc">KYC, documentos extra y verificaciones adicionales.</p>
               <span class="wedukas-link">Ir a Weduka ↗</span>
             </a>
           </div>
@@ -3179,6 +3517,7 @@
       const STRICT_CONTACT_REASON_LABELS = [
         "Dudas sobre el Resultado de Solicitud (Declinado, Cancelado o Erróneo)",
         "Consulta o sugerencia de producto no ofertado",
+        "Registro, aplicación e información de productos Nu",
         "Dudas o problemas en la app después de iniciar sesión.",
         "Dudas o problemas con programa de referidos",
         "Dudas sobre Campañas y Beneficios",
@@ -3507,6 +3846,645 @@
         },
       ];
 
+      const REGISTRO_PRODUCTOS_LABEL = "Registro, aplicación e información de productos Nu";
+      const REGISTRO_PRODUCTOS_DOC_ROWS = [
+        {
+          nombre: "ACQ-01: ¿Qué es la Tarjeta Abre Caminos y cuáles son sus beneficios?",
+          macro: "La Tarjeta Abre Caminos es una tarjeta de crédito donde tú decides tu cupo: depositas en una Cajita de Respaldo y ese monto se convierte en tu límite de crédito. Por ejemplo, si depositas $200.000, tu cupo será de $200.000.\n\nEs una tarjeta real con todos los beneficios:\n- $0 cuota de manejo, $0 emisión, $0 seguros obligatorios\n- Compras nacionales e internacionales (Mastercard Gold)\n- Diferir compras a cuotas desde la app\n- Construyes historial crediticio con reportes positivos (según suceda) a centrales de riesgo\n- Con buen uso, podrías obtener cupo adicional sin necesidad de respaldo\n\nConoce más en: https://blog.nu.com.co/tarjeta-abre-caminos-nu",
+          shuffleChat: "Si el usuario está entusiasmado: \"Lo mejor de esta tarjeta es que tú tienes el control. No dependes de que un banco decida por ti cuánto puedes gastar.\"\nSi el usuario está confundido: \"Piensa en la Cajita de Respaldo como una garantía: tu dinero sigue siendo tuyo, pero mientras esté ahí, te habilita un cupo de crédito equivalente.\"\nSi pregunta por el ejemplo: \"Mira, si hoy depositas $100.000, tu cupo es $100.000. Si mañana agregas otros $100.000, tu cupo sube a $200.000. Tú decides.\"\nPara reforzar el beneficio: \"El objetivo es que con buenos hábitos puedas dejar de necesitar el respaldo. Es tu camino hacia un crédito sin depósito.\"",
+          zendeskBody: "Si pregunta con curiosidad, enfatiza el ejemplo concreto. Si pregunta con desconfianza, enfatiza los $0 costos y el control total.",
+        },
+        {
+          nombre: "ACQ-02: ¿La Tarjeta Abre Caminos es de crédito o débito? Approved",
+          macro: "Es una tarjeta de crédito. Aunque el cupo lo defines tú con un depósito en la Cajita de Respaldo, funciona exactamente como cualquier tarjeta de crédito: recibes un extracto mensual, tienes fecha de pago, puedes diferir compras a cuotas, y genera reportes a centrales de riesgo.\n\nLa diferencia con una tarjeta de crédito tradicional es que tú decides el monto de tu cupo a través de tu depósito. Con buen uso, podrías recibir cupo adicional sin respaldo.",
+          shuffleChat: "Si pregunta la diferencia con la de débito: \"Tu tarjeta débito se conecta directamente a tu Cuenta Nu: lo que gastas se descuenta al instante. La de crédito funciona con un ciclo de facturación mensual y puedes diferir a cuotas.\"\nSi pregunta por qué recibió 2 tarjetas: \"Al registrarte en Nu, puedes recibir una tarjeta de débito (para tu Cuenta Nu) y una de crédito (la Abre Caminos). Son productos diferentes que se complementan.\"\nSi insiste que es su propio dinero: \"Tu depósito funciona como garantía, no como saldo. Es como dejar un depósito de seguridad que te abre una línea de crédito. Las compras generan un extracto que debes pagar mensualmente.\"",
+          zendeskBody: "Pain point frecuente: \"si es mi plata, ¿por qué me cobran intereses?\". Respuesta: porque al diferir a cuotas, Nu financia las cuotas restantes, igual que cualquier tarjeta de crédito.",
+        },
+        {
+          nombre: "ACQ-03: Mi tarjeta llegó en $0 / sin cupo / ¿Cómo activo mi cupo?",
+          macro: "Entendemos que puede parecer confuso recibir una tarjeta con cupo en $0. Te explicamos cómo funciona: a diferencia de una tarjeta de crédito tradicional, con la Abre Caminos tú decides tu propio cupo.\n\n¿Cómo activarlo?\n1. En tu app Nu, ve a Cuenta de ahorros > Cajitas de ahorro\n2. Selecciona \"Dinero de respaldo\"\n3. Deposita el monto que desees. Ese será tu cupo de crédito.\n\nPor ejemplo, si depositas $200.000, tu cupo será de $200.000. Con buen uso y completando tus misiones, podrías obtener cupo adicional sin necesidad de respaldo.",
+          shuffleChat: "Si el usuario está frustrado: \"Entendemos tu frustración. La Abre Caminos funciona diferente a una tarjeta convencional: aquí tú tienes el control total de tu cupo. Es una forma de empezar a construir historial crediticio sin depender de la aprobación de un banco.\"\nSi dice que la tarjeta no sirve para nada: \"Entendemos que no era lo que esperabas. Lo bueno es que con esta tarjeta tú decides cuánto crédito quieres tener, y con buen uso podrías obtener cupo sin necesidad de respaldo. Es tu puerta de entrada al crédito.\"\nSi pregunta cómo depositar: \"Desde tu app, ve a Cuenta de ahorros > Cajitas de ahorro > \"Dinero de respaldo\" > \"Agregar\". Puedes transferir desde tu Cuenta Nu o depositar por PSE o efectivo en puntos aliados.\"\nSi quiere devolver la tarjeta: \"Si prefieres no continuar, podemos ayudarte con la cancelación. Pero antes, ¿te gustaría que te expliquemos cómo funciona? Muchos usuarios que empezaron con dudas hoy están construyendo su historial crediticio con Nu.\"\nPara anclar la propuesta de valor: \"La gran ventaja es que con buenos hábitos de pago, Nu te irá conociendo y podrías recibir cupo sin necesidad de respaldo. Es un camino, no un destino fijo.\"",
+          zendeskBody: "Este es el escenario que más contactos genera. El usuario está decepcionado. NO minimices su frustración. Valida, explica brevemente, y lleva al paso a paso. El ejemplo numérico es clave para que entienda.",
+        },
+        {
+          nombre: "ACQ-04: ¿Cómo deposito en la Cajita de Respaldo / Cómo creo mi cupo? Approved",
+          macro: "Depositar en tu Cajita de Respaldo es muy fácil:\n\n1. Abre tu app Nu\n2. Ve a Cuenta de ahorros > Cajitas de ahorro\n3. Selecciona \"Dinero de respaldo\"\n4. Toca \"Agregar\" y define el monto que quieras depositar\n5. Confirma y listo: ese monto será tu cupo de crédito\n\nEl dinero que deposites sale de tu Cuenta Nu. Si aún no tienes saldo en tu Cuenta Nu, puedes transferir dinero desde otro banco por PSE, o depositar efectivo en puntos aliados.\n\nEl máximo que puedes depositar en la cajita es $17.000.000. El límite por transacción es de $10.000.000.",
+          shuffleChat: "Si no tiene saldo en Cuenta Nu: \"Primero necesitas tener saldo en tu Cuenta Nu. Puedes recibir dinero por transferencia desde otro banco, por PSE, o depositar efectivo en un punto aliado.\"\nSi pregunta si puede depositar desde otra cuenta: \"Sí, puedes transferir dinero a tu Cuenta Nu desde cualquier banco colombiano usando PSE o transferencia bancaria, y luego moverlo a tu Cajita de Respaldo.\"\nSi quiere depositar un monto específico: \"Puedes depositar desde $1 peso hasta $17.000.000 en total. Tú decides cuánto. Si depositas $50.000, ese es tu cupo. Si después quieres más, solo agregas más dinero.\"",
+          zendeskBody: "Pregunta operativa. El usuario no necesita un pitch del producto, necesita el paso a paso. Sé directo.",
+        },
+        {
+          nombre: "ACQ-05: ¿Por qué me llegaron 2 tarjetas? (débito y crédito)",
+          macro: "Cuando te registras en Nu y eres elegible, puedes recibir dos tarjetas:\n\n- Tarjeta de débito (Cuenta Nu): funciona como cualquier tarjeta débito, lo que gastas se descuenta directamente de tu saldo.\n- Tarjeta de crédito Abre Caminos: es tu tarjeta de crédito. El cupo lo defines tú depositando en tu Cajita de Respaldo.\n\nSon dos productos que se complementan: la Cuenta Nu es donde manejas tu dinero día a día y en donde depositas el cupo que liberará tu tarjeta de crédito, y la Abre Caminos es tu herramienta para construir historial crediticio.",
+          shuffleChat: "Si solo quería una: \"Entendemos, no te preocupes. Puedes usar solo la que necesites. Si no deseas la tarjeta de crédito, podemos ayudarte a cancelarla sin afectar tu Cuenta Nu.\"\nSi no sabe cuál es cuál: \"La tarjeta de débito y la de crédito tienen números diferentes. En tu app, en \"Mis tarjetas\", puedes ver cuál es cada una y sus datos.\"\nPara explicar la ventaja de tener ambas: \"Tener ambas te permite separar tus gastos: la débito para el día a día y la de crédito para compras que quieras diferir a cuotas mientras construyes historial.\"",
+          zendeskBody: "El usuario no entiende por qué tiene 2 plásticos. Explica la diferencia de forma simple sin asumir que sabe qué es débito vs. crédito.",
+        },
+        {
+          nombre: "ACQ-06: ¿Me van a prestar dinero? / Pensé que traía un cupo aprobado",
+          macro: "Entendemos tu inquietud. La Tarjeta Abre Caminos funciona diferente a una tarjeta de crédito convencional: en vez de que el banco te asigne un cupo, aquí tú decides cuánto quieres tener como límite de crédito depositando en tu Cajita de Respaldo.\n\n¿Por qué es una ventaja?\n- Tú tienes el control total: si depositas $100.000, tu cupo es $100.000\n- No necesitas historial crediticio previo\n- Con buen uso, Nu te irá conociendo y podrías recibir cupo sin necesidad de respaldo\n- Cada pago a tiempo genera reportes positivos a centrales de riesgo\n\nEs tu puerta de entrada al mundo del crédito. El primer paso es depositar en tu Cajita de Respaldo desde la app.",
+          shuffleChat: "Si el usuario está molesto: \"Lamentamos que no fuera lo que esperabas. Sabemos que puede parecer diferente a lo habitual, pero esta tarjeta está diseñada para darte el control total de tu crédito. Con el tiempo y buen uso, podrías tener cupo sin necesidad de respaldo.\"\nSi dice que es una estafa: \"Entendemos tu molestia y queremos ser transparentes contigo. Tu dinero sigue siendo tuyo: está en tu Cajita de Respaldo y puedes retirarlo si no has hecho compras. La tarjeta simplemente usa ese monto como garantía para darte un cupo de crédito.\"\nSi quiere cancelar todo: \"Respetamos tu decisión. Si deseas cancelar, podemos ayudarte. Antes de hacerlo, ¿te gustaría que te expliquemos los beneficios? Muchas personas que comenzaron con dudas hoy ya están construyendo su historial crediticio.\"\nSi compara con otra tarjeta: \"En una tarjeta de crédito convencional, el banco decide tu cupo. Aquí, tú decides. La ventaja es que no necesitas historial previo y tú controlas cuánto crédito quieres manejar.\"",
+          zendeskBody: "NUNCA minimices la frustración. Valida primero (\"entendemos\"), luego explica brevemente, y ofrece el siguiente paso. Si el usuario quiere salir, no insistas más de una vez.",
+        },
+        {
+          nombre: "ACQ-07: ¿Cuánto es mi cupo? / ¿De cuánto me aprobaron?",
+          macro: "Tu cupo de crédito es igual al monto que tengas depositado en tu Cajita de Respaldo. Si aún no has depositado, tu cupo aparecerá en $0.\n\nPara ver tu cupo actual: abre tu app > busca tu Tarjeta Abre Caminos > allí verás tu cupo disponible y tu cupo total.\n\nPara crear o aumentar tu cupo: ve a Cuenta de ahorros > Cajitas de ahorro > \"Dinero de respaldo\" > \"Agregar\" y deposita el monto que desees. Ese será tu cupo.",
+          shuffleChat: "Si esperaba un cupo pre-aprobado: \"Con la Tarjeta Abre Caminos, no hay un cupo pre-aprobado. Tú lo defines depositando en tu Cajita de Respaldo. Si depositas $300.000, tu cupo será de $300.000.\"\nSi dice que solicitó un monto específico: \"En la Abre Caminos no se solicita un monto de cupo. Tú lo defines directamente depositando en la Cajita de Respaldo. Puedes empezar con cualquier monto y aumentarlo cuando quieras.\"\nPara orientar al paso a paso: \"Es muy fácil: Cuenta de ahorros > Cajitas de ahorro > \"Dinero de respaldo\" > \"Agregar\". Ahí defines tu cupo en segundos.\"",
+          zendeskBody: "",
+        },
+        {
+          nombre: "ACQ-08: ¿Debo tener una Cuenta Nu para tener la Tarjeta Abre Caminos? Approved",
+          macro: "Sí, la Cuenta Nu es necesaria porque ahí se crea tu Cajita de Respaldo, que es la que define tu cupo de crédito. Pero tranquilo: la Cuenta Nu no tiene ningún costo ni obligación. Es $0 mantenimiento.\n\nSi aún no eres cliente: al aplicar desde nu.com.co o la app, tu Cuenta Nu se crea automáticamente como parte del proceso.\n\nSi ya tienes Cuenta Nu: no necesitas hacer nada más. Nuestro sistema analiza tu perfil continuamente y te notificará cuando tenga una oferta de tarjeta de crédito para ti.",
+          shuffleChat: "Si no quiere la cuenta de ahorros: \"La Cuenta Nu es necesaria porque tu Cajita de Respaldo (que define tu cupo) vive dentro de ella. Pero no te preocupes: no tiene costo, no tiene cuota de manejo, y no estás obligado a usarla para nada más si no quieres.\"\nSi piensa que tiene que pagar: \"No tienes que pagar nada para abrir tu Cuenta Nu. Es totalmente gratuita. El dinero que deposites en la Cajita de Respaldo sigue siendo tuyo y define tu cupo de crédito.\"\nSi ya tiene cuenta y pregunta por la tarjeta: \"Si ya tienes tu Cuenta Nu, revisa tu app por si ya tienes una oferta disponible. Nuestro sistema evalúa tu perfil continuamente y te notifica cuando hay una oferta para ti.\"",
+          zendeskBody: "Muchos FTA no entienden que al aplicar a Nu se obtiene Cuenta + Tarjeta juntas. Explica que la cuenta es gratuita y es solo el \"contenedor\" de la cajita.",
+        },
+        {
+          nombre: "ACQ-09: No tengo ninguna tarjeta de crédito. ¿Puedo aplicar?",
+          macro: "¡Claro que sí! La Tarjeta Abre Caminos fue creada precisamente para personas que quieren empezar su vida crediticia. No tener historial no es un problema: es una oportunidad para construirlo.\n\nPara aplicar: ve a nu.com.co o descarga la App Nu. Al registrarte, nuestro sistema evalúa tu perfil y te ofrece los productos disponibles para ti.\n\nSi ya tienes Cuenta Nu: revisa tu app, puede que ya tengas una oferta de tarjeta de crédito esperándote. No necesitas aplicar de nuevo.",
+          shuffleChat: "Si el usuario tiene miedo del crédito: \"Con la Abre Caminos tienes el control total: tú decides tu cupo con tu depósito. No hay sorpresas ni cobros que no esperes. Es una forma segura de empezar.\"\nSi no sabe qué es historial crediticio: \"El historial crediticio es tu \"hoja de vida financiera\". Cada vez que pagas a tiempo, se genera un reporte positivo en centrales de riesgo, lo que te abre puertas para futuros créditos.\"\nPara reforzar la oportunidad: \"La Abre Caminos es para personas como tú que quieren empezar. No necesitas tener historial previo, lo construyes usando la tarjeta responsablemente.\"",
+          zendeskBody: "",
+        },
+        {
+          nombre: "ACQ-10: Ya tengo la Cuenta Nu. ¿Puedo aplicar a la Tarjeta Abre Caminos?",
+          macro: "Si ya tienes tu Cuenta Nu, no necesitas aplicar de nuevo. Nuestro sistema analiza tu perfil continuamente y cuando tengamos una oferta de tarjeta de crédito para ti, te enviaremos una notificación en tu App y por correo.\n\nTe recomendamos revisar tu app: es posible que ya tengas una oferta disponible. Si no la ves, significa que el sistema aún está evaluando tu perfil.",
+          shuffleChat: "Si busca un botón para aplicar: \"No existe un botón para solicitar la tarjeta directamente. Nuestro sistema evalúa tu perfil de forma continua y automática. Cuando tenga una oferta para ti, aparecerá directamente en tu app.\"\nSi lleva tiempo esperando: \"Entendemos que la espera puede ser frustrante. Nuestro sistema está en constante evolución y evalúa muchos factores. No podemos darte un tiempo exacto, pero tu perfil se revisa continuamente.\"\nPara dar contexto: \"Podemos ofrecerte cualquiera de nuestras tarjetas de crédito Nu, dependiendo de tu perfil. La Abre Caminos es una de ellas, diseñada para quienes están empezando o reconstruyendo su historial.\"",
+          zendeskBody: "El usuario puede frustrarse al no encontrar dónde \"aplicar\". Sé claro: no hay botón, el sistema evalúa automáticamente.",
+        },
+        {
+          nombre: "ACQ-11: Ya tengo tarjeta de crédito convencional. ¿Puedo tener la Abre Caminos?",
+          macro: "Agradecemos tu interés. Por el momento, solo es posible tener una tarjeta de crédito Nu activa. Como ya cuentas con la tarjeta tradicional, no podrías tener también la Abre Caminos al mismo tiempo.\n\nLa buena noticia es que tu tarjeta actual ya te ofrece los mismos beneficios core: $0 cuota de manejo, compras a cuotas, y construcción de historial crediticio.",
+          shuffleChat: "Para hacer sentir bien al usuario: \"Tu tarjeta de crédito Nu ya es un excelente producto. Tiene los mismos beneficios de $0 cuota de manejo, MSI en comercios seleccionados, y todo el soporte 24/7.\"\nSi insiste: \"Entendemos tu interés. Seguimos trabajando para mejorar nuestros productos continuamente. Por ahora, la política es una tarjeta de crédito por persona.\"",
+          zendeskBody: "",
+        },
+        {
+          nombre: "ACQ-12: Había aplicado a la TdC convencional, me la negaron. ¿Puedo tener la Abre Caminos?",
+          macro: "Entendemos tu situación y queremos que sepas que un \"no\" en Nu nunca es definitivo. Nuestro sistema está en constante evolución.\n\nSi aún no eres cliente: puedes volver a aplicar desde nu.com.co o la App. Nuestro sistema hará un nuevo análisis y evaluará si la Tarjeta Abre Caminos es una opción para ti.\n\nSi ya tienes Cuenta Nu: no necesitas aplicar de nuevo. El sistema analiza tu perfil continuamente y te notificará cuando tenga una oferta.",
+          shuffleChat: "Para dar esperanza real: \"La Abre Caminos está diseñada precisamente para quienes están empezando o reconstruyendo su vida crediticia. Que no hayas sido elegible para la convencional no significa que no puedas acceder a la Abre Caminos.\"\nSi pregunta por qué lo rechazaron: \"No podemos compartir los detalles específicos de la evaluación, pero lo que sí te podemos decir es que nuestro sistema evoluciona constantemente y tu perfil se re-evalúa de forma continua.\"",
+          zendeskBody: "Empatía primero. El usuario viene de un rechazo. Usa \"entendemos\" y redirige hacia la oportunidad.",
+        },
+        {
+          nombre: "ACQ-13: ¿A cuántas cuotas puedo diferir? / ¿Cuál es la tasa de interés?",
+          macro: "Con tu Tarjeta Abre Caminos puedes diferir tus compras entre 2 y 48 cuotas directamente desde tu app, después de hacer la compra. Puedes cambiar las cuotas de tu compra en cualquier momento sin papeleos.\n\nAl diferir a más de una cuota, se aplican intereses corrientes, tal como funciona cualquier tarjeta de crédito. La tasa de interés vigente la puedes consultar en tu app, en la sección de tu tarjeta de crédito > Detalles.\n\nSi compras a una sola cuota, no se generan intereses adicionales.",
+          shuffleChat: "Si pregunta por qué cobran intereses si es su plata: \"Tu depósito es la garantía de tu cupo, no el pago de tus compras. Cuando difieres a cuotas, Nu financia las cuotas restantes, y eso genera intereses, igual que en cualquier tarjeta de crédito.\"\nPara recomendar buen uso: \"Si quieres evitar intereses, compra a una sola cuota. Si necesitas diferir, recuerda que pagar siempre el total del extracto es la mejor forma de evitar cargos adicionales.\"",
+          zendeskBody: "",
+        },
+        {
+          nombre: "ACQ-14: No quiero continuar / No me interesa / Opt-out",
+          macro: "Entendemos y respetamos tu decisión.\n\nConfirmamos que tu proceso de adquisición ha sido cancelado. Tu información será tratada según nuestras políticas de tratamiento de datos: tus datos no serán usados ni compartidos con fines comerciales o publicitarios.\n\nSi en el futuro cambias de opinión, puedes volver a aplicar cuando quieras desde nu.com.co, la App Nu o WhatsApp.\n\nFrases complementarias para el agente+\n\nSi el usuario está enojado: \"Lamentamos que la experiencia no haya sido lo que esperabas. Valoramos tu tiempo y respetamos completamente tu decisión.\"\nSi quiere entender antes de decidir: \"Antes de cancelar, ¿te gustaría que te expliquemos cómo funciona en 30 segundos? La Abre Caminos funciona diferente a una tarjeta convencional y muchas personas que empezaron con dudas hoy la usan activamente.\"\nPara despedir con calidez: \"Te deseamos lo mejor. Recuerda que en Nu las puertas siempre están abiertas para ti.\"",
+          shuffleChat: "",
+          zendeskBody: "No intentes retener agresivamente. Si ya decidió, facilita la salida. Un opt-out limpio genera mejor percepción de marca.",
+        },
+        {
+          nombre: "ACQ-15: Me siento engañado / Publicidad falsa / No tiene cupo pre-aprobado",
+          macro: "Lamentamos que sientas eso. Queremos ser transparentes contigo.\n\nLa Tarjeta Abre Caminos es una tarjeta de crédito real, pero funciona diferente: tu cupo lo defines tú depositando en una Cajita de Respaldo. Tu dinero sigue siendo tuyo, está en tu cuenta, y puedes retirarlo si no has hecho compras.\n\nCon esta tarjeta puedes:\n- Construir historial crediticio con reportes positivos a centrales de riesgo\n- Con buen uso, obtener cupo sin necesidad de respaldo\n- Tener una tarjeta Mastercard Gold sin costos ocultos\n\nSi prefieres no continuar, respetamos tu decisión. Solo confírmanos y gestionamos la cancelación.",
+          shuffleChat: "Si dice que le prometieron cupo: \"Entendemos la confusión. La comunicación puede no haber sido lo suficientemente clara. La Abre Caminos no tiene un cupo pre-aprobado: el cupo lo defines tú con tu depósito. Lamentamos si esto no se comunicó de la mejor manera.\"\nSi pide que le devuelvan su dinero: \"Tu dinero en la Cajita de Respaldo es tuyo. Si no has hecho compras con la tarjeta, puedes retirar el 100% en cualquier momento desde tu app.\"\nPara validar sin minimizar: \"Tienes toda la razón en pedir transparencia. Queremos que tomes una decisión informada. ¿Te gustaría que te expliquemos exactamente cómo funciona, o prefieres cancelar?\"\nSi menciona que le dijeron que le \"duplicaban\": \"Lamentamos la confusión. El depósito que haces en la Cajita de Respaldo se convierte en tu cupo: si depositas $100.000, tu cupo es $100.000. No se duplica el monto.\"",
+          zendeskBody: "NUNCA minimices la frustración. El usuario se siente engañado. Valida su sentimiento, sé transparente, y ofrece la salida sin fricción.",
+        },
+        {
+          nombre: "ACQ-16: No quiero recibir notificaciones / No me interesa",
+          macro: "Entendemos, no hay problema. Puedes desactivar las notificaciones así:\n\n1. En tu App, toca el ícono de usuario (esquina superior izquierda)\n2. Ve a \"Notificaciones\" (la campanita)\n3. Toca el ícono de la tuerca (configuración)\n4. Desactiva las notificaciones por el canal que prefieras: App, Correo, WhatsApp o SMS\n\nSi cambias de opinión, estaremos aquí.",
+          shuffleChat: "Para cerrar con calidez: \"Listo, con eso dejarás de recibir esas notificaciones. Si en el futuro te interesa explorar la tarjeta, siempre podrás encontrar la info en tu app o en nuestro blog.\"",
+          zendeskBody: "",
+        },
+        {
+          nombre: "ACQ-17: ¿Por qué no puedo tener la Tarjeta Abre Caminos? [Producto declinado] Approved",
+          macro: "Agradecemos tu interés. En este momento, nuestro sistema determinó que el producto no está disponible para tu perfil. La elegibilidad se evalúa de forma automática con base en múltiples factores.\n\nLo bueno es que en Nu, un \"no\" nunca es definitivo. Nuestro sistema evoluciona y se re-evalúa constantemente. Cuando podamos ofrecerte un producto, te notificaremos por tu App y por correo.",
+          shuffleChat: "Para dar esperanza: \"Te recomendamos mantener tu Cuenta Nu activa y usarla normalmente. Eso nos ayuda a conocerte mejor y aumenta las posibilidades de que aparezca una oferta para ti en el futuro.\"\nSi pregunta qué puede hacer: \"No hay una acción específica que puedas tomar para acelerar el proceso, pero mantener tu Cuenta Nu activa y en buen estado es lo mejor que puedes hacer.\"\nSi está muy frustrado: \"Entendemos tu frustración. No podemos compartir los detalles de la evaluación, pero lo que sí te aseguramos es que tu perfil se revisa de forma continua. Estamos trabajando para que más personas puedan acceder a nuestros productos.\"",
+          zendeskBody: "Nunca des razones específicas del rechazo. Enfócate en \"no es definitivo\" y en que el sistema sigue evaluando.",
+        },
+        {
+          nombre: "ACQ-18: ¿Cómo activo / Cómo uso mi tarjeta? [Problema de activación]",
+          macro: "Para activar tu Tarjeta Abre Caminos:\n\n1. Abre tu app Nu\n2. Ve a la sección de tu tarjeta de crédito\n3. Sigue las instrucciones de activación (crear PIN de 4 dígitos)\n\nDespués de activar, necesitas depositar dinero en tu Cajita de Respaldo para tener cupo:\n- Ve a Cuenta de ahorros > Cajitas de ahorro > \"Dinero de respaldo\" > \"Agregar\"\n- El monto que deposites será tu cupo de crédito\n\nUna vez tengas cupo, podrás usar tu tarjeta para compras en establecimientos físicos y en línea.",
+          shuffleChat: "Si la app no le deja activar: \"Si la app no te permite completar la activación, intenta cerrar y abrir la app nuevamente. Si el problema persiste, podemos ayudarte a revisarlo desde aquí.\"\nSi quiere usar la tarjeta virtual: \"También puedes crear una tarjeta virtual para compras en línea. En la app, ve a \"Mis tarjetas\" > \"Activar mi tarjeta\" y sigue los pasos para crear tu tarjeta virtual.\"\nSi ya activó pero no puede comprar: \"Revisa que tengas cupo disponible. Tu cupo depende de lo que hayas depositado en la Cajita de Respaldo. Si está en $0, necesitas depositar primero.\"",
+          zendeskBody: "",
+        },
+        {
+          nombre: "ACQ-19: ¿Las tarjetas de crédito de Nu tienen cuota de manejo?",
+          macro: "No, la Tarjeta Abre Caminos no tiene cuota de manejo. Tampoco tiene costo de emisión ni seguros obligatorios. Es $0 en todo.\n\nEsto aplica para todas las tarjetas de crédito de Nu:\n- Tarjeta de Crédito Nu tradicional: $0 cuota de manejo\n- Tarjeta de crédito Abre Caminos: $0 cuota de manejo\n- Tarjeta NuControl: esta sí tiene cuota de manejo",
+          shuffleChat: "Para reforzar la propuesta de valor: \"Con Nu, tu tarjeta de crédito no te cuesta nada. Solo pagas intereses si decides diferir tus compras a más de una cuota.\"\n\nTips para el Agente\n\nGuía práctica para gestionar esta contact reason con excelencia:\n\n1. Lo primero: identifica en qué subtema está el cliente\nAntes de escribir una sola palabra, clasifica el caso: ¿es registro técnico? ¿es pregunta de producto? ¿es NuControl? ¿es opt-out? Cada subtema tiene un flujo distinto. Equivocarte de sección puede generar más confusión que antes.\n\n2. Revisa el estado del registro antes de responder\nPara cualquier consulta de registro, entra a Shuffle y verifica: ¿el prospecto ya activó el link? ¿en qué paso quedó? ¿tiene tag 'docs_request'? Esta información define completamente la respuesta que debes dar.\n\n3. Para NuControl: nunca uses lenguaje de exclusión\nPalabras prohibidas al hablar de NuControl: 'mal historial', 'no calificó', 'solo te podemos dar NuControl'. La comunicación correcta es siempre afirmativa: 'Nu analizó tu perfil y diseñó una oferta específicamente para ti'.\n\n4. Préstamos y Tarjetas Amparadas: no prometas lo que el sistema decide\nPara préstamos: NUNCA prometas cupos, plazos ni tasas. La elegibilidad la determina el sistema automáticamente. Si el cliente pregunta cómo calificar, indica que debe tener Cuenta Nu activa y que el sistema evalúa diariamente. Para Tarjetas Amparadas: valida primero el rol del usuario (Titular o Amparado) antes de dar los requisitos específicos.\n\n5. El opt-out es una oportunidad de aprendizaje\nCuando un prospecto cancela, documenta el motivo en las notas del ticket. Esta información es oro para el equipo de producto y marketing: ¿por qué se van? ¿qué generaba confusión? ¿qué les faltó para confirmar el registro?",
+          zendeskBody: "",
+        },
+        {
+          nombre: "AFA-01: Prospecto abandoned — no logra finalizar el registro",
+          macro: "Veo que iniciaste tu registro con Nu y quedó pendiente. Para retomarlo, sigue estos pasos:\n1. Abre la app Nu en tu celular.\n2. Ingresa con tu correo electrónico (el mismo que usaste al registrarte).\n3. Revisa tu bandeja de entrada - te enviamos un correo con un link mágico para continuar.\n\nSi ya activaste el link pero la app no carga el registro, intenta cerrar sesión y volver a ingresar. Si el problema persiste, cuéntame y revisamos juntos en qué paso quedó tu proceso.",
+          shuffleChat: "Si el cliente no recuerda el correo: \"Podemos ayudarte a identificar el correo con el que iniciaste. ¿Tienes a mano el número de celular que registraste?\"\nSi el link del correo ya venció: \"El link de activación tiene una vigencia de 72 horas. Si ya venció, podemos generarte uno nuevo desde nuestro sistema.\"",
+          zendeskBody: "El registro puede quedar incompleto en cualquier paso. Revisa en Shuffle en qué etapa se detuvo antes de responder: eso define la instrucción exacta que debes darle.",
+        },
+        {
+          nombre: "AFA-02: Prospecto invitado — desea saber su cupo aprobado",
+          macro: "El cupo asignado se genera automáticamente durante tu proceso de registro. Lo mejor es que podrás ver el monto asignado en la App Nu antes de finalizar, así tú decides si quieres continuar con la solicitud.\n\nUna vez que completes el proceso, el cupo aparecerá visible siempre en la sección de tu tarjeta de crédito.\n\nTen en cuenta que Nu no comparte los criterios exactos de evaluación, ya que es un sistema automático y personalizado para cada perfil.",
+          shuffleChat: "Si el cliente insiste en conocer el cupo antes de registrarse: \"Entiendo que quieres asegurarte antes de continuar. Aunque no puedo adelantarte el número, sí puedo decirte que el proceso es completamente gratuito y sin compromiso: si el cupo no te convence, no estás obligado a activar la tarjeta.\"\nSi el cliente ya completó el registro pero no ve el cupo: \"Revisemos juntos en qué etapa está tu solicitud. ¿El registro te muestra que fue enviado, o ves algún mensaje de error?\"",
+          zendeskBody: "Si el cliente presiona para saber el cupo antes de registrarse, enfátiza que el proceso es rápido (menos de 5 minutos) y que al final verá el cupo exacto aprobado para él. No adelantes estimados bajo ninguna circunstancia.",
+        },
+        {
+          nombre: "AFA-03: Prospecto en etapa de validación — no puede ver sus productos",
+          macro: "Tu proceso de registro está actualmente en etapa de validación. Esto significa que nuestro equipo está revisando la información que ingresaste para confirmar tu identidad y completar la aprobación.\n\nEsta etapa es completamente normal y es parte del procedimiento estándar de vinculación de Nu. Durante este tiempo, es posible que el acceso a tus productos esté temporalmente limitado.\n\nEl proceso puede tardar entre unas pocas horas y 48 horas calendario. Recibirás una notificación al correo registrado cuando la validación esté completa, o si necesitamos alguna información adicional.\n\nNo se requiere ninguna acción de tu parte por ahora. Solo un poco de paciencia mientras terminamos el proceso.",
+          shuffleChat: "Si el cliente ya esperó más de 48 horas calendario: \"Entiendo la espera y lo frustrante que puede sentirse. Voy a escalar tu caso al equipo de validación para que lo revisen con prioridad y te contacten lo antes posible.\"\nSi el cliente pregunta si su registro fue aprobado o rechazado: \"Aún no tenemos el resultado final de la revisión. En cuanto esté listo, recibirás un correo con toda la información. Si tienes alguna duda mientras tanto, aquí estamos.\"",
+          zendeskBody: "La frustración de «ya terminé y no pasa nada» es alta en este punto. Valida su emoción antes de dar la información: «Entendemos que ya hiciste toda tu parte y que la espera puede ser frustrante…»",
+        },
+        {
+          nombre: "AFA-04: Ya terminé el registro — ¿Ahora qué sigue?",
+          macro: "¡Listo, ya completaste el registro! Estos son los próximos pasos:\n1. Nu revisará tu información (Hasta 48 horas calendario).\n2. Recibirás un correo con el resultado de la revisión.\n3. Si todo está en orden, podrás activar tus productos desde la app.\n\nPara la tarjeta física, el tiempo de entrega varía según tu ciudad. Recibirás un correo con la fecha estimada una vez aprobada tu solicitud.",
+          shuffleChat: "Si el cliente pregunta cuándo llega la tarjeta física: \"El tiempo de entrega depende de tu ciudad. Una vez aprobada tu solicitud, recibirás la fecha estimada por correo. ¿En qué ciudad estás? Así puedo orientarte mejor.\"\nSi el cliente quiere saber si puede usar la tarjeta virtual mientras espera: \"¡Sí! Una vez activada tu tarjeta desde la app, puedes usarla para compras en línea de inmediato, sin necesidad de tener la tarjeta física en mano.\"",
+          zendeskBody: "Una vez confirmado el registro, el cliente quiere acción. Dale pasos concretos y deja claro quién hace qué: ellos esperan y revisan el correo, Nu revisa y notifica.\n\nMacros adicionales de inscripción y registro",
+        },
+        {
+          nombre: "AFA-05: No me llega el correo de confirmación",
+          macro: "Si el correo de confirmación no aparece, sigue estos pasos:\n1. Revisa tu carpeta de spam, correo no deseado y promoción.\n2. Verifica que el correo registrado esté bien escrito (sin errores tipográficos).\n3. El correo puede tardar hasta 5 minutos en llegar.\n4. Si pasados 5 minutos no llega, puedes solicitar el reenvío del correo.",
+          shuffleChat: "Si el correo está en spam: \"Busca en la carpeta de 'No deseados' o 'Spam' y marca el correo de Nu como seguro para que los próximos lleguen directamente a tu bandeja principal.\"\nSi el correo fue mal escrito: \"No hay problema. Confirma la dirección correcta y hacemos el reenvío de inmediato.\"",
+          zendeskBody: "Antes de reenviar el correo, verifica en Shuffle que el correo registrado es correcto. Si está mal escrito, el equipo debe corregirlo antes del reenvío.",
+        },
+        {
+          nombre: "AFA-06: Hago clic en el link de confirmación y no funciona Approved",
+          macro: "Si el link mágico no funciona, hay tres causas posibles:\n1. El link ya fue usado antes (es de un solo uso).\n2. El link expiró (vigencia de 72 horas desde su envío).\n3. El link se copió incompleto o con caracteres adicionales.\n\nSolución: podemos generarte un nuevo link mágico de inmediato. ¿Quieres que lo enviemos al mismo correo?",
+          shuffleChat: "Si el link ya fue usado: \"Cada link mágico funciona una sola vez por seguridad. Generamos uno nuevo y lo enviamos al instante.\"\nSi el cliente intenta abrir el link en un navegador diferente: \"Prueba abrir el link en Chrome, Firefox o Safari. Algunos navegadores tienen configuraciones que pueden bloquear redirecciones.\"",
+          zendeskBody: "El link mágico es de uso único y expira en 72 horas. Revisa en Shuffle el estado del prospecto antes de generar uno nuevo para confirmar que el proceso no fue completado ya.",
+        },
+        {
+          nombre: "AFA-07: ¿Cómo verifico mi correo con el link mágico?",
+          macro: "El link mágico es un enlace de verificación segura que Nu envía a tu correo.\n\n¿Cómo usarlo?\n1. Abre el correo de Nu en tu bandeja de entrada.\n2. Busca el botón o link que dice algo como 'Continuar mi registro' o 'Verificar mi correo'.\n3. Haz clic en ese link desde el mismo dispositivo donde quieres completar el registro.\n4. Listo - quedarás autenticado automáticamente, sin necesidad de contraseña.",
+          shuffleChat: "Si el cliente no encuentra el botón en el correo: \"A veces el correo llega sin formato (solo texto). En ese caso, busca una URL que comience con nu.com.co y copia y pega esa dirección completa en tu navegador.\"\nSi el cliente prefiere ingresar desde otro dispositivo: \"El link mágico funciona en cualquier dispositivo, pero úsalo en el mismo donde quieres continuar el registro para una experiencia más fluida.\"",
+          zendeskBody: "El link mágico es la forma más segura de acceder: no requiere contraseña y funciona solo una vez. Explícalo como 'una llave digital de un solo uso'.",
+        },
+        {
+          nombre: "AFA-09: ¿Cuánto tiempo tengo para terminar el proceso de registro?",
+          macro: "Tu invitación Nu tiene una vigencia de 45 días calendario desde que fue enviada a tu correo.\n\nEsto significa que tienes 45 días para completar todo el proceso de registro: confirmar el correo, verificar el celular, ingresar tus datos, seleccionar productos y firmar el pagaré (si aplica para tu producto).\n\nSi la invitación vence antes de que termines, no te preocupes: puedes volver a aplicar desde nu.com.co o la app Nu en cualquier momento.\n\nNuestra recomendación es terminar el proceso lo antes posible para aprovechar la oferta actual.",
+          shuffleChat: "Si la invitación ya venció (más de 45 días): \"Tu invitación ya no está activa. Sin embargo, puedes solicitar una nueva invitación desde nu.com.co, la app Nu o volver a aplicar por WhatsApp.\"\nSi el cliente quiere saber si puede pausar y retomar: \"¡Claro! Puedes pausar en cualquier paso y retomar desde donde quedaste. Tu progreso queda guardado automáticamente.\"",
+          zendeskBody: "La invitación vence en 45 días, pero el link mágico del correo solo dura 72 horas. Estos son dos tiempos distintos que vale la pena aclarar bien al cliente.",
+        },
+        {
+          nombre: "AFA-10: ¿Puedo terminar el registro en la página web?",
+          macro: "Sí, puedes iniciar tu solicitud por diferentes canales, pero ten en cuenta que, por tu seguridad, el registro siempre se finaliza en la App Nu.\nAquí te explico cómo puedes comenzar:\n\t•\tApp Nu: Es el canal principal. Puedes descargarla para iOS o Android y hacer todo el proceso desde allí.\n\t•\tPágina web (nu.com.co): Puedes aplicar desde tu computador o celular, y luego continuar en la app.\n\t•\tWhatsApp: Puedes iniciar tu aplicación escribiéndonos a nuestro número oficial y continuar el registro en la app.\nElige el canal que prefieras para empezar; una vez lo hagas, te guiaremos a la app para que completes tu registro de forma segura.",
+          shuffleChat: "Si el cliente no tiene smartphone: \"Puedes iniciar tu solicitud desde un computador o tablet en nu.com.co. Sin embargo, ten en cuenta que para finalizar el registro y proteger tus datos, será necesario completar el proceso desde la App Nu en un dispositivo móvil compatible.\"\nSi el cliente prefiere WhatsApp: \"Puedes iniciar tu aplicación escribiéndonos al número oficial de Nu Colombia por WhatsApp. Luego por seguridad, debes continuar el registro en tu app.\"",
+          zendeskBody: "Si el cliente dice que la web no carga o da error, verifica si está usando un navegador desactualizado (IE, versiones antiguas de Safari). RecómendaChrome o Firefox actualizados.",
+        },
+        {
+          nombre: "AFA-11: Tengo problemas para digitar la fecha de nacimiento",
+          macro: "El campo de fecha de nacimiento usa un selector de calendario en la app.\n\nPasos para ingresarla correctamente:\n1. Toca el campo de fecha - se abrirá un selector visual.\n2. Navega al mes y año correcto usando las flechas.\n3. Selecciona el día correspondiente.\n\nSi estás en la versión web, el formato es DD/MM/AAAA (día, mes, año).",
+          shuffleChat: "Si el selector no responde en la app: \"Intenta cerrar la app completamente y volver a abrirla. Si el problema persiste, prueba desde la versión web en nu.com.co donde puedes escribir la fecha directamente.\"\nSi la fecha no es aceptada (ej: cliente mayor de 100 años o menor de edad): \"Nu solo acepta mayores de edad (18 años o más). Si la fecha ingresada corresponde a un menor de edad, el sistema no la aceptará.\"",
+          zendeskBody: "Si el cliente tiene problemas con el selector, la versión web suele ser más fácil para este campo ya que permite escribir directamente.",
+        },
+        {
+          nombre: "AFA-12: ¿Cómo inició el proceso de registro para elegir mis productos?",
+          macro: "Para registrarte en Nu y elegir tus productos, sigue estos pasos:\n1. Accede por uno de los tres canales: nu.com.co, App Nu o WhatsApp.\n2. Ingresa tus datos: documento de identidad (CC, CE o PPT), correo electrónico, teléfono colombiano y nombre completo.\n3. Nu analiza tu información y te envía una invitación por correo con los productos disponibles para ti.\n4. Acepta la invitación y completa el registro en la app: datos financieros, PIN, firmas y fotos de tu documento.\n\nEl proceso completo toma menos de 5 minutos.",
+          shuffleChat: "Si el cliente pregunta qué productos puede obtener: \"Nu puede ofrecerte Cuenta de Ahorros, Tarjeta de Crédito o ambos, dependiendo de tu perfil. Los productos disponibles para ti los verás al recibir tu invitación.\"\nSi el cliente tiene PPT: \"Con PPT puedes registrarte y acceder a la Cuenta Nu y a CDT. La Tarjeta de Crédito no está disponible.",
+          zendeskBody: "El proceso de registro tiene dos momentos: (1) aplicar y recibir la invitación, y (2) completar el registro al aceptar la invitación. Acláralo bien para que el cliente sepa qué esperar.",
+        },
+        {
+          nombre: "AFA-13: Ya tengo cuenta con BR/MX — ¿tengo que registrarme nuevamente en Colombia?",
+          macro: "Nu Colombia es una entidad financiera independiente de Nu Brasil y Nu México.\n\nAunque comparten la misma marca y filosofía, cada operación tiene sus propios productos, regulaciones y sistemas.\n\nPor esto, si ya eres cliente Nu en otro país, deberás:\n1. Registrarte como cliente nuevo en Nu Colombia.\n2. Usar tu documento de identidad colombiano válido (CC, CE o PPT).\n3. Completar el proceso desde la app.",
+          shuffleChat: "Si el cliente ya conoce Nu y confía en la marca: \"¡Bienvenido de nuevo al universo Nu! Aunque el registro es nuevo, toda la filosofía que ya conoces - sin costos ocultos, todo desde la app - es exactamente igual en Colombia.\"\nSi el cliente pregunta si puede usar la misma app: \"La app de Nu Colombia es diferente a la de Brasil o México. Deberás descargar la app específica de Nu Colombia.\"",
+          zendeskBody: "Este cliente ya tiene una buena predisposición hacia Nu. Aprovecha esa confianza y haz el proceso de registro simple y claro para él.",
+        },
+        {
+          nombre: "AFA-14: Prospecto en pantalla de inicio — acceso anticipado al inicio",
+          macro: "Ver la pantalla de inicio después del registro es completamente normal.\n\nSignifica que tu registro fue recibido exitosamente y Nu está validando tu información.\n\nDurante este tiempo (hasta 48 horas calendario), podrás ver la pantalla de inicio, pero los productos no estarán activos aún.\n\nUna vez finalice la revisión, recibirás un correo con el resultado y podrás usar tus productos.",
+          shuffleChat: "Si el cliente cree que algo salió mal porque no ve sus productos: \"Todo va bien. La pantalla de inicio que ves confirma que tu registro llegó correctamente. Los productos se activarán en cuanto finalicemos la revisión de tu información.\"\nSi el cliente ya esperó más de 48 horas calendario sin novedades: \"Voy a escalar tu caso al equipo de validación para que lo revisen con prioridad. Te contactarán pronto.\"",
+          zendeskBody: "Ver el home no significa que el proceso falló. Es un estado intermedio mientras Nu valida. No generes alarma innecesaria: explícalo como algo positivo.",
+        },
+        {
+          nombre: "AFA-15: No sé si soy un PEP",
+          macro: "Un PEP (Persona Expuesta Políticamente) es alguien que ocupa o ha ocupado en los últimos 2 años un cargo de alto perfil público.\n\nEjemplos de cargos PEP:\n• Funcionarios de gobierno: presidentes, ministros, alcaldes, gobernadores, congresistas.\n• Altos directivos de entidades públicas o militares.\n• Jueces, magistrados o fiscales de alto rango.\n• Directivos de partidos políticos.\n• Familiares directos o asociados cercanos de las personas anteriores.\n\nSi tienes dudas sobre si aplicas, marca la opción que consideres correcta y el equipo de Nu podrá orientarte si es necesario.",
+          shuffleChat: "Si el cliente trabaja en el gobierno pero en un cargo operativo: \"No todos los funcionarios públicos son PEP. Solo aplica para cargos de alta responsabilidad y exposición pública. Un empleado administrativo de nivel operativo generalmente no es PEP.\"\nSi el cliente tiene un familiar que es PEP: \"Los familiares directos (cónyuge, hijos, padres) de un PEP también pueden clasificar como PEP por asociación. Si tienes dudas, es mejor declararlo y el equipo de cumplimiento lo revisará.\"",
+          zendeskBody: "",
+        },
+        {
+          nombre: "AFA-16: ¿Qué es ser un/a PEP?",
+          macro: "PEP significa Persona Expuesta Políticamente.\n\nSon personas que, por su cargo o posición, tienen mayor exposición a riesgos de corrupción, lavado de activos u otros delitos financieros.\n\nNu pregunta esto por obligación legal (SARLAFT) para gestionar adecuadamente los riesgos financieros y cumplir con las normas de prevención de lavado de activos.\n\nSer PEP no impide ser cliente de Nu, pero sí implica un proceso de vinculación más detallado.",
+          shuffleChat: "Si el cliente pregunta si ser PEP lo bloquea de tener productos Nu: \"No. Ser PEP no te impide tener productos con Nu. Solo implica que el proceso de vinculación incluye pasos adicionales de verificación, como lo establece la regulación colombiana.\"\nSi el cliente se siente incómodo con la pregunta: \"Entendemos que es una pregunta sensible. Es un requisito estándar en toda entidad financiera en Colombia, sin excepción. No refleja ningún tipo de desconfianza hacia ti.\"",
+          zendeskBody: "",
+        },
+        {
+          nombre: "AFA-17: ¿Qué implicaciones tiene ser un PEP? Approved",
+          macro: "Declararte como PEP es un requisito legal y no afecta tu posibilidad de tener productos con Nu. Lo que cambia es el proceso de vinculación:\n\t•\tEs posible que solicitemos documentación adicional para verificar el origen de tus fondos.\n\t•\tEl área encargadadebe revisar tu solicitud, por lo que el proceso puede tomar un poco más de tiempo de lo habitual.\nSer funcionario público no es un impedimento para ser cliente. Una vez completado el proceso, disfrutas de los mismos productos y beneficios que cualquier otro cliente.",
+          shuffleChat: "Si el cliente pregunta cuánto más tiempo tarda el proceso: \"El tiempo adicional depende de la documentación requerida por el área encargada. Te notificaremos si necesitamos información adicional.\"\nSi el cliente se niega a declarar que es PEP: \"La declaración de PEP es obligatoria por ley. Si omites esta información y el sistema lo detecta posteriormente, puede generar inconvenientes con tu cuenta. Es mejor declararlo desde el inicio.\"",
+          zendeskBody: "",
+        },
+        {
+          nombre: "AFA-18: Pasos para elegir las llaves",
+          macro: "Durante el registro, Nu te pedirá elegir una o más llaves Bre-B para tu cuenta.\n\nLos tipos de llave disponibles son:\n• Número de celúlar\n• Cédula de ciudadanía (CC)\n• Cédula de extranjería (CE)\n• Correo electrónico\n\nPuedes elegir una o más llaves. Te recomendamos al menos dos para mayor flexibilidad al recibir transferencias.",
+          shuffleChat: "Si el cliente no sabe cuál llave elegir: \"Te recomendamos agregar tu número de celular y tu correo. Son las llaves más fáciles de compartir y recordar cuando quieras recibir transferencias.\"\nSi el cliente tiene PPT y quiere registrar ese documento: \"El PPT no puede registrarse como llave Bre-B. Solo CC, CE, celular y correo son válidos como llaves.\"",
+          zendeskBody: "Las llaves Bre-B son el identificador que otras personas usan para transferirte dinero. Explica esto antes de que el cliente elija para que tome una decisión informada.",
+        },
+        {
+          nombre: "AFA-19: Pasos para registrar las llaves Approved",
+          macro: "El registro de llaves Bre-B sucede automáticamente durante el proceso de registro en Nu.\n\nPasos que verás en la app:\n1. La app te mostrará los tipos de llave disponibles.\n2. Selecciona la(s) llave(s) que quieres registrar.\n3. Confirma tu selección.\n4. Listo - tus llaves quedan registradas al finalizar el registro.\n\nTambién puedes agregar o eliminar llaves después del registro desde la app.",
+          shuffleChat: "Si el cliente quiere saltarse el paso de llaves: \"Puedes omitir este paso durante el registro y agregar llaves más adelante desde la app. Sin llaves registradas no podrás recibir transferencias Bre-B.\"\nSi las llaves no se guardan correctamente: \"Si el registro de llaves falló, puedes agregarlas manualmente desde la sección de Cuenta Nu > Llaves en la app una vez activa tu cuenta.\"",
+          zendeskBody: "",
+        },
+        {
+          nombre: "AFA-20: ¿Es obligatorio elegir las llaves para terminar el registro?",
+          macro: "No, el registro de llaves Bre-B no es obligatorio para completar el proceso de registro.\n\nPuedes omitirlo durante el registro y agregarlo después desde la app.\n\nSin embargo, ten en cuenta que sin llaves registradas no podrás recibir transferencias inmediatas Bre-B de otras personas.\n\nPuedes agregar tus llaves en cualquier momento desde la app Nu: Cuenta Nu > Llaves > Agregar llave.",
+          shuffleChat: "Si el cliente quiere hacerlo después: \"No hay problema. Cuando quieras agregar llaves, ve a tu Cuenta Nu en la app y busca la sección de llaves. El proceso toma menos de un minuto.\"\nSi el cliente no sabe qué son las llaves: \"Las llaves son como tu alias bancario en el sistema Bre-B. Son el identificador que le das a otras personas para que te transfieran dinero fácilmente, sin necesidad de compartir tu número de cuenta.\"",
+          zendeskBody: "",
+        },
+        {
+          nombre: "AFA-21: ¿Qué son las llaves Bre-B? Approved",
+          macro: "Las llaves Bre-B son identificadores que puedes registrar en tu Cuenta Nu para recibir transferencias inmediatas.\n\nEn lugar de compartir tu número de cuenta bancaria, puedes darle a alguien tu llave (celular, correo o cédula) y ellos te transfieren dinéro directamente.\n\nBre-B es el sistema de transferencias inmediatas del Banco de la República de Colombia.\n\nLas llaves disponibles son: número de celular, correo electrónico, cédula de ciudadanía (CC) o cédula de extranjería (CE).",
+          shuffleChat: "Si el cliente pregunta si es seguro dar su llave a otros: \"Sí, es seguro. Tu llave solo permite que te envíen dinero, nunca que lo retiren. No da acceso a tu cuenta.\"\nSi el cliente pregunta cuántas llaves puede tener: \"Puedes tener múltiples llaves. Te recomendamos registrar al menos dos para mayor flexibilidad.\"",
+          zendeskBody: "Si el cliente viene de Brasil y conoce PIX, explica que Bre-B es exactamente lo mismo: transferencias instantáneas usando un alias en vez del número de cuenta.",
+        },
+        {
+          nombre: "AFA-22: ¿Puedo eliminar o agregar más llaves después? Approved",
+          macro: "Sí, puedes gestionar tus llaves Bre-B en cualquier momento desde la app Nu.\n\nPara agregar una nueva llave:\n1. Ve a Cuenta Nu > Llaves.\n2. Toca 'Agregar llave'.\n3. Selecciona el tipo y confirma.\n\nPara eliminar una llave:\n1. Ve a Cuenta Nu > Llaves.\n2. Selecciona la llave que deseas eliminar.\n3. Confirma la eliminación.",
+          shuffleChat: "Si el cliente quiere saber cuántas llaves puede tener: \"No hay un límite definido para el número de llaves. Puedes agregar tantas como necesites.\"\nSi el cliente elimina una llave que otros ya conocen: \"Al eliminar una llave, ya no podrás recibir transferencias a esa llave. Asegúrate de notificar a quienes la tenían guardada.\"",
+          zendeskBody: "",
+        },
+        {
+          nombre: "AFA-23: ¿Por qué no puedo registrar mi PPT como llave?Approved",
+          macro: "El Permiso Temporal de Protección (PPT) no puede usarse como llave Bre-B por una limitación técnica y regulatoria del sistema Bre-B.\n\nBre-B actualmente acepta como llaves solo los documentos permanentes reconocidos por el sistema financiero colombiano:\n• Cédula de Ciudadanía (CC)\n• Cédula de Extranjería (CE)\n• Número de celular\n• Correo electrónico\n\nCon PPT, puedes usar tu celular o correo como llave sin ningún problema.",
+          shuffleChat: "Si el cliente está frustrado con esta limitación: \"Entendemos la inconveniencia. Aunque el PPT no puede ser llave, tu celular y correo funcionan perfectamente como llaves Bre-B y son incluso más fáciles de recordar.\"\nSi el cliente pregunta si esto cambiará en el futuro: \"Nu trabaja continuamente para ampliar las opciones disponibles. Por ahora, la alternativa más práctica es registrar tu celular o correo como llave.\"",
+          zendeskBody: "Esta limitación es del sistema Bre-B, no de Nu. Acláralo así para evitar que el cliente sienta que Nu está discriminando su documento.",
+        },
+        {
+          nombre: "AFA-24: ¿Puedo tener otro producto Nu en el futuro?",
+          macro: "Nu evalúa periódicamente el perfil de sus clientes y puede hacerte nuevas ofertas de productos con el tiempo. Este proceso es automático: no hay una solicitud manual que puedas hacer. El sistema analiza tu perfil financiero de forma recurrente y, si identifica una oferta adecuada para ti, te notificará directamente en la app. Te recomendamos revisarla periódicamente para no perderte ninguna novedad.",
+          shuffleChat: "Si el cliente pregunta cuánto tiempo tarda en recibir la tarjeta: \"El tiempo varía según el perfil de cada cliente. Nu no maneja tiempos fijos para esto.\"\nSi el cliente está interesado en CDTs: \"Los CDTs están disponibles para ti desde tu cuenta de ahorros Nu. Solo ingresa a la sección de Cajitas en la app y busca la opción Invertir en CDT para comenzar.\"",
+          zendeskBody: "",
+        },
+        {
+          nombre: "AFA-25: ¿Me van a enviar el contrato a algún lado? Approved",
+          macro: "Sí, al completar tu registro Nu te envía los documentos contractuales directamente a tu correo electrónico registrado.\nSi no encuentras el mensaje, revisa tu carpeta de spam o correo no deseado.",
+          shuffleChat: "Si el cliente necesita el contrato para un trámite: \"El contrato descargado desde la app tiene plena validez. Si necesitas una versión con certificación especial, contáctanos y gestionamos el documento requerido.\"\nSi el cliente nunca recibió el correo con el contrato: \"Revisa spam y promoción. Si definitivamente no está, podemos reenviarlo o puedes descargarlo directamente desde la app.\"\n\nAFA-26  ¿Cómo transfiero a otros bancos con Bre-B?    Approved\nRevisado por QA   Approved\n\nPreguntas reales de usuarios\n\"¿Cómo hago una transferencia a otro banco desde Nu?\"\n\"Quiero enviar plata a alguien de Bancolombia, ¿cómo lo hago?\"\n\"¿Nu tiene transferencias inmediatas?\"\n\nRespuesta mejorada\nPuedes transferir a cualquier banco colombiano usando Bre-B desde la app Nu:\n\n1. Abre la app Nu.\n2. Ve a tu Cuenta Nu y selecciona 'Enviar'.\n3. Elige si quieres enviar por llave Bre-B o por número de cuenta.\n4. Ingresa la llave o número de cuenta del destinatario.\n5. Confirma el monto y listo.\n\nLas transferencias Bre-B son instantáneas, disponibles 24/7 y sin costo para el remitente.\n\nFrases complementarias para el agente\nSi el destinatario no tiene llave Bre-B: \"Si el destinatario no tiene llave registrada, puedes enviar por número de cuenta bancaria tradicional. En ese caso, la transferencia puede tardar hasta 24 horas hábiles.\"\nSi el cliente pregunta si hay límites: \"Hay límites diarios para las transferencias Bre-B. Puedes consultarlos en la app y ajustarlos según tus necesidades.\"",
+          zendeskBody: "",
+        },
+        {
+          nombre: "AFA-27: ¿Qué son las transferencias inmediatas con llaves?Approved",
+          macro: "Las llaves son identificadores asociados a tu Cuenta Nu que otras personas usan para enviarte dinero instantáneamente.\n\nTipos de llave que puedes registrar: celular, correo electrónico, CC o CE.\n\nDiferencia con transferencia tradicional:\n• Con llave: solo necesitas compartir tu llave (ej: tu celular). Instantáneo, 24/7.\n• Con número de cuenta: necesitas proporcionar número de cuenta, tipo de cuenta y banco. Puede tardar hasta 24 horas hábiles.",
+          shuffleChat: "Si el cliente quiere compartir su llave: \"Simplemente compártele a quien quieras enviarte dinero tu llave (ej: tu número de celular). Ellos podrán hacerte la transferencia desde cualquier banco de Colombia que tenga Bre-B activo.\"\nSi el cliente recibe una transferencia y no llega: \"Verifica que la llave esté activa en tu cuenta. Si la llave está registrada y el remitente confirmó el envío, la transferencia debería llegar en segundos. Escala si el problema persiste.\"",
+          zendeskBody: "",
+        },
+        {
+          nombre: "AFA-28: ¿Hay un límite de transferencias usando Bre-B?Approved",
+          macro: "Sí, existen límites diarios para las transferencias Bre-B en Nu.\nEl monto máximo por transacción Bre-B es de 1.000 UVB, equivalentes a $12.110.000 COP para 2026.\nSi necesitas transferir un monto mayor, deberás realizarlo en varias transacciones.",
+          shuffleChat: "Si el cliente necesita un límite mayor para una transacción: \"Desde la app puedes solicitar un ajuste temporal o permanente del límite. Este proceso puede requerir verificación adicional según el monto.\"\nSi el cliente no puede ver los límites en la app: \"Los límites están disponibles en la sección de configuración de tu cuenta. Si no encuentras la opción, actualiza la app o contáctanos.\"",
+          zendeskBody: "",
+        },
+        {
+          nombre: "AFA-29: ¿Puedo transferir de PIX a Bre-B? Approved",
+          macro: "Actualmente, PIX (Brasil) y Bre-B (Colombia) son sistemas nacionales independientes y no tienen interoperabilidad directa.\n\nEsto significa que no es posible hacer una transferencia directa de PIX a Bre-B.",
+          shuffleChat: "Si el cliente necesita recibir remesas frecuentemente: \"Existen varios servicios especializados en envíos internacionales Colombia-Brasil con tarifas competitivas. Una vez llegue el dinero a tu cuenta bancaria en Colombia, puedes moverlo a Nu libremente.\"\nSi el cliente pregunta si esto cambiará en el futuro: \"La interoperabilidad entre sistemas de pago instantáneo de diferentes países es un tema en desarrollo. Por ahora, no tenemos información confirmada de una integración PIX-Bre-B.\"",
+          zendeskBody: "",
+        },
+        {
+          nombre: "AFA-30: ¿Qué diferencia hay entre Bre-B y Redeban?",
+          macro: "Bre-B y Redeban son sistemas complementarios pero diferentes:\n\nBre-B:\n• Sistema del Banco de la República para transferencias entre cuentas bancarias.\n• Se usa para enviar y recibir dinero entre personas y empresas.\n• Usa llaves como identificadores.\n• Instantáneo, 24/7, gratuito.\n\nRedeban:\n• Red de procesamiento de pagos con tarjeta en datafónos.\n• Se usa cuando pagas con tarjeta en tiendas, restaurantes y comercios.\n• No es para transferencias entre personas.",
+          shuffleChat: "Si el cliente está confundido: \"Fácil: Bre-B es para enviar dinero de una cuenta a otra (como a un amigo o familiar). Redeban es lo que procesa el pago cuando deslizas o insertas tu tarjeta en un comercio.\"\nSi el cliente pregunta por qué su pago fue procesado por Redeban: \"Cuando pagas con tarjeta física en un establecimiento, la transacción pasa por la red de adquirencia (puede ser Redeban u otras). Eso es normal y no indica ningún problema.\"",
+          zendeskBody: "",
+        },
+        {
+          nombre: "AFA-31: ¿Los menores de edad pueden tener productos Nu?",
+          macro: "En este momento, los productos de Nu Colombia son exclusivos para personas mayores de 18 años.\n\nDocumentos válidos para el registro: Cédula de Ciudadanía (CC) · Cédula de Extranjería (CE) vigente · Permiso de Protección Temporal (PPT) vigente.\n\nNu está trabajando constantemente para ampliar su portafolio. Por el momento, no hay productos disponibles para menores de edad.\n\nCuando el menor cumpla la mayoría de edad y tenga Cédula de Ciudadanía, podrá aplicar a Nu de forma independiente.",
+          shuffleChat: "Si el cliente quiere productos para su hijo menor de edad: \"Por ahora, Nu no tiene productos diseñados para menores de edad. Cuando tu hijo cumpla 18 años, podrá aplicar a sus propios productos Nu.\"\nSi el cliente pregunta si puede gestionar la cuenta a nombre del menor: \"No es posible abrir una cuenta Nu a nombre de un menor de edad ni gestionarla en su nombre. La vinculación es siempre personal y directa.\"",
+          zendeskBody: "",
+        },
+        {
+          nombre: "AFA-32: Prospecto abandoned o confirmed: mensaje en blanco o sin contexto Approved",
+          macro: "Recibimos tu mensaje, pero necesitamos un poco más de contexto para orientarte de la mejor manera.\n\n¿Nos puedes contar qué estás necesitando? Por ejemplo:\n• ¿Tienes dudas sobre cómo iniciar el proceso de registro con Nu?\n• ¿Ya empezaste el registro y te quedó a medias?\n• ¿Tienes preguntas sobre los productos Nu (tarjeta de crédito, cuenta de ahorros)?\n\nCon esa información podemos darte la respuesta correcta directamente y sin rodeos.",
+          shuffleChat: "Para indagar el contexto: \"Para ayudarte mejor, ¿puedes contarme un poco más sobre tu consulta? Por ejemplo: ¿es sobre el proceso de registro, un producto específico, o algo más?\"\nSi el cliente no responde: \"Si tienes alguna duda en el futuro, no dudes en escribirnos. Estamos disponibles para ayudarte.\"",
+          zendeskBody: "Para este tipo de contactos sin contexto, es clave preguntar de forma abierta y amigable sin asumir el tema. Evita lanzar una lista de opciones que puede abrumar.",
+        },
+        {
+          nombre: "AFA-33: Usuario no sabe cómo retomar su registro (abandoned)",
+          macro: "Puedes retomar tu registro desde donde lo dejaste siguiendo estos pasos:\n\n1. Abre la app Nu en tu celular.\n2. Ingresa con tu correo electrónico (el mismo que usaste al iniciar).\n3. Revisa tu bandeja de entrada - te enviamos un link mágico para continuar.\n4. Haz clic en ese link y la app te llevará exactamente al punto donde quedaste.\n\nSi el link ya venció (más de 72 horas), podemos enviarte uno nuevo.",
+          shuffleChat: "Si el cliente no recuerda con qué correo se registró: \"¿Tienes algún otro correo que puedas revisar?.\"\n Si el cliente dice que la app no le muestra el registro pendiente: \"Revisa en Shuffle en qué etapa está el prospecto y dale las instrucciones específicas para ese paso. El mensaje debe ser preciso al contexto.\"",
+          zendeskBody: "Revisa en Shuffle el estado exacto del prospecto antes de responder. Las instrucciones son diferentes si está en 'Abandoned', 'Confirmed', 'Docs Requested', etc.",
+        },
+        {
+          nombre: "AFA-34: ¿Cuándo puedo empezar a usar mi Cuenta Nu y mis llaves?",
+          macro: "Una vez aprobado tu registro, puedes comenzar a usar tu Cuenta Nu de inmediato:\n\n• Cuenta Nu y llaves Bre-B: disponibles desde el momento de la aprobación. Puedes recibir depósitos y hacer transferencias de inmediato.\n\n• Tarjeta virtual: disponible desde la aprobación para compras en línea.\n\n• Tarjeta física: llega en los días posteriores según tu ciudad (ver tiempos de entrega).",
+          shuffleChat: "Si el cliente quiere hacer un depósito antes de que llegue la tarjeta: \"¡Sí, puedes hacerlo! Tu Cuenta Nu está activa desde la aprobación. Comparte tu llave Bre-B o tu número de cuenta para recibir depósitos.\"\nSi el cliente quiere comprar en línea antes de recibir la tarjeta física: \"Puedes usar tu tarjeta virtual de inmediato. Los datos de la tarjeta virtual los encuentras en la app en la sección de tu tarjeta de crédito.\"",
+          zendeskBody: "",
+        },
+        {
+          nombre: "AFA-35: ¿Por qué me piden que confirme el email?",
+          macro: "La verificación del correo electrónico es necesaria por dos razones:\n\n1. Seguridad: confirma que el correo registrado es tuyo y que tienes acceso a él.\n2. Comunicación: es el canal principal para notificaciones importantes, extractos, alertas y novedades de tu cuenta.\n\nSin el correo verificado, algunas funcionalidades de la cuenta pueden estar restringidas.",
+          shuffleChat: "Si el cliente pregunta si puede saltar este paso: \"La verificación del correo es obligatoria para completar el proceso de vinculación. Es un paso de seguridad que protege tu cuenta.\"\nSi el correo de verificación no llega: \"Revisa tu carpeta de spam. Si no está, podemos reenviar el correo de verificación de inmediato.\"",
+          zendeskBody: "",
+        },
+        {
+          nombre: "AFA-36: Si no quiero confirmar el email, ¿qué pasa?",
+          macro: "La verificación del correo es un paso obligatorio en el proceso de registro de Nu.\n\nSi no confirmas el correo, no podrás completar el proceso de vinculación y activar tus productos.\n\nSi no tienes acceso al correo que registraste, podemos ayudarte a:\n1. Reenviar el correo de verificación al mismo correo.\n2. Actualizar el correo si fue un error de digitación.",
+          shuffleChat: "Si el correo fue mal escrito: \"Si el correo tiene un error, podemos corregirlo. Confírmame el correo correcto y hacemos el ajuste para que puedas continuar.\"\nSi el cliente ya no usa ese correo: \"Puedes actualizar el correo de contacto antes de completar el registro. Una vez verificado el nuevo correo, el proceso continúa normalmente.\"",
+          zendeskBody: "",
+        },
+        {
+          nombre: "AFA-37: Si no quiero verificar el celúlar, ¿qué pasa?",
+          macro: "La verificación del número de celular es un paso obligatorio en el proceso de registro de Nu.\n\nSe requiere porque:\n• Es necesaria para la seguridad de tu cuenta (autenticación de dos factores).\n• Se usa para notificaciones importantes en tiempo real.\n• Es requisito regulatorio para entidades financieras en Colombia.\n\nSin celular verificado, el proceso de vinculación no puede completarse.",
+          shuffleChat: "Si el cliente no tiene un número colombiano: \"Nu Colombia requiere un número de celular colombiano para el registro. Si actualmente no tienes un número local, necesitarás obtener uno para completar el proceso.\"\nSi el cliente está preocupado por recibir publicidad: \"Tu número se usa exclusivamente para seguridad y notificaciones de tu cuenta. Nu no lo usa para fines publicitarios sin tu autorización.\"",
+          zendeskBody: "",
+        },
+        {
+          nombre: "AFA-38: ¿Es obligatorio firmar el pagaré?",
+          macro: "Sí, firmar el pagaré es obligatorio para completar el proceso de solicitud de tarjeta de crédito Nu.\n\nEl pagaré es un documento legal que respalda el cupo de crédito que Nu te otorga. Es un instrumento estándar en el sistema financiero colombiano y es requerido por la regulación.\n\nAntes de firmarlo, podrás revisarlo completo desde la app. Una vez que lo firmes, Nu te envía una copia al correo registrado para que siempre tengas acceso a él.\n\nSin la firma del pagaré, el proceso de tarjeta de crédito no puede completarse.",
+          shuffleChat: "Si el cliente tiene dudas sobre qué está firmando: \"El pagaré que firmas con Nu es un instrumento que garantiza el crédito de tu tarjeta. Funciona como respaldo para Nu en caso de que no puedas pagar tu deuda. Es un documento completamente estándar en la banca colombiana.\"\nSi el cliente quiere leer el pagaré antes de firmar: \"Puedes revisar el documento completo antes de firmarlo. Si tienes dudas específicas sobre alguna cláusula, puedes consultarlo con un asesor legal independiente.\"",
+          zendeskBody: "",
+        },
+        {
+          nombre: "AFA-39: ¿Por qué el pagaré viene en blanco?",
+          macro: "Es completamente normal y legal en Colombia que el pagaré de una tarjeta de crédito no especifique un monto fijo.\n\n¿Por qué?\nUna tarjeta de crédito es un crédito rotativo: el monto adeudado cambia mes a mes según tus consumos. Por eso, el pagaré se firma como instrumento de respaldo general para el crédito de la tarjeta.\n\nLo que sí está claro en el contrato son las condiciones: tasa de interés, cupo aprobado y condiciones de pago.",
+          shuffleChat: "Si el cliente tiene miedo de que Nu llene el pagaré con una cifra arbitraria: \"El pagaré solo puede utilizarse para reclamar el saldo real de tu deuda con Nu, que siempre puede verificarse en tu extracto. Esto está regulado por la Superintendencia Financiera.\"\nSi el cliente quiere más garantías sobre el uso del pagaré: \"Tienes derecho a solicitar una copia del pagaré firmado y guardarlo. Además, siempre puedes consultar tu deuda real en la app en tiempo real.\"",
+          zendeskBody: "",
+        },
+        {
+          nombre: "AFA-40: ¿Qué es un pagaré?",
+          macro: "Un pagaré es un documento financiero legal en el que una persona se compromete a pagar una deuda.\n\nEn el caso de Nu:\n• Es el instrumento que respalda el crédito de tu tarjeta.\n• Al firmarlo, reconoces que utilizaste el crédito y te comprometes a pagarlo según las condiciones acordadas.\n• Es un documento estándar que todos los bancos y entidades de crédito en Colombia utilizan.\n\nFirmar el pagaré no tiene ninguna implicación negativa: es simplemente el soporte legal de tu tarjeta de crédito.",
+          shuffleChat: "Si el cliente tiene miedo de las implicaciones legales: \"El pagaré solo aplica si tienes una deuda con Nu y no la pagas. Mientras uses la tarjeta responsablemente y pagues tus obligaciones, el pagaré no tiene ninguna implicación práctica para ti.\"\nSi el cliente quiere saber si puede cancelar el pagaré: \"El pagaré se cancela automáticamente cuando cierras o cancelas tu tarjeta de crédito con Nu y no tienes saldo pendiente.\"",
+          zendeskBody: "",
+        },
+        {
+          nombre: "AFA-41: Requisitos para tener productos con Nu (email)",
+          macro: "Los requisitos para aplicar a Nu Colombia son:\n\n• Ser mayor de edad (18 años o más).\n• Tener documento de identidad válido: Cédula de Ciudadanía (CC), Cédula de Extranjería (CE) o Permiso por Protección Temporal (PPT).\n• Tener un correo electrónico válido y activo.\n• Tener un número de teléfono celular colombiano.\n\nPuedes aplicar en: nu.com.co, App Nu (iOS/Android) o WhatsApp.",
+          shuffleChat: "Si el cliente tiene PPT: \"Con PPT puedes acceder a la Cuenta Nu y a CDT. La Tarjeta de Crédito tiene restricciones.\"\nSi el cliente pregunta por documentos adicionales: \"En la mayoría de casos, solo necesitas el documento de identidad y tus datos básicos. En algunos casos, Nu puede solicitar documentos adicionales de ingresos o residencia según el análisis del perfil.\"",
+          zendeskBody: "",
+        },
+        {
+          nombre: "AFA-42: ¿Cuánto tiempo tengo para subir las fotos si no tengo mi documento?",
+          macro: "Tienes 45 días calendario desde el momento en que recibiste la invitación de Nu para completar el registro, incluyendo el envío de las fotos de tu documento.\n\nSi en este momento no tienes tu documento a mano, no te preocupes. Puedes avanzar en otros pasos del registro (datos personales, selección de productos, PIN) y luego regresar al paso de fotos cuando tengas el documento disponible.\n\nSi tu documento fue perdido, robado o está en trámite de reexpedición, los 45 días te dan margen suficiente para gestionarlo.\n\nSi la invitación vence antes de tener el documento, puedes volver a aplicar desde nu.com.co cuando esté listo.",
+          shuffleChat: "Si el cliente perdió su documento: \"Si perdiste tu documento, primero debes tramitar el duplicado ante la Registraduría. Una vez lo tengas, puedes continuar el proceso. Mientras tanto, el registro queda en espera.\"\nSi el cliente solo tiene la versión digital de la cédula: \"La cédula digital puede ser aceptada para el proceso. Sigue las instrucciones en la app para tomar la foto de la versión digital de tu documento.\"",
+          zendeskBody: "Verifica en Shuffle si el prospecto tiene el tag 'docs_request' antes de responder. Solo se piden fotos cuando ese tag está activo.",
+        },
+        {
+          nombre: "AFA-43: ¿Puedo enviar las fotos por correo u otro medio?",
+          macro: "Por seguridad, las fotos de tu documento solo se pueden cargar a través del proceso oficial en la app Nu.\n\nNu NO recibe fotos de documentos por correo, WhatsApp, chat de atención ni ningún otro canal.\n\nEsto protege la integridad y confidencialidad de tu información personal.\n\nSi tienes problemas técnicos para cargar las fotos desde la app, podemos ayudarte a resolver el inconveniente técnico.",
+          shuffleChat: "Si el cliente tiene problemas técnicos con las fotos: \"Cuéntame qué error ves cuando intentas tomar o cargar la foto. Puede ser un problema con los permisos de cámara, la versión de la app, o la calidad de la imagen.\"\nSi el cliente insiste en enviarlas por otro canal: \"Entendemos la incomodidad, pero por tu propia seguridad no podemos aceptar documentos por otros canales. El proceso seguro garantiza que tu información solo la vea el equipo autorizado.\"",
+          zendeskBody: "",
+        },
+        {
+          nombre: "AFA-44: ¿Qué hago si tengo solo mi cédula digital?",
+          macro: "Entendemos que puede ser más cómodo usar la cédula digital, sin embargo, para completar tu registro en Nu es necesario contar con tu cédula de ciudadanía física.\nEsto se debe a que durante el proceso de validación de identidad, el sistema requiere fotografías del documento físico y no acepta el formato digital.\nSi en este momento no cuentas con tu cédula física, te recomendamos tramitarla y volver a intentar tu registro una vez la tengas disponible.\"",
+          shuffleChat: "Si la foto de la cédula digital no es aceptada: \"Si el cliente insiste en usar la cédula digital: \"Entendemos que es más práctico, pero por el momento nuestro proceso de validación de identidad solo permite fotografías de la cédula física. Lamentablemente no hay una alternativa disponible con el formato digital.\"\nSi el cliente solo tiene el PDF de la cédula: Si el cliente dice que perdió o no tiene su cédula física: \"En ese caso, te recomendamos tramitar tu cédula física en la Registraduría Nacional y volver a intentar tu registro una vez la tengas disponible. El proceso de solicitud puedes hacerlo en línea o en el punto de atención más cercano.\"\n\nSección 2: Fotos, PPT y Documentos (FoN)\n\nEsta sección cubre las 24 macros relacionadas con el proceso de fotografía de documentos de identidad, documentos alternativos y casos especiales de ciudadanos extranjeros.\n\n⚠️ Regla crítica para todo el flujo de fotos\nNUNCA le pidas al cliente que envíe fotos de su documento si el sistema no tiene el tag 'docs_request'. Las macros de FoN (Fotos No Recibidas) tienen condiciones de uso específicas - léelas antes de enviar.\n\nDocumentos aceptados para el registro: Cédula de Ciudadanía (CC) · Cédula de Extranjería (CE) vigente · Permiso Temporal de Protección (PPT) vigente\nNota: El PPT NO puede ser registrado como llave Bre-B y NO tiene acceso al producto Tarjeta de Crédito",
+          zendeskBody: "",
+        },
+        {
+          nombre: "CDT-01: ¿Qué requisitos necesito para abrir un CDT Nu?",
+          macro: "Para abrir un CDT Nu necesitas cumplir con los siguientes requisitos:\n\nDocumentos válidos: Cédula de Ciudadanía (CC) o Cédula de Extranjería (CE) vigente.\n\nNota importante: Si tu documento de identificación es PPT (Permiso por Protección Temporal) también podrás crear CDTs directamente desde su app de Nu.\n\nAdemás, debes tener una Cuenta de Ahorros Nu activa. Si ya eres cliente Nu, el CDT aparece disponible en la app en la opción invertir en CDT.",
+          shuffleChat: "Si el cliente pregunta si puede abrir el CDT sin tener tarjeta de crédito: \"¡Sí! El CDT solo requiere tener la Cuenta Nu activa: no necesitas tener la tarjeta de crédito para invertir en un CDT.\"\nSi el cliente pregunta sobre la tasa del CDT: \"Las tasas de los CDTs Nu están disponibles en la app al momento de crear tu Cajita. Varían según el plazo que elijas.\"",
+          zendeskBody: "Si el cliente tiene PPT, usa CDT-02 inmediatamente.",
+        },
+        {
+          nombre: "CDT-02: ¿Puedo registrarme con el PPT para invertir en un CDT?",
+          macro: "Entendemos tu interés en los CDTs de Nu. El Permiso de Protección Temporal (PPT) te da acceso al producto CDT en Nu Colombia.\n\nCon PPT vigente puedes acceder a la Cuenta de Ahorros Nu - que también ofrece rendimientos diarios superiores al promedio del mercado, sin costos de manejo.\n\nPara acceder al CDT Nu, se requiere Cédula de Ciudadanía (CC) , Cédula de Extranjería (CE) vigente o Permiso de Protección Temporal (PPT) vigente.",
+          shuffleChat: "Si el cliente con PPT pregunta cuándo estará disponible el CDT para ellos: \"Los clientes que tienen identificación PPT (Permiso por Protección Temporal) también podrán crear CDTs directamente desde su app de Nu.\nEsto significa que, cuando un cliente con PPT pregunte por inversión en CDTs o apertura de un nuevo CDT, ya podemos orientarlo con el mismo flujo estándar desde la aplicación.\"",
+          zendeskBody: "Aclara siempre que no hay restricción para clientes con PPT si desean empezar a invertir en CDTs.\n\nSección 5: Prospecto Solicita Cancelar su Invitación (Opt-out)\n\nProceso de opt-out - flujo de dos pasos\nLa cancelación de la invitación Nu tiene un flujo de dos mensajes obligatorio:\nPaso 1: Todos los agentes envían la macro OPT-01 (recepción y confirmación del reporte).\nPaso 2: SOLO los agentes ACQ envían la macro OPT-02 (confirmación definitiva del opt-out) una vez el sistema lo procesa.\n\n⚠️ No enviar OPT-02 sin tener la confirmación del sistema. El prospecto puede cambiar de opinión.",
+        },
+        {
+          nombre: "FON-01: Fotos borrosas",
+          macro: "Gracias por enviarnos las fotos. Revisamos las imágenes y notamos que no tienen la claridad suficiente para completar la validación.\n\nPara que tus fotos sean aceptadas, asegúrate de:\n1. Estar en un lugar bien iluminado, preferiblemente con luz natural (sin flash directo).\n2. Colocar el documento sobre una superficie plana y estable.\n3. Mantener la cámara quieta al tomar la foto - apoya los codos si es necesario.\n4. Verificar que no haya reflejos ni brillos sobre el documento.\n5. Asegurarte de que todos los datos del documento sean legibles.",
+          shuffleChat: "Si el cliente no entiende por qué se rechazaron: \"Las fotos deben permitir leer claramente todos los datos del documento. Si hay zonas borrosas o pixeladas, el sistema no puede validar la información y debemos pedirte que las vuelvas a tomar.\"\nSi el cliente ya intentó varias veces: \"Intenta en otro ambiente: busca luz natural, evita el flash y apoya el documento sobre una mesa. Si el problema persiste, cuéntanos qué dispositivo usas y te ayudamos a encontrar una solución.\"",
+          zendeskBody: "Usa esta macro SOLO cuando el prospecto ya envió fotos y están borrosas (el sistema tiene el tag docs_request activo). Si el prospecto NO ha enviado fotos, NO uses esta macro.",
+        },
+        {
+          nombre: "FON-02: Fotos con requisitos incompletos (cortadas, selfie inválida)",
+          macro: "Revisamos las fotos enviadas y encontramos que no cumplen con los requisitos técnicos necesarios para validar tu documento.\n\nLos requisitos que deben cumplir las fotos son:\nFoto del documento frontal: Toda la superficie del documento visible, sin recortes, sin reflejos ni sombras.\nFoto del documento posterior: Igual que la frontal, completa y legible.\nSelfie con documento: Tu cara debe estar visible, el documento sostenido frente a ti, ambos claramente reconocibles.\n\n¿Qué puede causar el rechazo?: Documento cortado en los bordes · Flash directo que opaca los datos · Selfie fuera de foco · Documento girado o en ángulo incorrecto.",
+          shuffleChat: "Si la selfie fue rechazada: \"Para la selfie, sostén el documento frente a tu cara, asegúrate de que tanto tu cara como el documento estén dentro del marco y en foco. No uses lentes de sol ni gorras que oculten tu rostro.\"\nSi el documento estaba cortado: \"Aléjate un poco más al tomar la foto para que todo el documento quede dentro del encuadre. Puedes usar el modo cuadrado de la cámara para tener mejor referencia.\"",
+          zendeskBody: "Aplica cuando las fotos enviadas no cumplen los requisitos técnicos (cortadas, selfie inválida, ángulo incorrecto). El tag docs_request debe estar activo.",
+        },
+        {
+          nombre: "FON-03: Foto de foto (no es permitido)",
+          macro: "Para validar tu identidad, Nu necesita fotos tomadas directamente del documento físico (o de la cédula digital en pantalla).\n\nNo se aceptan:\n• Fotos de fotos del documento\n• Fotocopias o escaneos\n• Fotos de pantallas que muestren la foto del documento\n\nEsto es un requisito de seguridad para proteger tu identidad y cumplir con las normas de vinculación.\n\nSi tienes la cédula digital en la app del gobierno, sí puedes tomar foto de la pantalla mostrando la cédula digital directamente.",
+          shuffleChat: "Si el cliente no tiene el documento físico a mano: \"Necesitamos las fotos del documento original. Si no lo tienes ahora, puedes completar el registro más adelante - tienes 45 días desde la invitación para enviarnos las fotos.\"\nSi el cliente tiene la cédula digital: \"La cédula digital (app del gobierno) sí es válida. Muéstrala en pantalla completa y toma la foto desde la app Nu directamente.\"",
+          zendeskBody: "NUNCA solicites fotos si el tag docs_request no está activo. Si el cliente envía fotos de fotos o fotocopias, explica el motivo del rechazo y orienta hacia el proceso correcto.",
+        },
+        {
+          nombre: "FON-04: ID dañado o muy deteriorado",
+          macro: "Para poder validar tu identidad, el documento debe estar en condiciones que permitan leer claramente todos tus datos.\n\nSi el documento está muy deteriorado (datos ilegibles, laminado desprendido, información borrosa), puede que no sea posible validarlo.\n\nOpciones si tu documento está dañado:\n1. Reexpedición de cédula: Puedes tramitar una nueva cédula en la Registraduría.\n2. Documento temporal: En algunos casos, la Registraduría entrega un documento provisional mientras expiden la nueva cédula.\n\nTienes 45 días calendario desde la invitación para completar el proceso con Nu.",
+          shuffleChat: "Si el cliente puede esperar la nueva cédula: \"Puedes solicitar la reexpedición en la Registraduría más cercana o en línea en registraduria.gov.co. Una vez tengas el nuevo documento, vuelve al proceso de registro con Nu y continúa desde donde lo dejaste.\"\nSi el cliente tiene urgencia y el documento es parcialmente legible: \"Si algunos datos son legibles y la foto es reconocible, podemos intentar validarlo. Toma las fotos con buena iluminación y sin flash. Si el sistema lo rechaza, necesitaremos la reexpedición.\"",
+          zendeskBody: "Verifica en Shuffle si el documento enviado tiene datos legibles antes de rechazarlo definitivamente. Si hay duda, escala al equipo de validación con evidencia.",
+        },
+        {
+          nombre: "FON-05: Las fotos me están saliendo borrosas — ¿qué hago?",
+          macro: "Para la situación que presentas, te recomendamos estas acciones para mejorar la calidad de las fotos:\n\n1. Busca un lugar bien iluminado con luz natural - evita ambientes oscuros o con luz artificial muy directa.\n2. Coloca el documento sobre una mesa o superficie plana para estabilizarlo.\n3. Apoya los codos al tomar la foto para reducir el movimiento.\n4. Limpia el lente de la cámara con un paño suave.\n5. Evita usar el zoom - acércate físicamente al documento en vez de hacer zoom digital.\n6. Asegúrate de que la pantalla esté enfocada antes de tomar la foto (toca el documento en la pantalla para enfocar).",
+          shuffleChat: "Si el problema persiste con el celular: \"Puedes intentar el proceso desde otro dispositivo (celular de un familiar, por ejemplo). Lo importante es que las fotos sean claras y todos los datos legibles.\"\nSi la cámara del celular tiene problemas técnicos: \"Si la cámara tiene fallas de hardware, te recomendamos usar otro dispositivo. También puedes intentar desde el sitio web de Nu en un computador.\"",
+          zendeskBody: "Esta macro aplica cuando el cliente tiene problemas técnicos con la cámara antes o durante el envío de fotos. Diferente a FON-01 (fotos ya enviadas y rechazadas).",
+        },
+        {
+          nombre: "FON-06: No me sirve la cámara — ¿cómo tomo las fotos?",
+          macro: "Si tu celular no tiene cámara funcional, puedes completar tu registro desde otro celular o tablet que tenga cámara disponible.\nUna vez finalices el registro desde ese dispositivo, podrás seguir usando tu cuenta Nu normalmente desde tu teléfono habitual.\nPara retomar el proceso, ingresa a la app Nu y selecciona la opción 'Ingresar.\"\nRecuerda: Las fotos deben ser del documento físico directamente, claras y con todos los datos visibles.",
+          shuffleChat: "Si el cliente no tiene acceso a otro dispositivo: \"Entendemos la situación. Tienes 45 días desde la invitación para completar el proceso. Si en ese tiempo consigues acceso a una cámara, puedes continuar donde lo dejaste.\"",
+          zendeskBody: "Aplica cuando el cliente no tiene cámara disponible en su dispositivo. Orienta hacia alternativas concretas.",
+        },
+        {
+          nombre: "FON-07: No quiero dar autorización a la cámara",
+          macro: "Para que puedas completar el proceso de verificación de identidad dentro de la app Nu, necesitamos acceso temporal a tu cámara.\n\n¿Por qué lo necesitamos?:\n• Para tomar las fotos de tu documento de identidad de forma segura directamente en la app.\n• Para la selfie de verificación.\n\n¿Es seguro?: Sí. Nu no almacena videos ni hace uso de la cámara fuera del proceso de registro. El acceso a la cámara se usa únicamente en el momento en que tú lo activas para tomar las fotos.",
+          shuffleChat: "Si el cliente no confía en los permisos: \"Entendemos tu preocupación por la privacidad. Nu solo usa la cámara durante el proceso de registro que tú activas - jamás en segundo plano.\nSi el cliente quiere saber cómo revocar el permiso después: \"Una vez completado el registro, puedes revocar el permiso de cámara desde la configuración de tu celular (Ajustes > Aplicaciones > Nu > Permisos) en cualquier momento.\"",
+          zendeskBody: "Si el cliente definitivamente no quiere dar permisos de cámara, oriéntalo hacia el proceso web. No fuerces el permiso.",
+        },
+        {
+          nombre: "FON-08: Prospecto no quiere enviar fotos de su documento",
+          macro: "Entendemos completamente tu preocupación - la seguridad de tu información es nuestra prioridad.\n\n¿Por qué necesitamos las fotos?: En Colombia, la ley exige que los bancos y entidades financieras verifiquen la identidad de sus clientes antes de vincularlos. Este proceso se llama SARLAFT y es obligatorio para todas las entidades del sistema financiero.\n\n¿Qué hacemos con tus fotos?:\n• Las fotos son confidenciales y se almacenan en servidores seguros.\n• Solo el equipo autorizado de validación las revisa.\n• Se tratan según nuestra Política de Tratamiento de Datos Personales, disponible en nu.com.co en la sección 'Transparencia'.\n\nSin esta verificación, no es posible completar el registro ni abrir los productos.",
+          shuffleChat: "Si el cliente se niega definitivamente: \"Si decides no enviar las fotos, lamentablemente no podremos completar tu registro. Es un requisito legal que no podemos omitir. Si cambias de opinión, tienes 45 días desde la invitación para completarlo.\"\nSi el cliente tiene miedo de fraude: \"Tu seguridad es fundamental para nosotros. Nu nunca comparte tus datos con terceros y el almacenamiento es cifrado. Si tienes dudas específicas, puedes revisar nuestra política en nu.com.co/transparencia.\"",
+          zendeskBody: "No presiones al cliente. Si se niega, explica el requisito legal con empatía. Si insiste en no enviarlas, cierra el contacto con respeto y registra la negativa.",
+        },
+        {
+          nombre: "FON-09: Prospecto envía fotos proactivamente (sin solicitud) Approved",
+          macro: "¡Hola! Gracias por tu disposición y por contactarnos.\n\nSin embargo, notamos que aún no tenemos una solicitud activa de fotos en tu proceso de registro.\n\nLas fotos de tu documento solo se solicitan y se procesan a través del paso específico dentro de la app Nu - no por este canal de atención.\n\nPor seguridad, Nu no puede recibir ni procesar fotos de documentos enviadas por chat, correo u otros canales.\n\nPara continuar con el proceso:\n1. Abre la app Nu.\n2. Sigue los pasos del registro hasta llegar al paso de verificación de identidad.\n3. Desde esa pantalla, carga las fotos de tu documento directamente.",
+          shuffleChat: "Si el cliente ya completó el registro: \"Si ya terminaste el registro y enviaste las fotos desde la app, entonces ya está todo en orden. Nuestro equipo las revisará y te notificaremos por correo.\"\nSi el cliente no sabe dónde cargar las fotos en la app: \"En la app, continúa con el proceso de registro hasta llegar a la pantalla de 'Verificación de identidad'. Allí encontrarás el paso para tomar y cargar las fotos de tu documento.\"",
+          zendeskBody: "NUNCA solicites al cliente que reenvíe las fotos por este canal. Siempre oriéntalo al proceso oficial dentro de la app o web.",
+        },
+        {
+          nombre: "FON-10: ¿Qué documentos admiten en las fotos?",
+          macro: "Nu Colombia acepta los siguientes documentos de identidad para el proceso de registro:\n\n✅ Cédula de Ciudadanía (CC): Para colombianos mayores de 18 años.\n✅ Cédula de Extranjería (CE) vigente: Para extranjeros residentes en Colombia con CE activa.\n✅ Permiso por Protección Temporal (PPT) vigente: Para ciudadanos venezolanos con PPT activo.\n\n❌ NO se aceptan: Pasaportes · Tarjetas de identidad · Documentos de menores de edad · CE vencida · PPT vencido.\n\nNota importante sobre el PPT: Los portadores de PPT solo pueden acceder a la Cuenta de Ahorros Nu y a CDT. El PPT no permite solicitar Tarjeta de Crédito ni registrarse como llave Bre-B.",
+          shuffleChat: "Si el cliente tiene pasaporte: \"Por ahora, Nu Colombia no acepta pasaportes como documento de registro. Si tienes Cédula de Extranjería vigente, puedes usarla para el proceso.\"\nSi el cliente es menor de 18 años: \"Actualmente, los productos Nu Colombia son exclusivos para mayores de 18 años con documento de identidad válido. Esperamos poder ofrecerte alternativas en el futuro.\"",
+          zendeskBody: "Recuerda: PPT = solo Cuenta de Ahorros y CDT, NO tarjeta de crédito ni llave Bre-B. CE debe estar vigente.",
+        },
+        {
+          nombre: "FON-11: ¿Qué hago si perdí mi documento? Approved",
+          macro: "Sentimos lo ocurrido. Si perdiste o te robaron el documento, sigue estos pasos:\n\n1. Denuncia el robo o pérdida: Primero repórtalo ante la Policía Nacional o en Denuncias en Línea. Esto te protege de posibles usos fraudulentos de tu identidad.\n2. Solicita la reexpedición: Tramita la nueva cédula en la Registraduría Nacional (registraduria.gov.co) o en cualquier oficina de la Registraduría.\n\n¿Qué pasa con tu proceso en Nu?:\nTienes 45 días calendario desde la invitación para completar el registro. Si necesitas tiempo para reponer el documento, puedes continuar el proceso una vez lo tengas.\n\nSi la invitación vence antes de que tengas el nuevo documento, podrás aplicar de nuevo desde nu.com.co.",
+          shuffleChat: "Si el cliente tiene urgencia: \"Entendemos que 45 días puede parecer poco tiempo. Si en ese plazo no puedes completar el proceso, no te preocupes - puedes volver a aplicar desde nu.com.co cuando tengas el documento.\"\nSi el cliente ya tiene el documento nuevo: \"Excelente. Ahora puedes continuar el proceso de registro con el nuevo documento. Si tu invitación sigue activa, ingresa a la app Nu y continúa donde lo dejaste.\"",
+          zendeskBody: "Orienta al cliente a reportar el documento perdido primero (seguridad) y luego a gestionar la reexpedición. Nu no puede avanzar sin el documento físico o digital vigente.",
+        },
+        {
+          nombre: "FON-12: Ciudadano extranjero con CE próxima a vencer (advertencia)",
+          macro: "Revisamos tu documento y notamos que tu Cédula de Extranjería está próxima a vencer. Para continuar con tu registro, es necesario contar con un documento vigente, por lo que te recomendamos renovarla y cargar nuevamente las fotos en la app.\n\nRecuerda que tienes 45 días calendario desde tu invitación para completar el proceso. Si no alcanzas, podrás volver a aplicar a Nu en https://nu.com.co/ o desde la app.",
+          shuffleChat: "Si la CE ya está vencida: \"Lamentablemente, con CE vencida no es posible completar el registro. Necesitas renovarla en Migración Colombia primero. Una vez tengas la CE vigente, puedes volver al proceso de registro.\"\nSi el cliente pregunta cuánto dura el trámite de renovación: \"El tiempo varía según el tipo de visa y la carga en las oficinas de Migración Colombia.",
+          zendeskBody: "Si la CE ya está vencida al momento del contacto, usa FON-13. Esta macro es solo para advertencia cuando la CE está próxima a vencer pero sigue vigente.",
+        },
+        {
+          nombre: "FON-13: Ciudadano extranjero con CE expirada (TC)",
+          macro: "Lo sentimos. Con Cédula de Extranjería (CE) vencida no es posible completar el proceso de registro ni solicitar productos con Nu Colombia.\n\nPara poder continuar, necesitas:\n1. Renovar tu CE ante Migración Colombia (migracioncolombia.gov.co).\n2. Una vez tengas la CE vigente, vuelve a aplicar desde nu.com.co.\n\n¿Qué pasa si ya eras cliente Nu con la CE anterior?: Si ya tienes productos Nu y tu CE venció, debes actualizar tu documento para mantener el acceso completo a tus productos. Contáctanos una vez tengas la CE renovada.",
+          shuffleChat: "Si el cliente tiene urgencia y no quiere esperar: \"Entendemos tu situación. Lamentablemente es un requisito legal que no podemos saltarnos. La renovación de la CE es el primer paso necesario.\"\nSi el cliente pregunta si puede usar el pasaporte mientras: \"Por ahora, Nu Colombia no acepta pasaportes como documento de registro, solo CE vigente o PPT vigente.\"",
+          zendeskBody: "CE vencida = no se puede procesar. No hay excepciones. Orienta al cliente a renovar en Migración Colombia antes de volver al proceso Nu.",
+        },
+        {
+          nombre: "FON-14: Cliente con PPT vencido pero vigente en migración",
+          macro: "Entendemos tu situación. Si tu Permiso de Protección Temporal (PPT) venció, es necesario que cuentes con el documento renovado. Una vez cuentes con alguno de estos documentos actualizados, compártenos las fotos a través de la app:\nPPT o Cédula de Extranjería vigente, Cédula de Ciudadanía Colombiana.\nNecesitamos:\n\t•\tSelfie con tu documento de identidad\n\t•\tFoto de la parte delantera del documento\n\t•\tFoto de la parte trasera del documento\nEsto nos permite mantener tus datos siempre actualizados en nuestro sistema.",
+          shuffleChat: "Si el cliente no cuenta con docuumento válido vigente: \"Necesitamos que el PPT esté vigente para poder avanzar. Una vez Migración Colombia actualice tu PPT, puedes continuar el proceso.\"",
+          zendeskBody: "Si el cliente indica que ya renovó su documento, recuérdale que debe compartir las fotos del nuevo documento (selfie, parte delantera y trasera) a través de la app. Si el cliente aún no ha renovado, oriéntalo a completar primero ese trámite ante Migración Colombia antes de continuar con el proceso en Nu.",
+        },
+        {
+          nombre: "FON-15: Deterioro y/o pérdida del PPT",
+          macro: "Sentimos lo ocurrido. Si tu Permiso de Protección Temporal (PPT) fue perdido, robado o está muy deteriorado, solicita la reposición ante Migración Colombia.\n\n¿Qué pasa con tu proceso en Nu?:\nTienes 45 días desde la invitación para completar el registro. Mientras tramitas el nuevo PPT, puedes esperar y retomar el proceso cuando lo tengas.\n\nSi la invitación vence antes, podrás volver a aplicar desde nu.com.co una vez tengas el PPT vigente.",
+          shuffleChat: "Si el PPT está deteriorado pero los datos son legibles: \"Intenta tomar las fotos en buenas condiciones de luz. Si el sistema puede leer la información, puede que sea aceptado. Si el deterioro impide la lectura de datos, será necesaria la reposición.\"\nSi el cliente no tiene PPT y quiere aplicar: \"Para registrarse en Nu, necesitas un documento de identidad válido: CC, CE vigente o PPT vigente. Sin alguno de estos documentos no es posible completar el registro.\"",
+          zendeskBody: "Si el cliente indica que ya tiene el documento reexpedido, recuérdale que debe ingresar a la app y cargar nuevamente las fotos. Si aún no lo ha renovado, oriéntalo a tramitar la reexpedición antes de continuar con el proceso en Nu.",
+        },
+        {
+          nombre: "FON-16: PPT vencido",
+          macro: "Con Permiso de Protección Temporal (PPT) vencido no es posible completar el registro en Nu Colombia.\n\nPara poder continuar con el proceso, necesitas:\n1. Renovar tu PPT ante Migración Colombia.\n2. Una vez tengas el PPT vigente, vuelve a aplicar desde nu.com.co o la app Nu.\n\nRecuerda que los portadores de PPT solo tienen acceso a la Cuenta de Ahorros Nu. La Tarjeta de Crédito no está disponible para este documento.",
+          shuffleChat: "Si el cliente pregunta si puede usar otro documento: \"Si tienes Cédula de Extranjería (CE) vigente, también puedes registrarte con ese documento. La CE da acceso a todos los productos de Nu, incluyendo tarjeta de crédito.\"\nSi el cliente ya renovó el PPT: \"Si ya tienes el PPT renovado y vigente, puedes continuar el proceso de registro. Ingresa a nu.com.co o la app Nu y aplica nuevamente.\"",
+          zendeskBody: "PPT vencido = no se puede procesar. Orienta a renovación en Migración Colombia. Si el cliente tiene CE vigente, puede usarla en su lugar.",
+        },
+        {
+          nombre: "FON-18: Documentos aceptados para el registro (CC/CE/PPT)",
+          macro: "Para registrarte en Nu Colombia, necesitas uno de los siguientes documentos de identidad:\n\n✅ Cédula de Ciudadanía (CC) - Versión física en policarbonato.\n\n✅ Cédula de Extranjería (CE) vigente -  Versión física en policarbonato.\n✅ Permiso de Protección Temporal (PPT) vigente - Versión física en policarbonato.\n\n❌ No se aceptan: Pasaportes · Tarjetas de identidad · Documentos vencidos · Documentos de menores de edad.\n\nRequisito adicional: Número de teléfono colombiano activo y correo electrónico.",
+          shuffleChat: "Si el cliente tiene CE vencida: \"Necesitas la CE vigente. Te recomendamos renovarla en Migración Colombia antes de aplicar a Nu.\"\nSi el cliente solo tiene PPT y quiere tarjeta de crédito: \"Con PPT solo puedes acceder a la Cuenta de Ahorros Nu y CDT por ahora. Para la tarjeta de crédito se requiere CC o CE vigente.\"",
+          zendeskBody: "Resumen rápido: CC = todo · CE vigente = todo · PPT vigente = solo Cuenta Ahorros. Sin documentos válidos no hay registro posible.",
+        },
+        {
+          nombre: "FON-19: ¿Puedo registrarme con el PPT para invertir en un CDT? (email)",
+          macro: "Gracias por contactarnos sobre el Certificado de Depósito a Término (CDT) de Nu.\n\nRespecto a tu consulta: el Permiso por Protección Temporal (PPT)  da acceso al producto CDT de Nu Colombia.\n\nCon PPT, puedes acceder a:\n✅ Cuenta de Ahorros Nu\n✅ CDT",
+          shuffleChat: "Si el cliente pregunta cuándo el PPT tendrá acceso al CDT: \"Los clientes que tienen identificación PPT (Permiso por Protección Temporal) también podrán crear CDTs directamente desde su app de Nu.\"\n\nSección 3: Tarjeta de Crédito NuControl\n\n¿Qué es el piloto NuControl?\nNuControl es una línea de tarjetas de crédito diseñada para personas que, posiblemente, no tienen acceso a crédito tradicional. Las condiciones varían por cliente (cuota de manejo, tasa de interés, cupo) según el perfil financiero.\n\nVersiones activas: tasa usura + CM $3k / $8k / $12k / $27k · 0% interés + CM $29k · descuento intereses + CM $19k\nEl piloto dura 3 meses desde que el cliente contrata el producto.",
+          zendeskBody: "",
+        },
+        {
+          nombre: "LEN-01: ¿Nu ofrece préstamos? ¿Cómo funcionan?",
+          macro: "Sí, Nu ofrece préstamos desde octubre de 2025.\n\nEs importante saber que el Préstamo Nu no se solicita: Nu analiza diariamente los perfiles de sus clientes y, si eres elegible, verás la oferta directamente en tu app.\n\nPara poder ser evaluado, necesitas tener una Cuenta Nu activa. La oferta aparece en el home de la app como una opción nueva.\n\nSi ya eres cliente y quieres saber si tienes una oferta disponible: entra a tu App Nu y revisa el menú principal - si hay una oferta para ti, la verás allí.",
+          shuffleChat: "Si el cliente pregunta cómo calificar para el préstamo: \"La elegibilidad la determina automáticamente Nu según tu perfil financiero. No hay una solicitud manual que puedas hacer. Lo que sí ayuda es tener tu Cuenta Nu activa y usarla con regularidad.\"\nSi el cliente no tiene aún una oferta pero quiere el préstamo: \"Entiendo tu interés. Por ahora, la oferta llega directamente a la app cuando el sistema determina que eres elegible. Te recomiendo mantener activa tu Cuenta Nu y revisar la app periódicamente.\"",
+          zendeskBody: "NUNCA prometas cupos, plazos ni tasas específicas a un cliente que todavía no tiene oferta. La elegibilidad la decide el sistema - no el agente.",
+        },
+        {
+          nombre: "LEN-02: ¿Qué tipos de préstamos ofrece Nu?",
+          macro: "Nu maneja dos tipos de préstamos. Un cliente o prospecto solo puede ser elegido para uno de los dos:\n\n1. Préstamo Ligero:\n-> Diseñado para cubrir gastos inesperados o emergencias.\n-> Montos: desde $100.000 hasta $5.200.000.\n-> Plazos: de 1 a 48 cuotas.\n-> Tasa: varía mensualmente, puede ser menor o igual a la tasa de usura.\n\n2. Préstamo Personal:\n-> Para montos mayores y proyectos más grandes.\n-> Montos: desde $100.000 hasta $45.000.000.\n-> Plazos: de 1 a 60 cuotas.\n-> Tasa: varía mensualmente, puede ser menor o igual a la tasa de usura.",
+          shuffleChat: "Si el cliente pregunta cuál tipo le corresponde: \"El tipo de préstamo que aparece en tu app es el que Nu determinó según tu perfil. No es posible elegir entre los dos productos - el sistema asigna automáticamente el que mejor se adapta a tu situación.\"\nSi el cliente pregunta por la tasa de interés exacta: \"La tasa varía mensualmente y siempre es menor o igual a la tasa de usura vigente. El valor exacto lo verás en la simulación dentro de tu app cuando configures tu préstamo.\"",
+          zendeskBody: "Si el cliente es ya cliente Nu (CUSTOMER), transfíerelo al squad correspondiente: SAL para Préstamo Ligero, LEN para Préstamo Personal. Si es prospecto, respóndele con esta información general.",
+        },
+        {
+          nombre: "LEN-03: Uso y asignación del Préstamo Nu",
+          macro: "Una vez aceptas el préstamo en la app, funciona así:\n\n1. El Préstamo Nu se otorga en una sola ocasión. A diferencia de una tarjeta de crédito, el cupo no se libera a medida que pagas.\n\n2. Un cliente solo puede tener un préstamo activo a la vez.\n\n3. Las ofertas de crédito son asignadas automáticamente según las políticas de riesgo de Nu y se ven directamente en la app.\n\n4. El dinero queda disponible en tu Cuenta Nu en segundos.\n\n5. Tú eliges el monto y la fecha de pago desde la app, y puedes abonar cuando quieras.",
+          shuffleChat: "Si el cliente pregunta si puede pedir otro préstamo antes de terminar de pagar el actual: \"Con Nu solo puedes tener un préstamo activo a la vez. Una vez liquides tu préstamo actual, el sistema volverá a evaluar tu perfil y, si eres elegible, aparecerá una nueva oferta en tu app.\"\nSi el cliente quiere saber cómo verificar si tiene oferta en Shuffle: \"En Shuffle: selecciona los tags 'Savings' y 'Lending', ve al Widget de Loans, da clic en 'Rules'. Allí verás la información del préstamo pre-aprobado y en 'POLICY' el tipo de préstamo asignado.\"",
+          zendeskBody: "Recuerda: el dinero del préstamo se deposita instantáneamente en la Cuenta Nu del cliente. Si el cliente no tiene Cuenta Nu activa, no puede recibir el préstamo.\n\nSecured Card Product",
+        },
+        {
+          nombre: "NC-01: ¿Qué es la tarjeta NuControl?",
+          macro: "NuControl es una tarjeta de crédito diseñada específicamente para tu perfil financiero actual. Funciona exactamente igual que cualquier tarjeta de crédito Mastercard: compras en Colombia y el exterior, en establecimientos físicos y online.\n\nAl igual que la tarjeta Nu estándar, NuControl la gestionas 100% desde la app - sin papeleo, sin filas, sin llamadas. Tienes control total: bloqueo en tiempo real, tarjetas virtuales, ajuste de cupo y más.\n\nLo que hace especial a NuControl es que sus condiciones están diseñadas para tu perfil específico. Incluye beneficios como 1 avance en efectivo gratuito al mes y una cuota de manejo mensual que varía según la versión asignada.\n\nEs una oportunidad real de acceso al crédito formal, pensada para que puedas empezar a construir historial financiero con Nu hoy mismo.",
+          shuffleChat: "Si el cliente pregunta si NuControl es peor que la TC estándar: \"NuControl fue diseñada específicamente para tu perfil y tiene sus propios beneficios concretos. Nu analiza cada perfil de manera individual para ofrecerte las mejores condiciones posibles para ti.\"",
+          zendeskBody: "Evita comparar NuControl con la tarjeta estándar de Nu en términos de 'mejor' o 'peor'. Enfócate en los beneficios que sí tiene NuControl para el perfil del cliente.",
+        },
+        {
+          nombre: "NC-02: ¿Qué diferencia hay entre NuControl y la tarjeta de crédito Nu?",
+          macro: "NuControl y la tarjeta de crédito Nu estándar son dos productos distintos del portafolio Nu, cada uno diseñado para diferentes perfiles financieros. Las dos son Mastercard y funcionan en los mismos comercios en Colombia y el exterior.\n\nLa diferencia principal está en las condiciones específicas: NuControl puede incluir una cuota de manejo mensual (que varía según la variante asignada: desde $3.000 hasta $29.000) y una tasa de interés adaptada al perfil del cliente.\n\nAmbas tarjetas comparten los beneficios base de Nu: sin costo de creación, sin costo de envío, sin seguros obligatorios, $0 por usar la app y gestión total desde el celular.\n\nLa versión que se te ofrece es la que Nu determinó como la más adecuada para tu situación financiera actual.",
+          shuffleChat: "Si el cliente pregunta por qué NuControl tiene cuota de manejo: \"La cuota de manejo de NuControl está asociada a los beneficios específicos que incluye tu versión del producto. Es una tarjeta diseñada para tu perfil, con condiciones pensadas especialmente para ti.\"\nSi el cliente compara condiciones con las de un amigo: \"Las condiciones de NuControl son personalizadas: cada cliente puede tener una versión distinta según su perfil. Por eso las condiciones de tu amigo pueden diferir de las tuyas.\"",
+          zendeskBody: "Si el cliente dice que 'NuControl tiene peores condiciones', no lo confirmes ni lo niegues. Enfócate en los beneficios concretos de SU versión: cuota de manejo, avance gratis, ajuste de cupo.",
+        },
+        {
+          nombre: "NC-03: ¿Por qué me ofrecen NuControl y no la tarjeta de crédito Nu?",
+          macro: "Nu analiza el perfil financiero de cada persona de forma individual y automática al momento del registro. En tu caso, el sistema identificó que NuControl es el producto que mejor se ajusta a tu situación actual.\n\nEsta es una oferta personalizada. NuControl fue creada precisamente para ampliar el acceso al crédito formal a más personas, con condiciones reales y manejables.\n\nUsar NuControl de forma responsable (pagos al día, uso activo) es la mejor manera de construir historial con Nu.",
+          shuffleChat: "Si el cliente se siente excluido o molesto: \"Entendemos perfectamente cómo te sientes. NuControl no es un 'plan B' - es un producto pensado para personas como tú, con condiciones que realmente funcionan para tu perfil financiero actual.",
+          zendeskBody: "Si el cliente está decepcionado, valida su emoción: «Entendemos que querías otro producto. NuControl fue diseñado específicamente para tu perfil y tiene beneficios reales…»",
+        },
+        {
+          nombre: "NC-04: ¿Cómo puedo solicitar la tarjeta NuControl?",
+          macro: "Para solicitar NuControl, el proceso es el mismo que para cualquier producto Nu: aplica desde nu.com.co, la app Nu o vía WhatsApp.\n\nDurante el registro, cuando llegues al paso de selección de productos, el sistema evaluará tu perfil automáticamente. Si NuControl está disponible para ti, aparecerá como opción para seleccionar.\n\nEl proceso completo toma menos de 5 minutos. Solo necesitas tu documento de identidad (CC, CE vigente), un número de celular colombiano activo y un correo electrónico.\n\nPara conocer más sobre NuControl antes de aplicar: nu.com.co/credito-nucontrol/condiciones",
+          shuffleChat: "Si el cliente ya está registrado pero no le apareció NuControl: \"La disponibilidad de NuControl depende del perfil que Nu identificó durante tu registro. Si no apareció la opción, es posible que el sistema no la haya detectado como la oferta más adecuada en ese momento.\"\nSi el cliente pregunta si puede solicitar NuControl después del registro: \"La oferta de productos se genera durante el proceso de registro. Si NuControl no apareció, puedes contactarnos y revisamos juntos qué opciones están disponibles para ti.\"",
+          zendeskBody: "La frase 'aplicación multi-producto' puede confundir. Tradúcela: 'Cuando te registras, Nu evalúa tu perfil y te ofrece los productos que más te convienen a ti.' Eso hace que el proceso se sienta personalizado, no estándar.",
+        },
+        {
+          nombre: "NC-05: ¿Por qué no puedo tener la tarjeta NuControl?",
+          macro: "La disponibilidad de NuControl depende del análisis que Nu hace automáticamente de tu perfil financiero durante el registro. Si NuControl no apareció como opción, el sistema determinó que otro conjunto de productos es el más adecuado para tu perfil en este momento.\n\nNuControl es un piloto activo: Nu continúa aprendiendo y ajustando para ampliar su alcance a más perfiles. Esto puede cambiar en el futuro según tu historial financiero.\nSi en el futuro hay una oferta de NuControl disponible para ti, recibirás una notificación en la app Nu o por correo electrónico.",
+          shuffleChat: "Si el cliente insiste en saber por qué no le ofrecen NuControl: \"Nu evalúa múltiples factores de manera automatizada y todavía estamos ajustando el sistema. No tenemos visibilidad sobre los criterios específicos en tu caso, pero sí puedo decirte que el sistema sigue aprendiendo.\"\nSi el cliente quiere que le ofrezcan NuControl: \"Lamentablemente no es posible solicitarlo directamente: el sistema lo ofrece de manera automática según el perfil. Si en el futuro hay una oferta disponible para ti, te llegará por la app o por correo.\"",
+          zendeskBody: "No insinuar que el cliente 'no calificó'. La frase correcta es que Nu aún está 'aprendiendo' del perfil del cliente.",
+        },
+        {
+          nombre: "NC-06: NuControl: ¿Por qué los beneficios son diferentes a los de mis amigos?",
+          macro: "Entendemos que puede generar confusión ver que las condiciones varían entre personas.\n\nNuControl es un piloto en el que ofrecemos diferentes variantes del producto según el perfil financiero de cada persona. Las condiciones (cuota de manejo, tasa de interés, cupo) se definen de forma individual basándonos en el análisis de cada perfil.\n\nEsto significa que dos personas pueden tener NuControl con condiciones distintas - ninguna es mejor ni peor, sino la que corresponde al perfil de cada una.\n\nLas condiciones ofrecidas no son negociables en este momento.",
+          shuffleChat: "Si el cliente quiere las mismas condiciones que su amigo: \"Las condiciones de NuControl se asignan individualmente y no pueden cambiarse por comparación. Lo que te ofrecemos es lo que corresponde a tu perfil actual con Nu.\"\nSi el cliente pregunta si puede mejorar sus condiciones: \"En Nu trabajamos constantemente para mejorar los productos. Las condiciones actuales son las vigentes para tu perfil, pero podrían ajustarse en el futuro según tu historial con Nu.\"",
+          zendeskBody: "Las condiciones de NuControl son personalizadas e individuales. No se pueden igualar a las de otro cliente. Explica con empatía y transparencia.",
+        },
+        {
+          nombre: "NC-07: NuControl: ¿Por qué este piloto dura 3 meses?",
+          macro: "NuControl es una nueva línea de productos diseñada para llevar acceso al crédito a más personas. Como es un producto nuevo, lo lanzamos en formato de piloto para aprender de la experiencia real de nuestros clientes y mejorar el producto continuamente.\n\n¿Qué significa el piloto de 3 meses?:\nEl piloto dura 3 meses desde que el cliente activa el producto. Durante este tiempo, las condiciones están garantizadas según lo acordado.\n\n¿Qué pasa después?: Este plazo se podrá renovar automáticamente, en caso contrario Nu avisará de esta decisión a los clientes con la debida anticipación.",
+          shuffleChat: "Si el cliente pregunta si perderá la tarjeta al terminar: \"Al finalizar el piloto de 3 meses, recibirás comunicación oficial de Nu con los detalles sobre el futuro del producto. Por ahora, disfruta de todos los beneficios disponibles.\"\nSi el cliente quiere saber si se renueva automáticamente: \"Este plazo se podrá renovar automáticamente, en caso contrario Nu avisará de esta decisión a los clientes con la debida anticipación.\"",
+          zendeskBody: "El piloto dura 3 meses desde la activación del producto por parte del cliente. Sé transparente: explica que es un formato de lanzamiento nuevo, no una restricción arbitraria.",
+        },
+        {
+          nombre: "NC-08: NuControl: ¿Puedo cambiar los beneficios / condiciones?",
+          macro: "Entendemos que las condiciones asignadas puedan no ser las que esperabas.\n\nSin embargo, en este momento no es posible modificar las condiciones de NuControl (cuota de manejo, tasa de interés o cupo).\n\nLas condiciones son determinadas por el análisis del perfil financiero de cada persona y son las más adecuadas que podemos ofrecerte según esa evaluación.\n\nLo que sí puedes hacer:\n• Usar el producto responsablemente para construir historial con Nu.\n• Mantener tus productos al día.\n• Esto puede abrir la puerta a mejores condiciones en el futuro.",
+          shuffleChat: "Si el cliente insiste en negociar: \"Comprendemos tu interés, pero las condiciones de NuControl son fijas y no son negociables en este momento. Lo que te ofrecemos es el producto diseñado específicamente para tu perfil.\"\nSi el cliente quiere cancelar por las condiciones: \"Entendemos la decisión. Si decides no aceptar NuControl, puedes cerrar el proceso de solicitud. Ten en cuenta que no podemos garantizar que el mismo producto sea ofrecido en el futuro.\"",
+          zendeskBody: "Las condiciones son fijas, no negociables. Explícalo con empatía. Orienta al cliente a construir historial para potenciales mejoras futuras.",
+        },
+        {
+          nombre: "NC-09: NuControl: Me la ofrecieron, la rechacé, ¿cómo la solicito ahora?",
+          macro: "Sabemos que quieres seguir construyendo tu camino financiero con Nu y nos alegra que reconsideres.\n\nSin embargo, una vez que declines la oferta de NuControl durante el registro, o si la invitación expira, no podemos garantizar que se te vuelva a ofrecer el mismo producto\nSi ya eres cliente de Nu, no necesitas volver a registrarte para solicitar más productos. Si vuelves a ser elegible para la tarjeta de crédito, te haremos la oferta directamente en tu app a través de un banner con toda la información necesaria para adquirirla.\nTen en cuenta que no hay un tiempo específico para que esta oferta aparezca, pero en cuanto esté disponible para ti, te lo notificaremos para que puedas completar el proceso de forma rápida y sencilla desde tu app.",
+          shuffleChat: "Si el cliente aplicó recientemente: \"Si tu proceso de aplicación fue muy reciente, te recomendamos esperar al menos unos días antes de aplicar de nuevo para que el sistema actualice tu estado.\"\nSi el cliente ya es cliente Nu con otro producto: \"Si ya tienes productos Nu activos (como Cuenta de Ahorros), no es posible agregar NuControl a través del proceso de primera vez. Por ahora, NuControl solo está disponible durante el proceso de inscripción inicial.\"",
+          zendeskBody: "Al ser cliente activo, no es necesario que vuelva a inscribirse. La oferta de nuevos productos aparecerá directamente en su app cuando sea elegible. No hay un tiempo específico para esto, pero se le notificará en cuanto esté disponible.",
+        },
+        {
+          nombre: "NC-10: NuControl v2 Prospectos: ¿Cómo solicito NuControl?",
+          macro: "¡Nos alegra que estés interesado en NuControl!\n\nNuControl se ofrece durante el proceso de inscripción al Mundo Nu. El proceso es el siguiente:\n\n1. Aplica desde nu.com.co, la app Nu o vía WhatsApp.\n2. Completa el formulario con tus datos (cédula, correo, teléfono colombiano).\n3. Nu analiza tu solicitud en segundos.\n4. Si eres elegible para NuControl, recibirás la oferta directamente en el proceso de registro.\n5. Acepta la oferta y completa el registro.\n\nPara más información sobre NuControl y sus condiciones, visita: nu.com.co/credito-nucontrol/condiciones",
+          shuffleChat: "Si el cliente ya tiene cuenta Nu pero quiere NuControl ahora: \"Por el momento, NuControl solo está disponible durante el proceso de primera inscripción. No es posible agregarlo como producto adicional si ya eres cliente Nu con otros productos.\"\nSi el cliente aplicó pero no le ofrecieron NuControl: \"La oferta de NuControl depende de la evaluación del perfil financiero. Si en tu proceso actual no te apareció la oferta, puedes volver a aplicar en una nueva solicitud.\"",
+          zendeskBody: "NuControl solo se ofrece durante la primera inscripción. Para prospectos que preguntan cómo solicitarlo, oriéntalos al proceso de aplicación estándar.",
+        },
+        {
+          nombre: "NC-11: Beneficios NuControl v2— tasa usura + CM $3.000 Approved",
+          macro: "Tu Tarjeta de Crédito NuControl incluye los siguientes beneficios:\n\n• Cuota de manejo mensual: $3.000 (una de las más bajas del mercado).\n• Tasa de interés: Tasa de usura vigente.\n• 1 avance en efectivo gratuito al mes.\n• Sin seguros obligatorios.\n• $0 por usar la app Nu.\n• Control total desde la app: bloqueo/desbloqueo, tarjetas virtuales, gestión de cuotas.\n• Mastercard aceptada en millones de establecimientos en Colombia y el exterior.\n• Atención al cliente 24/7.\n\nPara más detalles: nu.com.co/credito-nucontrol/condiciones",
+          shuffleChat: "Si el cliente pregunta por qué la tasa es alta: \"La tasa de usura es la tasa máxima legal en Colombia. Esta es la tasa asignada a tu perfil actual. Usando el producto responsablemente, podrías acceder a mejores condiciones en el futuro.\"\nSi el cliente quiere comparar con otras variantes: \"NuControl tiene varias variantes - la que tienes es la que corresponde a tu perfil. Las condiciones son personalizadas.\"",
+          zendeskBody: "Usa esta macro para la variante tasa usura + CM $3.000 específicamente.",
+        },
+        {
+          nombre: "NC-12: Beneficios NuControl — tasa usura + CM $8.000",
+          macro: "Tu Tarjeta de Crédito NuControl incluye los siguientes beneficios:\n\n• Cuota de manejo mensual: $8.000.\n• Tasa de interés: Tasa de usura vigente.\n• 1 avance en efectivo gratuito al mes.\n• Sin seguros obligatorios.\n• $0 por usar la app Nu.\n• Control total desde la app: bloqueo/desbloqueo, tarjetas virtuales, gestión de cuotas.\n• Mastercard aceptada en millones de establecimientos en Colombia y el exterior.\n• Atención al cliente 24/7.\n\nPara más detalles: nu.com.co/credito-nucontrol/condiciones",
+          shuffleChat: "Si el cliente quiere saber por qué tiene esta variante: \"Las condiciones de NuControl se asignan según el análisis de tu perfil financiero. Esta es la versión que mejor se ajusta a tu situación actual.\"\nSi el cliente compara con la variante de $3.000: \"Cada variante corresponde a un perfil diferente. Las condiciones son fijas para la variante asignada.\"",
+          zendeskBody: "Usa esta macro para la variante tasa usura + CM $8.000 específicamente.",
+        },
+        {
+          nombre: "NC-13: Beneficios NuControl — tasa usura + CM $12.000",
+          macro: "Tu Tarjeta de Crédito NuControl incluye los siguientes beneficios:\n\n• Cuota de manejo mensual: $12.000.\n• Tasa de interés: Tasa de usura vigente.\n• 1 avance en efectivo gratuito al mes.\n• Sin seguros obligatorios.\n• $0 por usar la app Nu.\n• Control total desde la app: bloqueo/desbloqueo, tarjetas virtuales, gestión de cuotas.\n• Mastercard aceptada en millones de establecimientos en Colombia y el exterior.\n• Atención al cliente 24/7.\n\nPara más detalles: nu.com.co/credito-nucontrol/condiciones",
+          shuffleChat: "Si el cliente pregunta por el cupo de crédito: \"El cupo de crédito asignado a tu NuControl se muestra en la app Nu. Si tienes dudas sobre el cupo específico, revísalo directamente en la sección de tu tarjeta.\"\nSi el cliente quiere cambiar la variante: \"Las condiciones son personalizadas y fijas para tu perfil actual. No es posible cambiar de variante en este momento.\"",
+          zendeskBody: "Usa esta macro para la variante tasa usura + CM $12.000 específicamente.",
+        },
+        {
+          nombre: "NC-14: Beneficios NuControl — tasa usura + CM $27.000",
+          macro: "Tu Tarjeta de Crédito NuControl incluye los siguientes beneficios:\n\n• Cuota de manejo mensual: $27.000 (una de las más bajas del mercado para este perfil).\n• Tasa de interés: Tasa de usura vigente.\n• 1 avance en efectivo gratuito al mes.\n• Sin seguros obligatorios.\n• $0 por usar la app Nu.\n• Control total desde la app: bloqueo/desbloqueo, tarjetas virtuales, gestión de cuotas.\n• Mastercard aceptada en millones de establecimientos en Colombia y el exterior.\n• Atención al cliente 24/7.\n\nPara más detalles: nu.com.co/credito-nucontrol/condiciones",
+          shuffleChat: "Si el cliente compara su CM con otras variantes: \"Las variantes de NuControl tienen diferentes CMs según el perfil. La que tienes es la asignada a tu perfil. No es posible cambiarla en este momento.\"\nSi el cliente pregunta si puede llegar a pagar menos: \"Construyendo un buen historial con Nu y usando el producto responsablemente, podrías acceder a mejores condiciones en el futuro.\"",
+          zendeskBody: "Usa esta macro para la variante tasa usura + CM $27.000 específicamente.",
+        },
+        {
+          nombre: "NC-15: Beneficios NuControl — 0% interés + CM $29.000 Approved",
+          macro: "Tu Tarjeta de Crédito NuControl tiene una condición especial de 0% de interés:\n\n• Tasa de interés: 0% E.A. en compras diferidas a 1 o hasta 36 cuotas.\n• Cuota de manejo mensual: $29.000.\n• 1 avance en efectivo gratuito cada periodo.\n• Sin seguros obligatorios.\n• $0 por usar la app Nu.\n• Control total desde la app: bloqueo/desbloqueo, tarjetas virtuales, gestión de cuotas.\n• Mastercard aceptada en millones de establecimientos en Colombia y el exterior.\n• Atención al cliente 24/7.\n\nPara más detalles: nu.com.co/credito-nucontrol/condiciones",
+          shuffleChat: "Si el cliente pregunta si el 0% aplica para avances en efectivo: \"El 0% de interés aplica para compras diferidas a cuotas. Los avances en efectivo pueden tener condiciones diferentes. Revisa los términos y condiciones en nu.com.co/credito-nucontrol/condiciones.\"\nSi el cliente quiere saber cuándo termina el 0%: \"Esta condición está vigente durante el periodo del piloto (3 meses desde la activación). Recibirás comunicación oficial antes de cualquier cambio en las condiciones.\"",
+          zendeskBody: "Usa esta macro para la variante 0% interés + CM $29.000. Es la variante más atractiva para usuarios que difieren compras.",
+        },
+        {
+          nombre: "NC-16: Beneficios NuControl — descuento intereses + CM $19.000 Approved",
+          macro: "Tu Tarjeta de Crédito NuControl tiene un beneficio de descuento en la tasa de interés:\n\n• Descuento de intereses: 30% de descuento sobre la tasa de interés en todas las compras que difieras a más de 1 cuota.\n• Cuota de manejo mensual: $19.000.\n• 1 avance en efectivo gratuito al mes.\n• Sin seguros obligatorios.\n• $0 por usar la app Nu.\n• Control total desde la app: bloqueo/desbloqueo, tarjetas virtuales, gestión de cuotas.\n• Mastercard aceptada en millones de establecimientos en Colombia y el exterior.\n• Atención al cliente 24/7.\n\nPara más detalles: nu.com.co/credito-nucontrol/condiciones",
+          shuffleChat: "Si el cliente pregunta sobre el 30% de descuento: \"El 30% de descuento aplica sobre la tasa de interés cuando difieres tus compras a más de 1 cuota. Si pagas en una sola cuota (pago total), se aplica la tasa normal.\"\nSi el cliente pregunta si el descuento es para siempre: \"Esta condición está vigente durante el periodo del piloto. Recibirás comunicación oficial antes de cualquier cambio.\"",
+          zendeskBody: "Usa esta macro para la variante descuento intereses + CM $19.000. El 30% de descuento aplica SOLO cuando el cliente difiere a más de 1 cuota.\n\nSección 4: Inscripción y Registro - CDTs\n\nContexto CDTs en el flujo de adquisición\nLos CDTs Nu (Certificados de Depósito a Término) se gestionan a través de las Cajitas Nu. Para acceder, el prospecto primero debe registrarse y abrir una Cuenta Nu.\n\nLos portadores de PPT (Permiso Temporal de Protección) tienen disponible el producto CDT",
+        },
+        {
+          nombre: "OPT-01: Prospecto decide cancelar — Recepción de solicitud (todos los agentes)",
+          macro: "Entendemos tu decisión y la respetamos. He reportado tu solicitud de cancelación del proceso de vinculación a Nu con nuestro equipo especializado.\nUna vez completado el proceso, recibirás una notificación en tu correo electrónico registrado con las novedades sobre tu solicitud.",
+          shuffleChat: "Si el cliente confirma que quiere cancelar y expresa frustración: \"\"Entendemos tu decisión. He reportado tu solicitud con nuestro equipo especializado y recibirás una notificación en tu correo electrónico cuando el proceso haya sido completado.\"\"",
+          zendeskBody: "Antes de enviar esta macro, pregunta brevemente el motivo de la cancelación: '¿Hay algo que podamos mejorar o aclarar?' No para retener, sino para documentar. Esa información vale oro para el equipo de producto.",
+        },
+        {
+          nombre: "OPT-02: Confirmación definitiva del opt-out (SOLO agentes ACQ)",
+          macro: "Confirmamos el procesamiento de tu solicitud de cancelación del registro con Nu.\n\nTu proceso ha sido cancelado y no recibirás más comunicaciones relacionadas con esta invitación.\n\nSi en el futuro decides intentarlo nuevamente, puedes aplicar desde nu.com.co cuando quieras. Nu siempre tendrá las puertas abiertas para ti.",
+          shuffleChat: "Si el cliente pregunta si quedaron datos guardados: \"Tus datos han sido procesados conforme a nuestra Política de Privacidad. Si tienes preguntas específicas sobre el manejo de tus datos, puedes escribirnos a privacidad@nu.com.co.\"\nSi el cliente podría retractarse: \"Si cambias de opinión, no hay ningún problema: puedes volver a solicitar una invitación a Nu cuando quieras. Nos encantaría tenerte.\"",
+          zendeskBody: "Si el cliente cancela porque tuvo una mala experiencia (demoras, confusión), primero valida su experiencia antes de enviar OPT-01. Solo continúa con el proceso si insiste en cancelar.\n\nSección 6: Tarjetas Amparadas\n\n¿Quién atiende qué en Tarjetas Amparadas?\nAcquisition: dudas generales sobre características del producto o cómo adquirirlo - solo para prospectos (estado INVALID PROSPECT en PV).\nCustomer Management: cuando ambos (Titular y Amparado) ya son clientes Nu - invitación, registro, certificados, cancelación.\nSi el usuario es CUSTOMER / RELEASED / CLIENTE -> transferir al squad correspondiente según la duda.",
+        },
+        {
+          nombre: "TA-01: ¿Cómo puedo acceder a una Tarjeta Amparada?",
+          macro: "Para acceder a una Tarjeta Amparada Nu hay dos roles: el Titular y el Amparado.\n\nSi quieres ser Titular (quien da el cupo):\n-> Debes ser cliente activo Nu con tarjeta de crédito.\n-> Tu tarjeta debe tener un límite de crédito de al menos $500.000.\n-> Puedes otorgar únicamente una Tarjeta Amparada y serás responsable de ella.\n-> La solicitas desde la App y allí confirmas los datos del Amparado.\n\nSi quieres ser Amparado (quien recibe el cupo):\n-> Debes ser cliente Nu y recibir la invitación del Titular.\n-> Necesitas Cédula de Ciudadanía (no aplica para menores de edad).\n-> Puedes tener varias tarjetas amparadas de diferentes titulares.\n\nSi aún no eres cliente Nu, puedes aplicar desde nuestra página web, App Nu o WhatsApp.",
+          shuffleChat: "Si quiere ser Titular pero no tiene la tarjeta de crédito aún: \"Para poder amparar una tarjeta, primero necesitas tener activa tu tarjeta de crédito Nu con un cupo mínimo de $500.000. Una vez la tengas, puedes invitar a tu amparado directamente desde la app.\"\nSi quiere ser Amparado pero no es cliente Nu: \"Para recibir una Tarjeta Amparada necesitas tener una cuenta Nu activa. Puedes registrarte fácilmente desde nuestra página web, la App Nu o por WhatsApp. Una vez seas cliente, el titular puede enviarte la invitación.\"",
+          zendeskBody: "Primero valida si la persona quiere ser Titular (quien da) o Amparado (quien recibe). La respuesta y los requisitos cambian completamente según el rol.",
+        },
+        {
+          nombre: "TA-02: ¿Nu cuenta con tarjetas amparadas? ¿Cómo funciona?",
+          macro: "Sí, en Nu contamos con Tarjetas Amparadas Nu.\n\nFuncionan así: el Titular (quien tiene la tarjeta de crédito Nu) comparte parte de su cupo con el Amparado, quien recibe una tarjeta física a su nombre.\n\nEl Titular gestiona desde la app:\n-> Establece el límite específico para el Amparado.\n-> Tiene historial de compras y seguimiento del cupo compartido.\n-> Puede ajustar el cupo compartido y cambiar cuotas de compras.\n-> Recibe notificaciones y autoriza compras (código 3DS).\n-> Es responsable del pago de la obligación.\n\nEl Amparado gestiona desde la app:\n-> Puede usar la tarjeta en wallets digitales y crear tarjetas virtuales.\n-> Tiene historial de sus propias compras y seguimiento del cupo.\n-> Puede cambiar el PIN de su tarjeta.\n-> Recibe notificaciones de sus transacciones.",
+          shuffleChat: "Si el prospecto quiere aplicar a Nu para poder usar este producto: \"Si aún no eres cliente Nu, puedes aplicar fácilmente desde nuestra página web, la App Nu o por WhatsApp. Una vez tengas tu tarjeta de crédito activa, puedes invitar a tu amparado desde la misma app.\"\nSi tiene dudas de a quién pertenece cada gestión: \"Una forma fácil de recordarlo: el Titular controla el cupo y paga la deuda; el Amparado usa la tarjeta y gestiona su PIN. Ambos ven el historial de sus propias compras.\"",
+          zendeskBody: "Si el cliente quiere saber si puede ser Titular o Amparado, guíalo primero con la pregunta: ¿ya eres cliente Nu con tarjeta de crédito activa? La respuesta define su rol posible.",
+        },
+        {
+          nombre: "TA-03: ¿Cuáles son los beneficios de las Tarjetas Amparadas Nu?",
+          macro: "Las Tarjetas Amparadas Nu tienen tres beneficios principales:\n\n1. Control del gasto: El Titular puede establecer un límite específico para el Amparado, lo que permite controlar los gastos de forma organizada.\n\n2. Flexibilidad para el Amparado: El Amparado puede tener varias tarjetas amparadas de diferentes titulares, lo que le da flexibilidad en su uso.\n\n3. Practicidad para el círculo social: Es una función útil para que los titulares puedan proveer a su familia o círculo cercano de un medio de pago para emergencias o gastos cotidianos, de manera organizada y segura.",
+          shuffleChat: "Si el cliente pregunta si el Amparado puede gastar más del límite asignado: \"No, el Amparado solo puede gastar dentro del límite que el Titular estableció para él. El Titular tiene control total sobre ese límite y puede ajustarlo cuando quiera desde la app.\"\nSi el cliente pregunta si hay costos adicionales por la tarjeta amparada: \"La Tarjeta Amparada funciona dentro del cupo del Titular, sin cargos adicionales por emisión. Los beneficios de la tarjeta Nu (sin costos de creación, envío o reposición) aplican igualmente.\"",
+          zendeskBody: "Presenta los beneficios según el interés del cliente: si es Titular, enfócate en el control del gasto; si es Amparado, en la flexibilidad y la practicidad.",
+        },
+        {
+          nombre: "TA-04: ¿Puedo invitar a un familiar para amparar una tarjeta para él?",
+          macro: "Sí, cuando ya seas cliente Nu con tarjeta de crédito activa, puedes invitar a tu amparado desde la app siguiendo estos pasos:\n\nPaso 1: En tu App Nu, ve a la sección 'Mis tarjetas' dentro de tu producto de tarjeta de crédito.\nPaso 2: Da clic en 'Solicitar una tarjeta amparada' en la parte de 'Compartidas por ti'.\nPaso 3: Llena los datos que te pide la app y notíficale a tu Amparado que le llegará una invitación.\nPaso 4: Cuando el Amparado acepte, podrá ver en su app la tarjeta registrada, y listo.\n\nRequisitos previos: cupo mínimo de $500.000 en tu tarjeta de crédito Nu y el Amparado debe tener Cédula de Ciudadanía (no aplica para menores de edad).",
+          shuffleChat: "Si el cliente no tiene el cupo mínimo requerido: \"Para poder otorgar una tarjeta amparada necesitas tener al menos $500.000 de cupo en tu tarjeta de crédito Nu. Si tu cupo actual es menor, te recomendamos usar la tarjeta activamente para que Nu pueda evaluar un aumento de cupo en el futuro.\"\nSi el Amparado no es cliente Nu aún: \"Primero tu familiar necesita tener una cuenta Nu activa para poder recibir la invitación. Puede registrarse desde la página web, la App Nu o por WhatsApp. Una vez sea cliente, tú le envías la invitación desde tu app.\"",
+          zendeskBody: "Ten en cuenta que solo puedes otorgar UNA tarjeta amparada a la vez, y serás responsable de los gastos que realice tu amparado con ella. Asegúrate de que el cliente entienda esta responsabilidad antes de proceder.\n\nSección 7: Lending - Préstamos Nu\n\nInformación clave sobre el producto de Préstamos Nu\nDisponible desde el 20 de octubre de 2025.\nNO es un producto que el cliente solicita: es una oferta que Nu hace directamente en la app a clientes elegibles.\nEl sistema analiza diariamente los perfiles. Para ser evaluado, el cliente debe tener una Cuenta Nu activa.\nSi el cliente es CUSTOMER / RELEASED -> transferir al squad Lending o SAL según el tipo de préstamo (Ligero o Personal).",
+        },
+      ];
       const RESULTADO_SOLICITUD_LABEL = "Dudas sobre el Resultado de Solicitud (Declinado, Cancelado o Erróneo)";
       const RESULTADO_SOLICITUD_ROWS = [
         {
@@ -3679,6 +4657,10 @@
       const localCsvZone = document.getElementById("localCsvZone");
       const filtersPanel = document.getElementById("filtersPanel");
       const q = document.getElementById("q");
+      const recentSearchesWrap = document.getElementById("recentSearchesWrap");
+      const recentSearchesEl = document.getElementById("recentSearches");
+      const clearRecentSearchesBtn = document.getElementById("clearRecentSearchesBtn");
+      const onlyFavoritesBtn = document.getElementById("onlyFavoritesBtn");
       const reasonSelect = document.getElementById("reasonSelect");
       const reasonButtons = document.getElementById("reasonButtons");
       const accionSelect = document.getElementById("accionSelect");
@@ -3696,6 +4678,7 @@
       const tabSearch = document.getElementById("tabSearch");
       const tabLearn = document.getElementById("tabLearn");
       const tabWedukas = document.getElementById("tabWedukas");
+      const tabFavorites = document.getElementById("tabFavorites");
       const introSlide = document.getElementById("introSlide");
       const startToolBtn = document.getElementById("startToolBtn");
       const toolShell = document.getElementById("toolShell");
@@ -3703,22 +4686,40 @@
       const searchView = document.getElementById("searchView");
       const learnView = document.getElementById("learnView");
       const wedukasView = document.getElementById("wedukasView");
+      const learnQ = document.getElementById("learnQ");
+      const learnRecentSearchesWrap = document.getElementById("learnRecentSearchesWrap");
+      const learnRecentSearchesEl = document.getElementById("learnRecentSearches");
+      const clearLearnRecentSearchesBtn = document.getElementById("clearLearnRecentSearchesBtn");
       const learnReasonSelect = document.getElementById("learnReasonSelect");
       const learnReasonButtons = document.getElementById("learnReasonButtons");
       const learnEmpty = document.getElementById("learnEmpty");
       let rows = [];
       let zendeskBase = "";
       let debounceTimer = null;
+      let learnDebounceTimer = null;
+      const STORAGE_RECENT_SEARCHES = "macrohub_recent_searches_v1";
+      const STORAGE_FAVORITES = "macrohub_favorite_macros_v1";
+      let onlyFavorites = false;
 
       function hasEmbeddedRows() {
         return Array.isArray(window.EMBEDDED_MACROS_ACQ) && window.EMBEDDED_MACROS_ACQ.length > 0;
       }
 
       function switchView(mode) {
-        const currentMode = mode === "learn" || mode === "wedukas" ? mode : "search";
-        if (searchView) searchView.hidden = currentMode !== "search";
+        const currentMode = mode === "learn" || mode === "wedukas" || mode === "favorites" ? mode : "search";
+        const isSearchLike = currentMode === "search" || currentMode === "favorites";
+        if (searchView) searchView.hidden = !isSearchLike;
         if (learnView) learnView.hidden = currentMode !== "learn";
         if (wedukasView) wedukasView.hidden = currentMode !== "wedukas";
+        if (currentMode === "favorites" && !onlyFavorites) {
+          onlyFavorites = true;
+          updateOnlyFavoritesButton();
+          render();
+        } else if (currentMode === "search" && onlyFavorites) {
+          onlyFavorites = false;
+          updateOnlyFavoritesButton();
+          render();
+        }
         if (tabSearch) {
           const active = currentMode === "search";
           tabSearch.classList.toggle("active", active);
@@ -3733,6 +4734,11 @@
           const active = currentMode === "wedukas";
           tabWedukas.classList.toggle("active", active);
           tabWedukas.setAttribute("aria-selected", active ? "true" : "false");
+        }
+        if (tabFavorites) {
+          const active = currentMode === "favorites";
+          tabFavorites.classList.toggle("active", active);
+          tabFavorites.setAttribute("aria-selected", active ? "true" : "false");
         }
       }
 
@@ -3773,13 +4779,19 @@
       function filterLearningBlocks() {
         if (!learnView) return;
         const selectedReason = norm(learnReasonSelect ? learnReasonSelect.value : "");
+        const learnTerm = norm(learnQ ? learnQ.value : "");
         const blocks = [...learnView.querySelectorAll("details.learn-block")];
-        if (!selectedReason) {
+        if (!selectedReason && !learnTerm) {
           blocks.forEach((block) => {
             block.hidden = true;
             block.open = false;
           });
-          if (learnEmpty) learnEmpty.hidden = true;
+          if (learnEmpty) {
+            learnEmpty.hidden = false;
+            learnEmpty.classList.add("guide");
+            learnEmpty.innerHTML =
+              '<p class="empty-title">Selecciona una Contact Reason</p><div class="empty-suggestions">Da clic en la Contact Reason que necesites para ver su aprendizaje.</div><div class="empty-cta">Panel izquierdo -> Contact Reason</div>';
+          }
           renderLearnReasonButtons();
           return;
         }
@@ -3788,7 +4800,8 @@
         blocks.forEach((block) => {
           const reason = norm(block.getAttribute("data-learn-reason") || "");
           const matchesReason = !selectedReason || reason === selectedReason;
-          const match = matchesReason;
+          const matchesTerm = !learnTerm || norm(block.textContent || "").includes(learnTerm);
+          const match = matchesReason && matchesTerm;
           block.hidden = !match;
           if (match) {
             visible++;
@@ -3797,7 +4810,11 @@
             block.open = false;
           }
         });
-        if (learnEmpty) learnEmpty.hidden = visible > 0;
+        if (learnEmpty) {
+          learnEmpty.classList.remove("guide");
+          learnEmpty.textContent = "No hay coincidencias en aprendizaje para esa búsqueda.";
+          learnEmpty.hidden = visible > 0;
+        }
         renderLearnReasonButtons();
       }
 
@@ -3909,8 +4926,8 @@
           }
 
           const count = document.createElement("span");
-          count.className = "reason-btn-count";
-          count.textContent = String(countValue);
+          count.className = "reason-btn-count learn";
+          count.textContent = `${countValue} guía${countValue === 1 ? "" : "s"}`;
 
           main.appendChild(icon);
           main.appendChild(title);
@@ -3934,6 +4951,163 @@
           .trim();
       }
 
+      function rowKey(row) {
+        return norm((row && (row.nombre || row.propuestaNombre)) || "");
+      }
+
+      function loadStorageArray(key) {
+        try {
+          const raw = localStorage.getItem(key);
+          if (!raw) return [];
+          const parsed = JSON.parse(raw);
+          if (!Array.isArray(parsed)) return [];
+          return parsed.map((item) => String(item || "").trim()).filter(Boolean);
+        } catch (e) {
+          return [];
+        }
+      }
+
+      function saveStorageArray(key, values) {
+        try {
+          localStorage.setItem(key, JSON.stringify(values));
+        } catch (e) {}
+      }
+
+      const recentSearchesState = loadStorageArray(STORAGE_RECENT_SEARCHES).slice(0, 8);
+      const favoriteKeysState = new Set(loadStorageArray(STORAGE_FAVORITES).map((v) => norm(v)).filter(Boolean));
+
+      function isFavoriteRow(row) {
+        return favoriteKeysState.has(rowKey(row));
+      }
+
+      function persistFavorites() {
+        saveStorageArray(STORAGE_FAVORITES, [...favoriteKeysState]);
+      }
+
+      function toggleFavoriteByKey(key) {
+        const k = norm(key || "");
+        if (!k) return;
+        if (favoriteKeysState.has(k)) favoriteKeysState.delete(k);
+        else favoriteKeysState.add(k);
+        persistFavorites();
+      }
+
+      function addRecentSearch(term) {
+        const text = String(term || "").trim();
+        if (text.length < 2) return;
+        const normalized = norm(text);
+        const next = [text, ...recentSearchesState.filter((item) => norm(item) !== normalized)].slice(0, 8);
+        recentSearchesState.length = 0;
+        recentSearchesState.push(...next);
+        saveStorageArray(STORAGE_RECENT_SEARCHES, recentSearchesState);
+        renderRecentSearches();
+      }
+
+      function removeRecentSearch(term) {
+        const normalized = norm(term || "");
+        if (!normalized) return;
+        const next = recentSearchesState.filter((item) => norm(item) !== normalized);
+        recentSearchesState.length = 0;
+        recentSearchesState.push(...next);
+        saveStorageArray(STORAGE_RECENT_SEARCHES, recentSearchesState);
+        renderRecentSearches();
+      }
+
+      function clearRecentSearches() {
+        recentSearchesState.length = 0;
+        saveStorageArray(STORAGE_RECENT_SEARCHES, recentSearchesState);
+        renderRecentSearches();
+      }
+
+      function renderRecentSearches() {
+        if (!recentSearchesWrap || !recentSearchesEl) return;
+        if (!recentSearchesState.length) {
+          recentSearchesWrap.hidden = true;
+          recentSearchesEl.innerHTML = "";
+          return;
+        }
+        recentSearchesWrap.hidden = false;
+        recentSearchesEl.innerHTML = recentSearchesState
+          .map(
+            (term) =>
+              `<span class="chip-btn-wrap"><button type="button" class="chip-btn" data-recent="${escapeHtml(
+                term
+              )}">${escapeHtml(term.length > 34 ? term.slice(0, 31) + "…" : term)}</button><button type="button" class="chip-remove-btn" data-recent-remove="${escapeHtml(
+                term
+              )}" aria-label="Eliminar búsqueda reciente">×</button></span>`
+          )
+          .join("");
+        recentSearchesEl.querySelectorAll("button[data-recent]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            q.value = btn.getAttribute("data-recent") || "";
+            scheduleRender();
+          });
+        });
+        recentSearchesEl.querySelectorAll("button[data-recent-remove]").forEach((btn) => {
+          btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            removeRecentSearch(btn.getAttribute("data-recent-remove") || "");
+          });
+        });
+      }
+
+      function addLearnRecentSearch(term) {
+        addRecentSearch(term);
+        renderLearnRecentSearches();
+      }
+
+      function removeLearnRecentSearch(term) {
+        removeRecentSearch(term);
+        renderLearnRecentSearches();
+      }
+
+      function clearLearnRecentSearches() {
+        clearRecentSearches();
+        renderLearnRecentSearches();
+      }
+
+      function renderLearnRecentSearches() {
+        if (!learnRecentSearchesWrap || !learnRecentSearchesEl || !learnQ) return;
+        if (!recentSearchesState.length) {
+          learnRecentSearchesWrap.hidden = true;
+          learnRecentSearchesEl.innerHTML = "";
+          return;
+        }
+        learnRecentSearchesWrap.hidden = false;
+        learnRecentSearchesEl.innerHTML = recentSearchesState
+          .map(
+            (term) =>
+              `<span class="chip-btn-wrap"><button type="button" class="chip-btn" data-learn-recent="${escapeHtml(
+                term
+              )}">${escapeHtml(term.length > 34 ? term.slice(0, 31) + "…" : term)}</button><button type="button" class="chip-remove-btn" data-learn-recent-remove="${escapeHtml(
+                term
+              )}" aria-label="Eliminar búsqueda reciente de aprendizaje">×</button></span>`
+          )
+          .join("");
+
+        learnRecentSearchesEl.querySelectorAll("button[data-learn-recent]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            learnQ.value = btn.getAttribute("data-learn-recent") || "";
+            filterLearningBlocks();
+          });
+        });
+        learnRecentSearchesEl.querySelectorAll("button[data-learn-recent-remove]").forEach((btn) => {
+          btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            removeLearnRecentSearch(btn.getAttribute("data-learn-recent-remove") || "");
+          });
+        });
+      }
+
+      function updateOnlyFavoritesButton() {
+        if (!onlyFavoritesBtn) return;
+        onlyFavoritesBtn.classList.toggle("active", onlyFavorites);
+        onlyFavoritesBtn.setAttribute("aria-pressed", onlyFavorites ? "true" : "false");
+        onlyFavoritesBtn.textContent = onlyFavorites ? "★ Solo favoritas activado" : "☆ Solo favoritas";
+      }
+
       function formatContactReasonLabel(label) {
         const text = String(label || "").trim();
         const normalized = norm(text);
@@ -3944,8 +5118,7 @@
       }
 
       function isTemporarilyDisabledReasonLabel(label) {
-        const normalized = norm(label || "");
-        return normalized.startsWith("registro, aplicacion e informacion de productos nu");
+        return false;
       }
 
       function isTemporarilyDisabledReasonRow(row) {
@@ -4326,6 +5499,37 @@
         return keepRows.concat(injectedRows);
       }
 
+      function applyRegistroProductosDocRows(baseRows) {
+        if (!REGISTRO_PRODUCTOS_DOC_ROWS.length) return baseRows;
+        const isRegistroProductos = (row) => {
+          const blob = norm((row.contactReason || "") + " " + (row.contactReasonActual || ""));
+          return (
+            blob.includes("registro, aplicacion e informacion de productos nu") ||
+            blob.includes("acquisition_first_time_application")
+          );
+        };
+        const keepRows = baseRows.filter((row) => !isRegistroProductos(row));
+        const injectedRows = REGISTRO_PRODUCTOS_DOC_ROWS.map((item) => ({
+            nombre: item.nombre,
+            propuestaNombre: "",
+            macro: item.macro,
+            contactReason: REGISTRO_PRODUCTOS_LABEL,
+            contactReasonActual: REGISTRO_PRODUCTOS_LABEL,
+            shuffleChat: item.shuffleChat,
+            zendeskBody: item.zendeskBody,
+            encargado: "Alejandra",
+            estado: "Revisado",
+            accion: "Nueva",
+            linkZendesk: "",
+            shuffleEmail: "No",
+            shuffleChatFlag: "Yes",
+            zendeskFlag: "Yes",
+            comentarios: "",
+          })
+        );
+        return keepRows.concat(injectedRows);
+      }
+
       function applyAppPostSesionRows(baseRows) {
         const keepRows = baseRows.filter((row) => {
           const blob = norm((row.contactReason || "") + " " + (row.contactReasonActual || ""));
@@ -4536,8 +5740,11 @@
         const accion = accionSelect.value;
         const canal = canalSelect ? canalSelect.value : "";
         const mode = "both";
+        if (!reason && !term && !accion && !canal && !onlyFavorites) return [];
+        const applyReasonFilter = Boolean(reason) && !term;
         return rows.filter((row) => {
-          if (!rowMatchesCategory(row, reason, mode)) return false;
+          if (applyReasonFilter && !rowMatchesCategory(row, reason, mode)) return false;
+          if (onlyFavorites && !isFavoriteRow(row)) return false;
           if (accion && row.accion !== accion) return false;
           const chatOn = rowHasChatChannel(row);
           const zdOn = rowHasZendeskChannel(row);
@@ -4655,6 +5862,8 @@
 
       function buildActiveCard(row, index) {
         const title = escapeHtml(expandAgentAbbreviations(row.nombre || row.propuestaNombre || "(Sin nombre)"));
+        const key = rowKey(row);
+        const favorite = isFavoriteRow(row);
         const indexBadge = `<span class="macro-index">${String(index || 0).padStart(2, "0")}</span>`;
         const contactReasonLabel = formatContactReasonLabel(row.contactReasonActual);
         const cra = contactReasonLabel
@@ -4713,6 +5922,11 @@
                     <h3 class="card-title">${titleHtml}</h3>
                   </div>
                   <div class="card-right">
+                    <button type="button" class="fav-btn${favorite ? " active" : ""}" data-fav="${escapeHtml(
+                      key
+                    )}" aria-label="${favorite ? "Quitar de favoritas" : "Agregar a favoritas"}" aria-pressed="${
+                      favorite ? "true" : "false"
+                    }">${favorite ? "★" : "☆"}</button>
                     ${channelChips}
                     <span class="card-chevron" aria-hidden="true">▾</span>
                   </div>
@@ -4772,11 +5986,16 @@
         const breakdownEl = document.getElementById("resultsBreakdown");
         const selectedReason = reasonSelect.value;
         const selectedCanal = canalSelect ? canalSelect.value : "";
+        const hasReasonSelected = Boolean(selectedReason);
+        const hasSearchTerm = Boolean(q.value.trim());
+        const globalSearchByTerm = hasSearchTerm;
+        const hasAnyFilter = hasReasonSelected || hasSearchTerm || Boolean(accionSelect.value) || Boolean(selectedCanal) || onlyFavorites;
         const isOverview =
           !selectedReason &&
           !q.value.trim() &&
           !accionSelect.value &&
-          !selectedCanal;
+          !selectedCanal &&
+          !onlyFavorites;
 
         if (channelTabs) {
           channelTabs.querySelectorAll(".channel-tab").forEach((btn) => {
@@ -4784,15 +6003,19 @@
           });
         }
         updateSummaryCard();
+        renderReasonButtons();
 
         const activas = filtered.filter((r) => !isAccionDesactivada(r.accion));
         const desactivadas = filtered.filter((r) => isAccionDesactivada(r.accion));
 
         if (resultsTitle) {
-          resultsTitle.textContent = selectedReason ? `CR: ${selectedReason}` : "CR: Todas";
+          if (globalSearchByTerm) resultsTitle.textContent = "CR: Todas (búsqueda global por palabra)";
+          else if (selectedReason) resultsTitle.textContent = `CR: ${selectedReason}`;
+          else if (hasAnyFilter) resultsTitle.textContent = "CR: Todas (búsqueda global)";
+          else resultsTitle.textContent = "CR: Selecciona una Contact Reason";
         }
         if (selectedCrBanner) {
-          if (selectedReason) {
+          if (selectedReason && !globalSearchByTerm) {
             selectedCrBanner.hidden = false;
             selectedCrBanner.innerHTML = `<strong>Contact Reason seleccionada:</strong> ${escapeHtml(selectedReason)}`;
           } else {
@@ -4800,14 +6023,31 @@
             selectedCrBanner.textContent = "";
           }
         }
-        resultsCount.textContent = isOverview ? `~${DEFAULT_SUMMARY.total} Macros` : `~${filtered.length} Macros`;
+        resultsCount.textContent = hasAnyFilter ? `~${filtered.length} Macros` : "0 Macros";
 
         if (filtered.length === 0) {
-          results.innerHTML =
-            '<div class="empty">No hay resultados.<div class="empty-suggestions">Prueba sin filtros, cambia el canal o usa menos palabras clave.</div></div>';
+          const shouldGuideToReason = !hasAnyFilter;
+          const emptyTitle = shouldGuideToReason ? "Selecciona una Contact Reason" : "No hay resultados.";
+          const emptyHint = shouldGuideToReason
+            ? "Da clic en la Contact Reason que necesites para ver sus macros."
+            : "Prueba con otra palabra clave, cambia el canal o ajusta filtros.";
+          const emptyHintText =
+            onlyFavorites && hasAnyFilter
+              ? "Marca macros con ☆ para guardarlas aquí."
+              : emptyHint;
+          const emptyClass = shouldGuideToReason ? "empty empty-guide" : "empty";
+          const emptyCta = shouldGuideToReason
+            ? '<div class="empty-cta">Panel izquierdo -> Contact Reason</div>'
+            : "";
+          const emptyTitleHtml = shouldGuideToReason ? `<p class="empty-title">${emptyTitle}</p>` : emptyTitle;
+          results.innerHTML = `<div class="${emptyClass}">${emptyTitleHtml}<div class="empty-suggestions">${emptyHintText}</div>${emptyCta}</div>`;
           resultsMeta.hidden = false;
           if (resultsStats) resultsStats.innerHTML = "";
-          if (breakdownEl) breakdownEl.textContent = "Macros que coinciden con tus filtros";
+          if (breakdownEl) {
+            breakdownEl.textContent = shouldGuideToReason
+              ? "Selecciona una Contact Reason para cargar resultados."
+              : "Macros que coinciden con tus filtros";
+          }
           return;
         }
 
@@ -4826,7 +6066,6 @@
         partes.push(buildDesactivadasBundle(desactivadas));
 
         results.innerHTML = partes.join("");
-        renderReasonButtons();
         if (resultsStats) {
           const chatCount = filtered.filter((r) => rowHasChatChannel(r)).length;
           const zdCount = filtered.filter((r) => rowHasZendeskChannel(r)).length;
@@ -4850,6 +6089,14 @@
         }
 
         results.querySelectorAll(".card").forEach((card) => {
+          card.querySelectorAll("button.fav-btn[data-fav]").forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              toggleFavoriteByKey(btn.getAttribute("data-fav") || "");
+              render();
+            });
+          });
           card.querySelectorAll("button.mini-link-btn[data-copy-link]").forEach((btn) => {
             btn.addEventListener("click", (e) => {
               e.preventDefault();
@@ -4878,14 +6125,15 @@
           const name = String(r.nombre || r.propuestaNombre || "").trim();
           if (!name) return false;
           if (isTemporarilyDisabledReasonRow(r)) return false;
+          if (isAccionDesactivada(r.accion)) return false;
           if (hasMacroBody(r)) return true;
-          if (isAccionDesactivada(r.accion)) return true;
           return false;
         });
         rows = applyConsultaNoOfertadoRows(rows);
         rows = applyCampanasBeneficiosRows(rows);
         rows = applyReactivacionAdquisicionRows(rows);
         rows = applyErroresFlujoRows(rows);
+        rows = applyRegistroProductosDocRows(rows);
         rows = applyAppPostSesionRows(rows);
         rows = applyReferidosRows(rows);
         rows = applyResultadoSolicitudRows(rows);
@@ -4994,6 +6242,25 @@
       }
 
       q.addEventListener("input", scheduleRender);
+      q.addEventListener("keydown", (e) => {
+        if (e.key !== "Enter") return;
+        addRecentSearch(q.value);
+      });
+      q.addEventListener("blur", () => {
+        addRecentSearch(q.value);
+      });
+      if (onlyFavoritesBtn) {
+        onlyFavoritesBtn.addEventListener("click", () => {
+          onlyFavorites = !onlyFavorites;
+          updateOnlyFavoritesButton();
+          render();
+        });
+      }
+      if (clearRecentSearchesBtn) {
+        clearRecentSearchesBtn.addEventListener("click", () => {
+          clearRecentSearches();
+        });
+      }
       reasonSelect.addEventListener("change", render);
       accionSelect.addEventListener("change", render);
       if (canalSelect) canalSelect.addEventListener("change", render);
@@ -5008,7 +6275,29 @@
       if (tabSearch) tabSearch.addEventListener("click", () => switchView("search"));
       if (tabLearn) tabLearn.addEventListener("click", () => switchView("learn"));
       if (tabWedukas) tabWedukas.addEventListener("click", () => switchView("wedukas"));
+      if (tabFavorites) tabFavorites.addEventListener("click", () => switchView("favorites"));
       if (learnReasonSelect) learnReasonSelect.addEventListener("change", filterLearningBlocks);
+      if (learnQ) {
+        learnQ.addEventListener("input", () => {
+          clearTimeout(learnDebounceTimer);
+          learnDebounceTimer = setTimeout(filterLearningBlocks, 160);
+        });
+        learnQ.addEventListener("keydown", (e) => {
+          if (e.key !== "Enter") return;
+          addLearnRecentSearch(learnQ.value);
+        });
+        learnQ.addEventListener("blur", () => {
+          addLearnRecentSearch(learnQ.value);
+        });
+      }
+      if (clearLearnRecentSearchesBtn) {
+        clearLearnRecentSearchesBtn.addEventListener("click", () => {
+          clearLearnRecentSearches();
+        });
+      }
+      renderRecentSearches();
+      renderLearnRecentSearches();
+      updateOnlyFavoritesButton();
       expandAbbreviationsInLearningView();
       initLearningSegmentTabs();
       filterLearningBlocks();
